@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "YUKITA";
+  src: url("../public/Fonts/yukita-sans.medium.otf");
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Argentum";
+  src: url("../public/Fonts/ArgentumSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../public/Fonts/GilroyMedium.ttf");
+}
+
+@font-face {
+  font-family: "Gilroy-semiBold";
+  src: url("../public/Fonts/Gilroy-Semibold.ttf");
 }
