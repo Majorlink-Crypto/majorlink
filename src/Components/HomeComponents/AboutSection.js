@@ -27,7 +27,7 @@ const AboutSection = () => {
                   {/*sECOND hEADER*/}
 
                  {/*text*/}
-                 <div className='w-[60%] mt-2'>
+                 <div className='md:w-[60%] w-[76%] mt-2'>
                     <h2 className='text-sm font-gilroy text-gray-300'>We provide users the opportunities to purchase any cryptocurrency,
                      converting and swapping currencies with speed, breaking international
                     borders for you and any banking intermediaries. Trade Fast and Easy.</h2>

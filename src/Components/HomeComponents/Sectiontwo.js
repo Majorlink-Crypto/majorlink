@@ -19,7 +19,7 @@ const Sectiontwo = () => {
   
                 {/*Header*/}
                <div className='md:w-[88%] text-headertext'>
-                   <h2 className='text-5xl'>
+                   <h2 className='md:text-5xl text-3xl'>
                    The Most Trusted Cryptocurrency Platform
                    </h2>
                </div>

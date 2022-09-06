@@ -26,7 +26,7 @@ const Navbar = () => {
       //Container for Navbar
     <div>
         {/*Navbar Box*/}
-        <div className='bg-primary flex justify-between items-center md:px-20 px-4 text-white font-raleway md:p-0 py-2'>
+        <div className='bg-primary flex justify-between items-center md:px-20 px-2 text-white font-raleway md:p-0 py-2'>
             {/*Logo*/}
             <span className='md:w-[6%] w-[10%] flex font-poppins font-bold cursor-pointer items-center'>
                 <img
@@ -51,7 +51,7 @@ const Navbar = () => {
 
                         {/*Buttons*/}
                            <div className='flex md:mr-10 items-center font-poppins'>
-                            <button className='md:mr-6 mr-4 hover:underline'>Sign In</button>
+                            <button className='md:mr-6 mr-4 hover:underline md:block hidden'>Sign In</button>
                             <button className='border-2 border-border p-1 md:px-5 px-3 rounded-md md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Buy Now</button>
 
                              {/*Menu Icon*/}
