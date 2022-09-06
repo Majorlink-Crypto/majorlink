@@ -5,7 +5,7 @@ import "aos/dist/aos.css"
 
 const Sectionthree = () => {
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({duration: 3000});
       }, []);
   return (
       //Section Container
@@ -15,7 +15,7 @@ const Sectionthree = () => {
             <div className='md:flex'>
 
                 {/*Left Image*/}
-                   <div data-aos="fade-right" className='md:mx-0 mx-16'>
+                   <div data-aos="fade-up" className='md:mx-0 mx-16'>
                        <img
                        className=''
                        src={transact}
@@ -25,7 +25,7 @@ const Sectionthree = () => {
                   {/*Left Image*/}
 
                    {/*Right Content*/}
-                   <div className='md:p-20 p-6 mt-20' data-aos="fade-left">
+                   <div className='md:p-20 p-6 mt-20' data-aos="fade-up">
                       
                        {/*Header*/}
                       <span>

@@ -107,7 +107,7 @@ const Sectiontwo = () => {
             {/*Left*/}
 
              {/*Right*/}
-             <div data-aos="fade-left" className='bg-right h-full md:mt-0 mt-10 md:w-[100%] w-fit md:p-20 p-10 flex items-center justify-center text-center'>
+             <div data-aos="fade-up" className='bg-right h-full md:mt-0 mt-10 md:w-[100%] w-fit md:p-20 p-10 flex items-center justify-center text-center'>
                      <img
                      className=''
                      src={rightm}
