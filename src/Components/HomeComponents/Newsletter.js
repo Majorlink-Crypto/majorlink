@@ -13,7 +13,7 @@ const Newsletter = () => {
                  <p className='text-border text-sm font-poppins'>Recieve latest news and updates from us and amazing offers</p>
 
                  <div className='font-gilroy mt-8 flex mb-10'>
-                     <input className='p-2 rounded-md mr-8 md:w-[40%] w-[55%]' placeholder='email'>
+                     <input className='p-2 rounded-md mr-8 md:w-[40%] w-[65%]' placeholder='email'>
                      </input>
 
                      <button className='bg-white text-black p-2 rounded-md font-bold font-poppins md:px-10'> Subscribe</button>
