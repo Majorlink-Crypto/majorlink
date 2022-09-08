@@ -38,7 +38,7 @@ const Footer = () => {
                      <IonIcon name='logo-facebook'/>
                      </span>
                      </section>
-                     
+                     <h2 className='mt-3 text-start font-gilroysemibold text-sm text-gray-400'> Majorlink © 2022</h2>
                 </div>
               {/* Logo and social media icons */}
 
@@ -46,7 +46,7 @@ const Footer = () => {
                <div className='flex justify-between md:mt-0 mt-6 '>
 
                {/* Center */}
-               <div className='text-sm font-gilroysemibold md:mr-10 mr-0'> 
+               <div className='text-sm font-gilroysemibold md:mr-20 mr-0'> 
                  <h2 className='text-primary'>Center</h2>
 
                  <ul className='mt-3'>
@@ -59,7 +59,7 @@ const Footer = () => {
                  {/* Center */}
 
                    {/* Right */}
-                   <div className='text-sm font-gilroysemibold md:mr-10 mr-0'> 
+                   <div className='text-sm font-gilroysemibold md:mr-20 mr-0'> 
                  <h2 className='text-primary'>Right</h2>
 
                  <ul className='mt-3'>
@@ -87,16 +87,16 @@ const Footer = () => {
 
 
                      {/* Contact Support */}
-                     <div className='text-sm font-gilroysemibold float-right md:mt-0 mt-10'> 
+                     <div className='text-sm font-gilroysemibold md:mt-0 mt-10 md:pb-0 pb-4 flex flex-col'> 
                  <h2 className='text-primary'>Contact Us</h2>
                  <p className='text-gray-300'>Please drop a message and we will get back to you</p>
-                       <input className='md:w-[70%] w-[90%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Email address'/>
-                       <input className='md:w-[70%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Phone number'/>
-                       <textarea className='md:w-[70%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Message'/>
+                       <input className='md:w-[80%] w-[90%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Email address'/>
+                       <input className='md:w-[80%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Phone number'/>
+                       <textarea className='md:w-[80%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Message'/>
                        <button className='mt-3 p-3 bg-primary text-white rounded-md'> Send message</button>
                </div>
                       {/* Contact Support */}
-                      <h2 className='pt-20 text-center font-gilroysemibold text-sm'> Majorlink © 2022</h2>
+                      
          </div>
          {/* Footer Content */}
     </div>

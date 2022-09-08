@@ -9,7 +9,7 @@ const Testimonials = () => {
       }, []);
   return (
       //Container
-    <div className='md:pt-2 pt-10 pb-3 bg-herosection'>
+    <div className='md:pt-2 pt-10 pb-3 bg-herosection md:block hidden'>
         {/* div */}
              <div className='flex flex-col md:p-10 p-4 text-center items-center justify-center'>
                  {/*Header*/}

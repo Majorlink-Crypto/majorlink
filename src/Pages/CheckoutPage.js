@@ -11,7 +11,7 @@ const CheckoutPage = () => {
         <title>Checkout |</title>
       </Helmet>
         {/*Center Div*/}
-        <div className='flex flex-col items-start w-fit justify-start mt-20 text-center rounded-md bg-herosection p-10'>
+        <div className='flex flex-col items-start w-fit justify-start mt-20 text-center rounded-md bg-herosection md:p-10 md:px-10 px-4 md:pt-10 pt-10 md:pb-10 pb-10'>
             <span className='text-sm font-gilroysemibold text-gray-400 cursor-pointer mb-3 hover:text-primary flex items-center'>
             <IonIcon name='arrow-back-outline'/>
             <h2 className='text-sm font-gilroysemibold text-gray-400 cursor-pointer ml-1 hover:text-primary'> <Link to={'/'}>Home</Link> </h2>
@@ -21,12 +21,12 @@ const CheckoutPage = () => {
                
                <section className='mt-10 text-start'>
                <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Your Name</label>
-             <input className='text-sm font-gilroysemibold p-3 w-[126%] border-primary border-2 rounded-md' placeholder='Name'/>
+             <input className='text-sm font-gilroysemibold p-3 w-[106%] md:w-[126%] border-primary border-2 rounded-md' placeholder='Name'/>
                </section>
 
                <section className='mt-4 text-start'>
                <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Your Email</label>
-             <input className='text-sm font-gilroysemibold p-3 w-[136%] border-primary border-2 rounded-md' placeholder='youremail@example.com' type='email'/>
+             <input className='text-sm font-gilroysemibold p-3 w-[106%] md:w-[136%] border-primary border-2 rounded-md' placeholder='youremail@example.com' type='email'/>
                </section>
 
                <section className='mt-4 text-start flex flex-col'>
