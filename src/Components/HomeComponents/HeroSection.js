@@ -13,21 +13,21 @@ const HeroSection = () => {
       }, []);
   return (
       //Main Hero Container
-    <div className='md:m-20 pt-20 px-6 bg-secondary pb-10' > 
+    <div className='md:m-20 pt-12 px-6 bg-white pb-10' > 
          {/*Hero Contents*/}
          <div>
               {/*Hero Header TagLine with side Image*/}
-            <div className='md:flex flex flex-col justify-center items-center'>
-                 <div className='text-black text-center'>
+            <div className='md:flex flex flex-col justify-start items-start'>
+                 <div className='text-black text-start'>
                      <h2 className='md:text-5xl text-4xl'>Use <span className='text-primary'>Majorlink</span></h2>
                      <h2 className='md:text-5xl text-4xl mt-2'>for all things Crypto</h2>
                      <h4 className='md:text-3xl text-xl mt-2'>Start trading now to enjoy the best rates</h4>
-                    <p className='text-gray-300 font-gilroy text-center md:px-40'>We provide the best and fastest service across the world in swapping e-currencies.
+                    <p className='text-gray-300 font-gilroy text-start w-[60%]'>We provide the best and fastest service across the world in swapping e-currencies.
                     We are a registered international company with partners all around</p>
-                   {/* <div className='flex'>
-                    <button className='bg-black p-2 rounded-md mt-6 md:w-[28%] w-[36%] text-white font-gilroy mr-6'> Get Started </button>
-                    <button className='bg-primary p-2 rounded-md mt-6 md:w-[28%] w-[36%] text-white font-gilroy'> Contact Support </button>
-                    </div>*/}
+                   <div className='flex'>
+                    <button className='bg-black p-2 rounded-md mt-6 md:w-[20%] w-[36%] text-white font-gilroy mr-6'> Get Started </button>
+                    <button className='bg-white border-primary border-2 p-2 rounded-md mt-6 md:w-[18%] w-[36%] text-black font-gilroy'> Contact Support </button>
+                    </div>
                  </div>
 
                 {/* <span className='w-[40%] md:block hidden' data-aos="fade-left">
