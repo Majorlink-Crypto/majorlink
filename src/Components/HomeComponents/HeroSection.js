@@ -31,7 +31,7 @@ const HeroSection = () => {
                     </div>
                  </div>
 
-                <span className='md:w-[80%] w-[100%] md:mt-0 mt-6' data-aos="fade-left">
+                <span className='md:w-[80%] w-fit md:mt-0 mt-6' data-aos="fade-up">
                      <img
                      className='mt-[-20]'
                      src={bince}
