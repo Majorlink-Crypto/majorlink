@@ -26,12 +26,12 @@ const HeroSection = () => {
                     <p className='text-gray-300 font-gilroy text-start md:w-[80%] w-[75%] md:block hidden'>We provide the best and fastest service across the world in swapping e-currencies.
                     We are a registered international company with partners all around</p>
                    <div className='md:flex'>
-                   <input className='bg-white border-primary border-2 p-2 rounded-md mt-6 md:w-[40%] w-[100%] text-black font-gilroy text-sm mr-6' placeholder='Email/Phone number'/>
+                   <input className='bg-white border-primary border-2 p-3 rounded-md mt-6 md:w-[46%] w-[100%] text-black font-gilroy text-sm mr-6' placeholder='Email/Phone number'/>
                     <button className='bg-primary p-2 rounded-md md:mt-6 mt-2 md:w-[30%] w-[100%] text-white font-gilroy '> Get Started </button>
                     </div>
                  </div>
 
-                <span className='w-[80%] md:block hidden animate-pulse' data-aos="fade-left">
+                <span className='w-[80%] md:block hidden' data-aos="fade-left">
                      <img
                      className='mt-[-20]'
                      src={bince}
