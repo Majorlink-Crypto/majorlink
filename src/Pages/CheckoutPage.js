@@ -11,15 +11,15 @@ const CheckoutPage = () => {
         <title>Checkout |</title>
       </Helmet>
         {/*Center Div*/}
-        <div className='flex flex-col items-start w-fit justify-start mt-20 text-center rounded-md bg-herosection md:p-10 md:px-10 px-4 md:pt-10 pt-10 md:pb-10 pb-10'>
+        <div className='flex flex-col items-start w-fit justify-start md:mt-20 text-center rounded-md bg-herosection md:p-10 md:px-10 px-4 md:pt-10 pt-10 md:pb-10 pb-10'>
             <span className='text-sm font-gilroysemibold text-gray-400 cursor-pointer mb-3 hover:text-primary flex items-center'>
             <IonIcon name='arrow-back-outline'/>
             <h2 className='text-sm font-gilroysemibold text-gray-400 cursor-pointer ml-1 hover:text-primary'> <Link to={'/'}>Home</Link> </h2>
             </span>
              <h2 className='text-4xl text-primary text-center'>Quick Checkout</h2>
-             <h2 className='text-2xl text-center'>The fastest checkout system</h2>
+             <h2 className='text-2xl text-start'>The fastest checkout system</h2>
                
-               <section className='mt-10 text-start'>
+               <section className='mt-7 text-start'>
                <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Your Name</label>
              <input className='text-sm font-gilroysemibold p-3 w-[106%] md:w-[126%] border-primary border-2 rounded-md' placeholder='Name'/>
                </section>
