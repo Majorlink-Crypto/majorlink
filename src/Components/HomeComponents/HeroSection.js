@@ -10,11 +10,11 @@ import bince from '../../Assets/bince.png'
 
 const HeroSection = () => {
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({duration: 1000});
       }, []);
   return (
       //Main Hero Container
-    <div className='md:p-20 pt-20 px-3 bg-herosection pb-10' > 
+    <div className='md:p-20 pt-12 px-5 bg-herosection pb-10' > 
          {/*Hero Contents*/}
          <div>
               {/*Hero Header TagLine with side Image*/}
@@ -27,11 +27,11 @@ const HeroSection = () => {
                     We are a registered international company with partners all around</p>
                    <div className='md:flex'>
                    <input className='bg-white border-primary border-2 p-3 rounded-md mt-6 md:w-[46%] w-[100%] text-black font-gilroy text-sm mr-6' placeholder='Email/Phone number'/>
-                    <button className='bg-primary p-2 rounded-md md:mt-6 mt-2 md:w-[30%] w-[100%] text-white font-gilroy '> Get Started </button>
+                    <button className='bg-primary p-3 rounded-md md:mt-6 mt-2 md:w-[30%] w-[100%] text-white font-gilroy '> Get Started </button>
                     </div>
                  </div>
 
-                <span className='w-[80%] md:block hidden' data-aos="fade-left">
+                <span className='md:w-[80%] w-[100%] md:mt-0 mt-6' data-aos="fade-left">
                      <img
                      className='mt-[-20]'
                      src={bince}

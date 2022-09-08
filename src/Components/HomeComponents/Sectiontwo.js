@@ -5,11 +5,11 @@ import "aos/dist/aos.css"
 
 const Sectiontwo = () => {
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({duration: 1000});
       }, []);
   return (
       //Main Container
-    <div data-aos="fade-up" className='mt-10'>
+    <div data-aos="fade-up" className='pt-10 bg-herosection'>
 
         {/*Contents wrapper*/}
         <div className='md:flex'>

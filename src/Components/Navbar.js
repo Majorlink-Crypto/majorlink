@@ -26,7 +26,7 @@ const Navbar = () => {
       //Container for Navbar
     <div>
         {/*Navbar Box*/}
-        <div className=' bg-white flex justify-between items-center md:px-20 px-2  text-black font-raleway md:p-2 py-2'>
+        <div className=' bg-white flex justify-between items-center md:px-20 px-4  text-black font-raleway md:p-2 py-2'>
             {/*Logo*/}
             <span className='md:w-[10%] w-[27%] flex font-poppins font-bold cursor-pointer items-center'>
                 <img

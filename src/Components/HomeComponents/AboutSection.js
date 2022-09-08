@@ -7,7 +7,7 @@ import abtright from '../../Assets/abtright.png'
 
 const AboutSection = () => {
     useEffect(() => {
-        Aos.init({duration: 2000});
+        Aos.init({duration: 1000});
       }, []);
   return (
       //Container
@@ -51,7 +51,7 @@ const AboutSection = () => {
                      {/*Arrow*/}
 
                       {/*About us Card*/}
-                         <div className='md:ml-10 md:w-[40%] mt-10' data-aos="fade-up">
+                         <div className='md:ml-2 md:w-[40%] mt-10' data-aos="fade-up">
                              <img
                                  className='mt-0'
                                  src={learnaboutuscard}

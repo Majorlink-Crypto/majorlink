@@ -10,7 +10,7 @@ const Footer = () => {
          <div className='md:flex justify-between'>
             
             {/* Logo and social media icons */}
-                <div>
+                <div className='md:mr-10 mr-0'>
                      {/* Logo  */}
                     <section className='flex'>
                         <img
@@ -21,7 +21,7 @@ const Footer = () => {
                     </section>
                      {/* Logo */}
                      
-                     <section className='flex mt-6 text-primary text-xl'>
+                     <section className='flex mt-6 text-black text-xl'>
                     <span className='mr-3'>
                     <IonIcon name='logo-whatsapp'/>
                     </span>
@@ -43,10 +43,10 @@ const Footer = () => {
               {/* Logo and social media icons */}
 
 
-               <div className='flex '>
+               <div className='flex justify-between md:mt-0 mt-6 '>
 
                {/* Center */}
-               <div className='text-sm font-gilroysemibold mr-20'> 
+               <div className='text-sm font-gilroysemibold md:mr-10 mr-0'> 
                  <h2 className='text-primary'>Center</h2>
 
                  <ul className='mt-3'>
@@ -59,7 +59,7 @@ const Footer = () => {
                  {/* Center */}
 
                    {/* Right */}
-                   <div className='text-sm font-gilroysemibold mr-20 '> 
+                   <div className='text-sm font-gilroysemibold md:mr-10 mr-0'> 
                  <h2 className='text-primary'>Right</h2>
 
                  <ul className='mt-3'>
@@ -72,7 +72,7 @@ const Footer = () => {
                     {/* Right */}
 
                       {/* Right */}
-                   <div className='text-sm font-gilroysemibold'> 
+                   <div className='text-sm font-gilroysemibold md:mr-10 mr-0'> 
                  <h2 className='text-primary'>Right</h2>
 
                  <ul className='mt-3'>
@@ -90,16 +90,14 @@ const Footer = () => {
                      <div className='text-sm font-gilroysemibold float-right md:mt-0 mt-10'> 
                  <h2 className='text-primary'>Contact Us</h2>
                  <p className='text-gray-300'>Please drop a message and we will get back to you</p>
-                       <input className='w-[70%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Email address'/>
-                       <input className='w-[70%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Phone number'/>
-                       <textarea className='w-[70%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Message'/>
+                       <input className='md:w-[70%] w-[90%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Email address'/>
+                       <input className='md:w-[70%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Phone number'/>
+                       <textarea className='md:w-[70%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Message'/>
                </div>
                       {/* Contact Support */}
-
+                      <h2 className='pt-20 text-center font-gilroysemibold text-sm'> Majorlink © 2022</h2>
          </div>
          {/* Footer Content */}
-
-        <h2 className='mt-10 text-center font-gilroysemibold text-sm'> Majorlink © 2022</h2>
     </div>
      //Main Container
   )
