@@ -23,7 +23,8 @@ module.exports = {
         'headertext': '#2C3131',
         'right': '#345D9D',
         'border': '#E3E3E3',
-         'herosection': '#fafafa'
+         'herosection': '#fafafa',
+         'bitcoin': '#F7931A',
       },
     },
   },

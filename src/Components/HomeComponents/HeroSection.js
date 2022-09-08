@@ -7,6 +7,7 @@ import MLCOriginal from '../../Assets/MLCOriginal.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import bince from '../../Assets/bince.png'
+import { Link } from 'react-router-dom'
 
 const HeroSection = () => {
     useEffect(() => {
@@ -86,7 +87,7 @@ const HeroSection = () => {
 
                                     {/*Trade Button*/}
                                   <span className='bg-green-500 hover:bg-green-300 underline px-4 rounded-lg cursor-pointer'>
-                                     TRADE
+                                    <Link to={'/checkout'}> TRADE</Link>
                                   </span>
                                    {/*Trade Button*/}
 
@@ -128,7 +129,7 @@ const HeroSection = () => {
                
                                      {/*Trade Button*/}
                                    <span className='bg-green-500 hover:bg-green-300 underline px-4 rounded-lg cursor-pointer'>
-                                      TRADE
+                                   <Link to={'/checkout'}> TRADE</Link>
                                    </span>
                                     {/*Trade Button*/}
                
@@ -170,7 +171,7 @@ const HeroSection = () => {
                 
                                       {/*Trade Button*/}
                                     <span className='bg-green-500 hover:bg-green-300 underline px-4 rounded-lg cursor-pointer'>
-                                       TRADE
+                                    <Link to={'/checkout'}> TRADE</Link>
                                     </span>
                                      {/*Trade Button*/}
                 

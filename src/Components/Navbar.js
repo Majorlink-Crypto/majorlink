@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import MLCOriginal from '../Assets/MLCOriginal.png'
 import {IonIcon} from "react-ion-icon";
 // eslint-disable-next-line
-import { Link, useLocation } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
@@ -29,18 +29,21 @@ const Navbar = () => {
         <div className=' bg-white flex justify-between items-center md:px-20 px-4  text-black font-raleway md:p-2 py-2'>
             {/*Logo*/}
             <span className='md:w-[10%] w-[27%] flex font-poppins font-bold cursor-pointer items-center'>
+                <Link to={'/'}>
                 <img
                 className='text-center'
                 src={MLCOriginal}
                 alt='logo'
                 />
-            </span>
+
+                </Link>
           
+            </span>
              {/*Logo*/}
 
                   {/*NavLinks*/}
                    <ul className={`md:flex mt-0 font-gilroysemibold font-semibold text-sm transition-all duration-500 ease-in hidden`}>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Buy BTC <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'> <Link to={'/checkout'}>Buy BTC</Link> <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
                        <li className='mr-8 hover:text-primary cursor-pointer'>Buy USDT</li>
                        <li className='mr-8 hover:text-primary cursor-pointer'>Products</li>
                        <li className='mr-8 hover:text-primary cursor-pointer'>Price</li>
@@ -72,19 +75,13 @@ const Navbar = () => {
                         <span onClick={() => setOpen(!open)} className='pr-10 pt-10 transition-all duration-500 ease-in cursor-pointer'>
                         <ion-icon name={open ? 'menu': 'close'}></ion-icon>
                         </span>
-                              <ul className={`${open ? 'hidden':'float-left pl-12 pr-16 mt-32 font-semibold text-base transition-all duration-500 ease-in'}`}>
-                                <li className='cursor-pointer'> 
-                                Products
-                             </li>
-                                <li  className='mt-10 cursor-pointer'> 
-                               Price
-                                </li>
-                                <li  className='mt-10 cursor-pointer'> 
-                                Learn
-                                </li>
-                                <li  className='mt-10 cursor-pointer'>
-                                Support
-                                </li>
+                              <ul className={`${open ? 'hidden':'float-left pl-12 pr-16 mt-32 font-gilroysemibold text-base transition-all duration-500 ease-in'}`}>
+                              <li className='mr-8 hover:text-primary cursor-pointer'> <Link to={'/checkout'}>Buy BTC</Link> <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Buy USDT</li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Products</li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Price</li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Learn</li>
+                              <li className='hover:text-primary cursor-pointer mt-4'>Support</li>
                              </ul>
                              </div>
                </div>

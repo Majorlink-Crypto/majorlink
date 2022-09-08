@@ -93,6 +93,7 @@ const Footer = () => {
                        <input className='md:w-[70%] w-[90%] p-2 mt-2 border-primary border-2 rounded-md' placeholder='Email address'/>
                        <input className='md:w-[70%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Phone number'/>
                        <textarea className='md:w-[70%] w-[90%]  p-2 mt-2 border-primary border-2 rounded-md' placeholder='Message'/>
+                       <button className='mt-3 p-3 bg-primary text-white rounded-md'> Send message</button>
                </div>
                       {/* Contact Support */}
                       <h2 className='pt-20 text-center font-gilroysemibold text-sm'> Majorlink © 2022</h2>
