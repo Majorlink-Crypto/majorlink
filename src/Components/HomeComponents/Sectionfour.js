@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import transact from '../../Assets/transact.png'
+import security from '../../Assets/security.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
@@ -18,7 +18,7 @@ const Sectionfour = () => {
                     <div data-aos="fade-up" className='md:mx-0 mx-16'>
                         <img
                         className=''
-                        src={transact}
+                        src={security}
                         alt='img'
                         />
                     </div>

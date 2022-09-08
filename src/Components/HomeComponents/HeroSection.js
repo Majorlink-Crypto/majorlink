@@ -6,6 +6,7 @@ import Tether from '../../Assets/Tether.png'
 import MLCOriginal from '../../Assets/MLCOriginal.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
+import bince from '../../Assets/bince.png'
 
 const HeroSection = () => {
     useEffect(() => {
@@ -13,30 +14,30 @@ const HeroSection = () => {
       }, []);
   return (
       //Main Hero Container
-    <div className='md:m-20 pt-12 px-6 bg-white pb-10' > 
+    <div className='md:p-20 pt-20 px-3 bg-herosection pb-10' > 
          {/*Hero Contents*/}
          <div>
               {/*Hero Header TagLine with side Image*/}
-            <div className='md:flex flex flex-col justify-start items-start'>
+            <div className='md:flex flex flex-col md:flex-row justify-start items-start'>
                  <div className='text-black text-start'>
                      <h2 className='md:text-5xl text-4xl'>Use <span className='text-primary'>Majorlink</span></h2>
                      <h2 className='md:text-5xl text-4xl mt-2'>for all things Crypto</h2>
                      <h4 className='md:text-3xl text-xl mt-2'>Start trading now to enjoy the best rates</h4>
-                    <p className='text-gray-300 font-gilroy text-start w-[60%]'>We provide the best and fastest service across the world in swapping e-currencies.
+                    <p className='text-gray-300 font-gilroy text-start md:w-[80%] w-[75%] md:block hidden'>We provide the best and fastest service across the world in swapping e-currencies.
                     We are a registered international company with partners all around</p>
-                   <div className='flex'>
-                    <button className='bg-black p-2 rounded-md mt-6 md:w-[20%] w-[36%] text-white font-gilroy mr-6'> Get Started </button>
-                    <button className='bg-white border-primary border-2 p-2 rounded-md mt-6 md:w-[18%] w-[36%] text-black font-gilroy'> Contact Support </button>
+                   <div className='md:flex'>
+                   <input className='bg-white border-primary border-2 p-2 rounded-md mt-6 md:w-[40%] w-[100%] text-black font-gilroy text-sm mr-6' placeholder='Email/Phone number'/>
+                    <button className='bg-primary p-2 rounded-md md:mt-6 mt-2 md:w-[30%] w-[100%] text-white font-gilroy '> Get Started </button>
                     </div>
                  </div>
 
-                {/* <span className='w-[40%] md:block hidden' data-aos="fade-left">
+                <span className='w-[80%] md:block hidden animate-pulse' data-aos="fade-left">
                      <img
                      className='mt-[-20]'
-                     src={MLCOriginal}
+                     src={bince}
                      alt='image'
                      />
-                 </span>*/}
+                 </span>
             </div>
               {/*Hero Header TagLine with side Image*/}
 
@@ -53,7 +54,7 @@ const HeroSection = () => {
 
 
                 {/*Currency cards*/}
-                <div className='md:flex font-gilroy mt-4'>
+                <div className='md:flex font-gilroy mt-0'>
 
                      {/*Bitcoin*/}
                     <section className='bg-primary p-3 pr-6 rounded-lg text-white md:w-[35%] md:mr-5 md:mt-0 mt-5'>

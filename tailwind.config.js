@@ -22,7 +22,8 @@ module.exports = {
         'numbers': '#D0DBFF',
         'headertext': '#2C3131',
         'right': '#345D9D',
-        'border': '#E3E3E3'
+        'border': '#E3E3E3',
+         'herosection': '#fafafa'
       },
     },
   },

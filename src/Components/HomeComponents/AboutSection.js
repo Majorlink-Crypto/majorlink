@@ -3,6 +3,7 @@ import arrow from '../../Assets/arrow.png'
 import learnaboutuscard from '../../Assets/learnaboutuscard.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
+import abtright from '../../Assets/abtright.png'
 
 const AboutSection = () => {
     useEffect(() => {
@@ -10,11 +11,14 @@ const AboutSection = () => {
       }, []);
   return (
       //Container
-    <div className='m-10 md:mt-0 mt-36'>
+    <div className='p-10 md:mt-0 mt-16'>
         {/*Div and its content*/}
-            <div className='bg-about bg-cover md:p-20'>
+            <div className='bg-about bg-cover md:p-8 md:flex'>
+                
+                 {/*Left Section*/}
 
-                 {/*MajorLinkHeader teaxt*/}
+                <div>
+                {/*MajorLinkHeader teaxt*/}
                 <span>
                     <h2 className='text-5xl text-primary'>Majorlink</h2>
                 </span>
@@ -34,6 +38,8 @@ const AboutSection = () => {
                 </div>
                    {/*text*/}
 
+                    <div className='flex'>
+ 
                     {/*Arrow*/}
                     <span data-aos="fade-down">
                         <img
@@ -45,7 +51,7 @@ const AboutSection = () => {
                      {/*Arrow*/}
 
                       {/*About us Card*/}
-                         <div className='md:ml-40' data-aos="fade-up">
+                         <div className='md:ml-10 md:w-[40%] mt-10' data-aos="fade-up">
                              <img
                                  className='mt-0'
                                  src={learnaboutuscard}
@@ -53,6 +59,20 @@ const AboutSection = () => {
                              />
                          </div>
                        {/*About us Card*/}
+                    </div>
+                </div>
+
+                  {/*Left Section*/}
+
+                    {/*Right Section*/}
+                        <div className='w-[90%]'>
+                            <img
+                            className=''
+                            alt=''
+                            src={abtright}
+                            />
+                        </div>
+                     {/*Right Section*/}
 
             </div>
         {/*Div and its content*/}

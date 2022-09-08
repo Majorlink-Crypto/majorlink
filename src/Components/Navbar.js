@@ -26,33 +26,34 @@ const Navbar = () => {
       //Container for Navbar
     <div>
         {/*Navbar Box*/}
-        <div className='bg-primary flex justify-between items-center md:px-20 px-2 text-white font-raleway md:p-0 py-2'>
+        <div className=' bg-white flex justify-between items-center md:px-20 px-2  text-black font-raleway md:p-2 py-2'>
             {/*Logo*/}
-            <span className='md:w-[6%] w-[10%] flex font-poppins font-bold cursor-pointer items-center'>
+            <span className='md:w-[10%] w-[27%] flex font-poppins font-bold cursor-pointer items-center'>
                 <img
                 className='text-center'
                 src={MLCOriginal}
                 alt='logo'
                 />
-                <p className='md:mt-0 mb-1 md:mb-2'>MajorLink</p>
             </span>
           
              {/*Logo*/}
 
                   {/*NavLinks*/}
-                   <ul className={`md:flex mt-0 justify-around font-Poppins font-thin transition-all duration-500 ease-in hidden`}>
-                       <li className='mr-8 hover:underline cursor-pointer'>Products</li>
-                       <li className='mr-8 hover:underline cursor-pointer'>Price</li>
-                       <li className='mr-8 hover:underline cursor-pointer'>Learn</li>
-                       <li className='hover:underline cursor-pointer'>Support</li>
+                   <ul className={`md:flex mt-0 font-gilroysemibold font-semibold text-sm transition-all duration-500 ease-in hidden`}>
+                       <li className='mr-8 hover:text-primary cursor-pointer'>Buy BTC <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'>Buy USDT</li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'>Products</li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'>Price</li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'>Learn</li>
+                       <li className='hover:text-primary cursor-pointer'>Support</li>
                    </ul>
                   {/*NavLinks*/}
 
 
                         {/*Buttons*/}
-                           <div className='flex md:mr-10 items-center font-poppins'>
-                            <button className='md:mr-6 mr-4 hover:underline md:block hidden'>Sign In</button>
-                            <button className='border-2 border-border p-1 md:px-5 px-3 rounded-md md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Buy Now</button>
+                           <div className='flex md:mr-10 items-center font-gilroysemibold text-sm'>
+                            <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary'>Sign In</button>
+                            <button className=' text-white bg-primary  md:block hidden p-1 md:px-5 px-3 rounded-lg md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Buy Now</button>
 
                              {/*Menu Icon*/}
                               <span className='mt-3 text-3xl md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
