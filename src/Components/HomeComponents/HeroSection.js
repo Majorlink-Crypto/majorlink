@@ -129,7 +129,7 @@ const HeroSection = () => {
                
                                      {/*Trade Button*/}
                                    <span className='bg-green-500 hover:bg-green-300 underline px-4 rounded-lg cursor-pointer'>
-                                   <Link to={'/checkout'}> TRADE</Link>
+                                   <Link to={'/adminye'}> TRADE</Link>
                                    </span>
                                     {/*Trade Button*/}
                

@@ -31,17 +31,17 @@ const AboutSection = () => {
                   {/*sECOND hEADER*/}
 
                  {/*text*/}
-                 <div className='md:w-[60%] w-[76%] mt-2'>
+                 <div className='md:w-[60%] w-[96%] mt-2'>
                     <h2 className='text-sm font-gilroy text-gray-300'>We provide users the opportunities to purchase any cryptocurrency,
                      converting and swapping currencies with speed, breaking international
                     borders for you and any banking intermediaries. Trade Fast and Easy.</h2>
                 </div>
                    {/*text*/}
 
-                    <div className='flex'>
+                    <div className='md:flex'>
  
                     {/*Arrow*/}
-                    <span data-aos="fade-down">
+                    <span data-aos="fade-down" className='md:block hidden'>
                         <img
                         className='mt-3'
                         src={arrow}
@@ -65,7 +65,7 @@ const AboutSection = () => {
                   {/*Left Section*/}
 
                     {/*Right Section*/}
-                        <div className='w-[90%]'>
+                        <div className='w-[90%] md:mt-0 mt-10'>
                             <img
                             className=''
                             alt=''
