@@ -15,7 +15,7 @@ const HeroSection = () => {
       }, []);
   return (
       //Main Hero Container
-    <div className='md:p-20 pt-12 px-5 bg-herosection pb-10' > 
+    <div className='md:p-20 pt-12 md:px-20 px-3 bg-herosection pb-10' > 
          {/*Hero Contents*/}
          <div>
               {/*Hero Header TagLine with side Image*/}

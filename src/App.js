@@ -14,7 +14,7 @@ import Services from './Pages/Admin/Services';
 import Construction from './Pages/Construction';
 
 function App() {
-  const [isloggedin, setisloggedin] = useState(null)
+  const [isloggedin, setisloggedin] = useState(false)
   useEffect(() => {
         if (localStorage.getItem('user')!== null ){
           setisloggedin(true)
@@ -33,8 +33,8 @@ function App() {
        <Route path='/adminye' element={<AdminLogin/>}></Route>
        <Route path='/construction' element={<Construction/>}></Route>
        {/*Protected Route*/}
-       <Route path='/services' element={(isloggedin == true? <Services/>  : <Unauthorized/>)}></Route>
-       <Route path='/admindashboard' element={(isloggedin == true? <AdminDashboard/>  : <Unauthorized/>)}></Route>
+       <Route path='/services' element={(isloggedin === true? <Services/>  : <Unauthorized/>)}></Route>
+       <Route path='/admindashboard' element={(isloggedin === true? <AdminDashboard/>  : <Unauthorized/>)}></Route>
         {/*Protected Route*/}
        <Route path="*"  element={<ErrorPage/>}/>
    </Routes> 

@@ -16,9 +16,10 @@
     "react-idle-timer": "^4.6.4",
     "react-ion-icon": "^4.0.0",
     "react-router-dom": "^6.3.0",
-    "react-select": "^5.2.0",
     "react-scripts": "5.0.1",
     "react-scroll-motion": "^0.3.0",
+    "react-select": "^5.2.0",
+    "react-spinners": "^0.13.4",
     "react-toastify": "^9.0.8",
     "reactstrap": "^9.1.4",
     "web-vitals": "^2.1.4"

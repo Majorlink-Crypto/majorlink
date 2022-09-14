@@ -3,8 +3,12 @@ import { Helmet } from 'react-helmet';
 import {IonIcon} from "react-ion-icon";
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import BounceLoader from "react-spinners/BounceLoader";
+
 
 const AdminLogin = () => {
+
+    const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate()
     
@@ -17,6 +21,7 @@ const AdminLogin = () => {
             const item = {email, password}
             if (email.length) {
                 if (email.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) !== null) {
+                  setLoading(true)
                 await fetch((APIURL), {
                  method: 'POST',
                  body:JSON.stringify(item),
@@ -24,11 +29,14 @@ const AdminLogin = () => {
                    "Content-Type": 'application/json'
                  }
               }).then(res => res.json())
-                .then(data => {
+                .then(data => { 
+                  setLoading(false)
                   if(data.error == true ){
+                    setLoading(false)
                     toast.info(data.message)
                   }else{
                       toast.success('success')
+                      setLoading(false)
                       localStorage.setItem('user', JSON.stringify(data))
                       navigate('/admindashboard')
                   }
@@ -36,10 +44,12 @@ const AdminLogin = () => {
             
             } else {
               toast.error('Email Address Is Invalid')
+              setLoading(false)
             }
             } else {
               
               toast.error("Email Address Is Required")
+              setLoading(false)
             }
             }
     
@@ -47,6 +57,7 @@ const AdminLogin = () => {
   return (
       //Checkout Main Container
     <div className='items-center justify-center flex pt-20 bg-herosection'>
+      <BounceLoader color="#36d7b7" loading={loading}/>
          <Helmet>
         <title>Admin |</title>
       </Helmet>
