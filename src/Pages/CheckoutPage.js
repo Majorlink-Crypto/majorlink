@@ -2,8 +2,16 @@ import React from 'react'
 import { Helmet } from 'react-helmet';
 import {IonIcon} from "react-ion-icon";
 import { Link } from 'react-router-dom';
+import Select from 'react-select'
 
 const CheckoutPage = () => {
+
+  const colorOptions = [
+    { value: 'bitcoin', label: 'Bitcoin' },
+    { value: 'usdt', label: 'USDT' },
+    { value: 'ethereum', label: 'Ethereum' }
+  ]
+  
   return (
       //Checkout Main Container
     <div className='items-center justify-center flex'>
@@ -31,25 +39,39 @@ const CheckoutPage = () => {
 
                <section className='mt-4 text-start flex flex-col'>
                <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Amount you want to transact</label>
-
                </section>
 
-               <section className='mt-0 text-start flex flex-row'>
-             <input className='text-sm font-gilroysemibold p-3 w-[106%] border-primary border-2 rounded-md mr-2' placeholder='Enter Amount' type='number'  />
-             <span className='mr-3 bg-white text-bitcoin p-3 flex items-center justify-center border-2 border-primary rounded-md'>
-               <IonIcon name='logo-bitcoin'/>
-               </span> 
+
+               <section className='mt-0 text-start flex flex-col text-sm font-gilroysemibold'>
+               <Select
+              //onChange={handleChanged}
+              isClearable={false}
+              //theme={selectThemeColors}
+              //isMulti
+              /* eslint-disable */
+             // getOptionLabel={e => e.firstname + ' ' + e.lastname}
+              /* eslint-enable */
+              
+             // getOptionValue={e => e.id}
+              name='colors'
+              options={colorOptions}
+              className='react-select'
+              classNamePrefix='select'
+            />
+
+
+             <input className='text-sm font-gilroysemibold p-3 mt-2 w-[106%] border-primary border-2 rounded-md mr-2' placeholder='Enter Amount' type='number'  />
                </section>
 
                <section className='mt-4 text-start flex flex-col'>
-               <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Amount you will Get</label>
+               <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Amount you will Get in Naira</label>
 
                </section>
 
                <section className='mt-0 text-start flex flex-row'>
              <input disabled className='text-sm font-gilroysemibold p-3 w-[106%] border-primary border-2 rounded-md mr-2' placeholder='400' type='number'  />
              <span className='mr-3 bg-white text-green-700 p-3 flex items-center justify-center border-2 border-primary rounded-md'>
-               <IonIcon name='logo-usd'/>
+               <IonIcon name='cash-outline'/>
                </span> 
                </section>
 

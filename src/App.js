@@ -10,6 +10,8 @@ import ErrorPage from './Pages/ErrorPage';
 import AdminLogin from './Pages/Admin/AdminLogin';
 import AdminDashboard from './Pages/Admin/AdminDashboard';
 import Unauthorized from './Pages/Unauthorized';
+import Services from './Pages/Admin/Services';
+import Construction from './Pages/Construction';
 
 function App() {
   const [isloggedin, setisloggedin] = useState(null)
@@ -29,8 +31,11 @@ function App() {
        <Route path='/' element={<HomePage/>}></Route>
        <Route path='/checkout' element={<CheckoutPage/>}></Route>
        <Route path='/adminye' element={<AdminLogin/>}></Route>
+       <Route path='/construction' element={<Construction/>}></Route>
        {/*Protected Route*/}
+       <Route path='/services' element={(isloggedin == true? <Services/>  : <Unauthorized/>)}></Route>
        <Route path='/admindashboard' element={(isloggedin == true? <AdminDashboard/>  : <Unauthorized/>)}></Route>
+        {/*Protected Route*/}
        <Route path="*"  element={<ErrorPage/>}/>
    </Routes> 
       </BrowserRouter>

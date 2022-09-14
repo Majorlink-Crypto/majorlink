@@ -47,39 +47,39 @@ const Footer = () => {
 
                {/* Center */}
                <div className='text-sm font-gilroysemibold md:mr-20 mr-0'> 
-                 <h2 className='text-primary'>Center</h2>
+                 <h2 className='text-primary'>About us</h2>
 
-                 <ul className='mt-3'>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
+                 <ul className='mt-2'>
+                   <li className='cursor-pointer hover:text-primary'>Who we are</li>
+                   <li className='cursor-pointer hover:text-primary'>Partners</li>
+                   <li className='cursor-pointer hover:text-primary'>Careers</li>
+                   <li className='cursor-pointer hover:text-primary'>Terms & Conditions</li>
+                   <li className='cursor-pointer hover:text-primary'>Privacy policy</li>
                  </ul>
                </div>
                  {/* Center */}
 
                    {/* Right */}
                    <div className='text-sm font-gilroysemibold md:mr-20 mr-0'> 
-                 <h2 className='text-primary'>Right</h2>
+                 <h2 className='text-primary'>Quick Links</h2>
 
-                 <ul className='mt-3'>
-                 <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
+                 <ul className='mt-2'>
+                 <li className='cursor-pointer hover:text-primary'>Buy Btc</li>
+                   <li className='cursor-pointer hover:text-primary'>Sell Btc</li>
+                   <li className='cursor-pointer hover:text-primary'>Log in</li>
+                   <li className='cursor-pointer hover:text-primary'>Create acount</li>
                  </ul>
                </div>
                     {/* Right */}
 
                       {/* Right */}
                    <div className='text-sm font-gilroysemibold md:mr-10 mr-0'> 
-                 <h2 className='text-primary'>Right</h2>
+                 <h2 className='text-primary'>Tools</h2>
 
-                 <ul className='mt-3'>
-                 <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
-                   <li className='cursor-pointer hover:text-primary'>Item one</li>
+                 <ul className='mt-2'>
+                 <li className='cursor-pointer hover:text-primary'>Rates Calculator</li>
+                   <li className='cursor-pointer hover:text-primary'>How to trade ?</li>
+                   <li className='cursor-pointer hover:text-primary'>How to use Trust wallet</li>
                  </ul>
                </div>
                     {/* Right */}

@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import MLCOriginal from '../../Assets/MLCOriginal.png'
 import {IonIcon} from "react-ion-icon";
 // eslint-disable-next-line
-import { Link} from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
 const Navbar = () => {
+
+  const navigate = useNavigate()
 
      //This open controls the menu icon when using mobile devices
   const [open, setOpen] = useState(true)
@@ -22,6 +24,11 @@ const Navbar = () => {
      // eslint-disable-next-line
   }, [location]);
 */}
+
+const logout = () => {
+  localStorage.clear()
+   navigate('/adminye')
+}
   return (
       //Container for Navbar
     <div>
@@ -44,10 +51,10 @@ const Navbar = () => {
                   {/*NavLinks*/}
                    <ul className={`md:flex mt-0 font-gilroysemibold font-semibold text-sm transition-all duration-500 ease-in hidden`}>
                        <li className='mr-8 hover:text-primary cursor-pointer'> <Link to={'/admindashboard'}>Dashboard</Link> <span className='bg-primary p-1 rounded-lg text-white'>Home</span> </li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Services</li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Emails</li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Settings</li>
-                       <li className='hover:text-primary cursor-pointer'>Support</li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'><Link to={'/services'}>Services</Link></li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'><Link to={'/construction'}>Email</Link></li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'><Link to={'/construction'}>Settings</Link></li>
+                       <li className='hover:text-primary cursor-pointer'><Link to={'www.tawk.to'}>Support</Link></li>
                    </ul>
                   {/*NavLinks*/}
 
@@ -75,13 +82,13 @@ const Navbar = () => {
                         <ion-icon name={open ? 'menu': 'close'}></ion-icon>
                         </span>
                               <ul className={`${open ? 'hidden':'float-left pl-12 pr-16 mt-12 font-gilroysemibold text-base transition-all duration-500 ease-in'}`}>
-                              <li className='mr-8 hover:text-primary cursor-pointer flex items-center justify-center text-2xl font-poppins'> <Link to={'/checkout'}> <ion-icon name={'home-outline'}></ion-icon>  Dashboard</Link>  </li>
-                              <li className='mr-8  hover:text-primary cursor-pointer mt-8 items-center justify-center text-2xl font-poppins '> <Link to={'/checkout'} > <ion-icon name={'bookmarks-outline'}></ion-icon>  Services </Link></li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/checkout'} > <ion-icon name={'mail-outline'}></ion-icon>  Emails </Link> </li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/checkout'} > <ion-icon name={'cog-outline'}></ion-icon>   Settings </Link> </li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/checkout'} > <ion-icon name={'ticket-outline'}></ion-icon>   Support</Link> </li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/checkout'} > <ion-icon name={'people-circle-outline'}></ion-icon>    Profile </Link> </li>
-                              <li className='hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/checkout'} > <ion-icon name={'log-out-outline'}></ion-icon>   Logout </Link> </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer flex items-center justify-center text-2xl font-poppins'> <Link to={'/checkout'}> <ion-icon name={'home-outline'}></ion-icon>  Home</Link>  </li>
+                              <li className='mr-8  hover:text-primary cursor-pointer mt-8 items-center justify-center text-2xl font-poppins '> <Link to={'/services'} > <ion-icon name={'bookmarks-outline'}></ion-icon>  Services </Link></li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'mail-outline'}></ion-icon>  Emails </Link> </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'cog-outline'}></ion-icon>   Settings </Link> </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'ticket-outline'}></ion-icon>   Support</Link> </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'people-circle-outline'}></ion-icon>    Profile </Link> </li>
+                              <li className='hover:text-primary cursor-pointer mt-8  text-2xl font-poppins' onClick={logout}> <ion-icon name={'log-out-outline'}></ion-icon>   Logout</li>
                              </ul>
                              </div>
                </div>
