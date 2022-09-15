@@ -22,22 +22,22 @@ const AdminLogin = () => {
             if (email.length) {
                 if (email.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) !== null) {
                   setLoading(true)
-                await fetch((APIURL), {
+                fetch((APIURL), {
                  method: 'POST',
                  body:JSON.stringify(item),
                  headers: {
                    "Content-Type": 'application/json'
                  }
               }).then(res => res.json())
-                .then(data => { 
+                .then(data => {
                   setLoading(false)
-                  if(data.error == true ){
+                  if(data.error === true ){
                     setLoading(false)
                     toast.info(data.message)
                   }else{
                       toast.success('success')
                       setLoading(false)
-                      localStorage.setItem('user', JSON.stringify(data))
+                      localStorage.setItem('user', JSON.stringify(data.success))
                       navigate('/admindashboard')
                   }
                 })

@@ -5,7 +5,7 @@ import {
   Routes,
   Route} from 'react-router-dom'
 import CheckoutPage from './Pages/CheckoutPage';
-import { toast, ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import ErrorPage from './Pages/ErrorPage';
 import AdminLogin from './Pages/Admin/AdminLogin';
 import AdminDashboard from './Pages/Admin/AdminDashboard';
@@ -15,13 +15,14 @@ import Construction from './Pages/Construction';
 
 function App() {
   const [isloggedin, setisloggedin] = useState(false)
+
   useEffect(() => {
         if (localStorage.getItem('user')!== null ){
           setisloggedin(true)
         }else{
           setisloggedin(false)
         }
-  }, )
+  }, [])
 
   return (
     <div className='font-yukita'>

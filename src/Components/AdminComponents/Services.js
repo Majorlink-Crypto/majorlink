@@ -38,8 +38,7 @@ const Services = () => {
      }, [])
 
      // service list
-     const hello = services 
-     console.log(hello, 'leo')
+     const hello = services;
 
      async function create () {
           try {
@@ -99,7 +98,7 @@ const Services = () => {
 
        <div>
        {
-          populate.map((data, index) => ([
+          services.map((data, index) => ([
                <section key={index} value={data.name} className='bg-white p-3 pr-6 rounded-lg text-black border-2 border-primary md:w-[65%] md:mr-5 md:mt-0 mt-5 font-gilroysemibold'>
                           
                {/*Top section containing nametage, icon and rate*/}

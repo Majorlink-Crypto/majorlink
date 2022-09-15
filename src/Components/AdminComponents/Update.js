@@ -1,39 +1,87 @@
+import axios, { patch, get, defaults } from 'axios'
 import React from 'react'
 import Select from 'react-select'
 
 const Update = () => {
 
-  //const [dataa, setDataa] = useState([])
+  defaults.baseURL = 'https://main.majorlink.co/api';
 
-  {/*
-  useEffect(async() => {
-    const resultsender = await fetch("https://api.peckpoint.com/api/v1/contacts", {
-        headers: {
-         Authorization: `Bearer ${token}`
-        }
-     }).then(res => res.json())
-
-    if (resultsender.success) {
-     setDataa(resultsender.data)
-     }
-
-  }, [])
-  */}
-
-  //const colorOptions = dataa
-  const colorOptions = [
-    { value: 'bitcoin', label: 'Bitcoin' },
-    { value: 'usdt', label: 'USDT' },
-    { value: 'ethereum', label: 'Ethereum' }
-  ]
+  const [data, setData] = React.useState([])
   
+  const [sell, setSell] = React.useState();
+  const [buy, setBuy] = React.useState();  
+
+
+  const [options, setOption] = React.useState([]);
+
+  React.useEffect(() => {
+
+    const init = async () => {
+
+      const { data: dx } = await axios.get("/services/list", {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+
+      setData(dx)
+
+      const opx = dx.map(({ name, id }, idx) => ({idx , id, value: name, label: name }));
+
+      setOption(opx)
+    
+    }
+
+    init();
+
+  }, [data]);
+  
+  const [buyOption, setBuyOption] = React.useState();
+  const [sellOption, setSellOption] = React.useState();
+
+  const handleChanged = (e, type = 'buy') => {
+
+      const { sell, buy } = data[e.idx]   
+
+      if (type === 'sell') {
+          setSell(sell);   
+          setSellOption(e)
+      }else{
+          setBuy(buy);
+          setBuyOption(e);
+      }
+
+  }
+
+
+  const updateRate = async (type = 'buy') => {
+
+      const newx = {};
+
+      const { token } = JSON.parse(localStorage.getItem('user'));
+      let selected;
+      if (type === 'buy') {
+          newx['buy'] = buy;
+          selected = buyOption;
+      }else if (type === 'sell') {
+          newx['sell'] = sell;
+          selected = sellOption;
+        }
+
+    const upx = await patch(`/admin/services/${selected.id}`, newx, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+      }
+    });
+    
+    setData('')
+
+    console.log(upx.data)
+    
+  }
 
     // handle selection
-  {/*
-    const handleChanged = (e) => {
-      getContact(Array.isArray(e) ? e.map(x => x.id) : [])
-    }
-  */}
 
   return (
       //Main Container
@@ -44,28 +92,22 @@ const Update = () => {
 
       <div className='md:flex md:px-16 pt-5'>
 
-          {/* Update rate Card */}
           <div className='font-gilroysemibold text-sm text-black rounded-md p-4 bg-green-500 md:mr-10 md:w-[86%]'>
-             <h2 className='text-xl text-white '> Buy Rates</h2>
+             <h2 className='text-xl text-white'> Buy Rates</h2>
              <p className='mb-1 text-white '>Update your buy rates for all currency</p>
              <Select
-              //onChange={handleChanged}
-              isClearable={false}
-              //theme={selectThemeColors}
-              //isMulti
-              /* eslint-disable */
-             // getOptionLabel={e => e.firstname + ' ' + e.lastname}
-              /* eslint-enable */
-              
-             // getOptionValue={e => e.id}
+              onChange={(e) => handleChanged(e)}
+              isClearable={false}              
+              value={buyOption}
               name='colors'
-              options={colorOptions}
+              options={options}
               className='react-select'
               classNamePrefix='select'
             />
-             <input className='rounded-md p-3 text-black mt-3 md:w-[60%]' type='number'/>
-             <button className='bg-primary text-white p-3 ml-2 rounded-md'>Update 🚀</button>
-         </div>
+          <div className="flex mt-3 items-center">
+            <input step={"any"} onChange={(w) => setBuy(w.target.value)} value={buy} className='rounded-md p-3 text-black w-full' type='number'/>
+            <button onClick={() => updateRate()} className='bg-primary text-white min-w-[130px] p-3 ml-2 rounded-md'>Update 🚀</button>
+         </div></div>
           {/* Update rate Card */}
 
           {/* Update rate Card */}
@@ -73,22 +115,18 @@ const Update = () => {
           <h2 className='text-xl text-white '> Sell Rates</h2>
              <p className='mb-1 text-white '>Update your sell rates for all currency</p>
              <Select
-              //onChange={handleChanged}
+              onChange={(e) => handleChanged(e, 'sell')}
               isClearable={false}
-              //theme={selectThemeColors}
-              //isMulti
-              /* eslint-disable */
-             // getOptionLabel={e => e.firstname + ' ' + e.lastname}
-              /* eslint-enable */
-              
-             // getOptionValue={e => e.id}
               name='colors'
-              options={colorOptions}
+              value={sellOption}
+              options={options}
               className='react-select'
               classNamePrefix='select'
             />
-             <input className='rounded-md p-3 text-black mt-3 md:w-[60%]' type='number'/>
-             <button className='bg-primary text-white p-3 ml-2 rounded-md'>Update 🚀</button>
+          <div className="flex mt-3 items-center">
+            <input step={"any"} onChange={(w) => setSell(w.target.value)} value={sell} className='rounded-md p-3 text-black w-full' type='number' />
+            <button onClick={() => updateRate('sell')} className='bg-primary text-white min-w-[130px] p-3 ml-2 rounded-md'>Update 🚀</button>
+          </div>
          </div>
           {/* Update rate Card */}
 
