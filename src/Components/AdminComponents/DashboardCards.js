@@ -1,6 +1,25 @@
 import React from 'react'
 
+import axios from 'axios';
+
+
 const DashboardCards = () => {
+
+    const [services, setServices] = React.useState([]);
+
+    React.useEffect(() => {
+        
+     axios.get('https://main.majorlink.co/api/services/list', {
+        header: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json' 
+        }
+     }).then(dx => {
+        setServices(dx.data);
+     });
+
+    }, []);
+
   return (
       //Dashboard Card Container
     <div className='mt-6'>
@@ -36,7 +55,7 @@ const DashboardCards = () => {
                   </span>
 
                   <span className='text-3xl pl-2'>
-                      4
+                      {services.length}
                   </span>
             </section>
              {/*Card*/}

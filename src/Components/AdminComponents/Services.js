@@ -10,7 +10,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 const Services = () => {
 
      const navigate = useNavigate()
-     const [services, setservices] = useState('')
+     const [services, setservices] = useState([])
      const user = JSON.parse(localStorage.getItem('user'))
      const token = user.success.token
      const [name, addname] = useState('')
@@ -20,7 +20,6 @@ const Services = () => {
      const [loading, setLoading] = useState(false);  
      const APIURL = ('https://main.majorlink.co/api/admin/services/add')
 
-
      useEffect(() => {
        const init = async () => {
           try {
@@ -28,6 +27,7 @@ const Services = () => {
                     method: 'GET',
                })
                const dx = await result.json()
+
                setservices(dx)
             } catch (error) {
                  toast.error(error)
@@ -37,8 +37,9 @@ const Services = () => {
        init()
      }, [])
 
-     const hello = (services.data)
-     console.log(hello)
+     // service list
+     const hello = services 
+     console.log(hello, 'leo')
 
      async function create () {
           try {
