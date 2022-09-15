@@ -1,4 +1,4 @@
-import axios, { patch, get, defaults } from 'axios'
+import { patch, get, defaults } from 'axios'
 import React from 'react'
 import Select from 'react-select'
 
@@ -18,7 +18,7 @@ const Update = () => {
 
     const init = async () => {
 
-      const { data: dx } = await axios.get("/services/list", {
+      const { data: dx } = await get("/services/list", {
         headers: {
           "Content-Type": "application/json"
         }
