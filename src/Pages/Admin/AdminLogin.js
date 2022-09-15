@@ -56,8 +56,7 @@ const AdminLogin = () => {
 
   return (
       //Checkout Main Container
-    <div className='items-center justify-center flex pt-20 bg-herosection'>
-      <BounceLoader color="#36d7b7" loading={loading}/>
+    <div className='items-center justify-center flex flex-col pt-20 bg-herosection'>
          <Helmet>
         <title>Admin |</title>
       </Helmet>
@@ -82,6 +81,7 @@ const AdminLogin = () => {
 
                 <button className='p-3 bg-primary text-white text-sm font-gilroysemibold mt-4 rounded-md w-[76%] md:w-[fill]' onClick={login}>Log In </button>
         </div>
+        <BounceLoader color="#2752E7" loading={loading}/>
          {/*Center Div*/}
     </div>
      //Checkout Main Container
