@@ -24,7 +24,7 @@ const DashboardCards = () => {
       //Dashboard Card Container
     <div className='mt-6'>
         {/*Main Div */}
-        <div className='md:flex md:px-16 px-4'>
+        <div className='md:flex md:px-4 px-4'>
 
               {/*Card*/}
               <section className='bg-newsletter bg-cover text-white text-sm font-gilroysemibold flex p-3 rounded-md md:mr-16 mr-0 items-center md:justify-center cursor-pointer md:mt-0 mt-4 md:ml-16 ml-0'>
