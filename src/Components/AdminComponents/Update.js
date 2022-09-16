@@ -15,6 +15,8 @@ const Update = () => {
 
   const [options, setOption] = React.useState([]);
 
+  const [update, setUpdate] = React.useState(false);
+
   React.useEffect(() => {
 
     const init = async () => {
@@ -35,7 +37,7 @@ const Update = () => {
 
     init();
 
-  }, [data]);
+  }, [update]);
   
   const [buyOption, setBuyOption] = React.useState();
   const [sellOption, setSellOption] = React.useState();
@@ -70,15 +72,17 @@ const Update = () => {
         }
 
     try {
-    const upx = await patch(`/admin/services/${selected.id}`, newx, {
+    await patch(`/admin/services/${selected.id}`, newx, {
       headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
       }
     });
     
-    setData('')
+    setUpdate(newx);
+
     toast.success(`${type} rate updated successfully`);
+    
   }catch (err) {
     if(err.response){
       toast.error("something went wrong, please try again later");
