@@ -1,6 +1,7 @@
-import { patch, get, defaults } from 'axios'
+import { patch, get, defaults, AxiosError } from 'axios'
 import React from 'react'
 import Select from 'react-select'
+import { toast } from 'react-toastify';
 
 const Update = () => {
 
@@ -68,6 +69,7 @@ const Update = () => {
           selected = sellOption;
         }
 
+    try {
     const upx = await patch(`/admin/services/${selected.id}`, newx, {
       headers: {
           'Content-Type': 'application/json',
@@ -76,10 +78,13 @@ const Update = () => {
     });
     
     setData('')
-
-    console.log(upx.data)
-    
+    toast.success(`${type} rate updated successfully`);
+  }catch (err) {
+    if(err.response){
+      toast.error("something went wrong, please try again later");
+    }  
   }
+ }
 
     // handle selection
 

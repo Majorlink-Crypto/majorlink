@@ -12,7 +12,7 @@ const Services = () => {
      const navigate = useNavigate()
      const [services, setservices] = useState([])
      const user = JSON.parse(localStorage.getItem('user'))
-     const token = user.success.token
+     const token = user.token
      const [name, addname] = useState('')
      const [buy, addbuy] = useState('')
      const [sell, addsell] = useState('')
@@ -54,14 +54,15 @@ const Services = () => {
                     const item = {name, buy, sell, symbol}
                     await fetch((APIURL, { 
                          method: 'POST',
-                         body:JSON.stringify(item),
+                         body: JSON.stringify(item),
                          headers: {
                             Authorization: `Bearer ${token}`,
-                           "Content-Type": 'application/json'
+                           "Content-Type": 'application/json',
+                           "Accept": "application/json"
                          }.then(res => res.json())
                          .then(data => { 
                            setLoading(false)
-                           if(data.error == true ){
+                           if(data.error === true ){
                              setLoading(false)
                              toast.info(data.message)
                            }else{
@@ -85,7 +86,7 @@ const Services = () => {
 
         <div className='w-[100%]'>
         <h2 className='text-2xl'>All currencies</h2>
-       <div className='flex'>
+       <div className='flex mb-2'>
        <button className='bg-primary text-white text-sm font-gilroysemibold p-2 flex items-center justify-start text-center rounded-md mt-2 mr-3'>
         <ion-icon name={'add'}></ion-icon>
         Update
@@ -99,7 +100,7 @@ const Services = () => {
        <div>
        {
           services.map((data, index) => ([
-               <section key={index} value={data.name} className='bg-white p-3 pr-6 rounded-lg text-black border-2 border-primary md:w-[65%] md:mr-5 md:mt-0 mt-5 font-gilroysemibold'>
+               <section key={index} value={data.name} className='bg-white p-3 pr-6 rounded-lg text-black border-2 border-primary md:w-[65%] md:mr-5 md:mt-0 my-5 font-gilroysemibold'>
                           
                {/*Top section containing nametage, icon and rate*/}
                <span className='flex justify-between'>
