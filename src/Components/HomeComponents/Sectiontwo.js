@@ -44,7 +44,7 @@ const Sectiontwo = () => {
                       </h2>
 
                       <p className='text-sm font-gilroy mt-1'>
-                      Quickly checkout through whatsapp or telegram 
+                      Checkout through whatsapp
                       </p>
                      </div>
                      </section>

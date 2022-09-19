@@ -22,6 +22,9 @@ const Navbar = () => {
      // eslint-disable-next-line
   }, [location]);
 */}
+const whatsapp = () => {
+  window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20will%20like%20to%20reach%20out%20to%20the%20Support%20team`, "_blank") 
+}
   return (
       //Container for Navbar
     <div>
@@ -44,19 +47,17 @@ const Navbar = () => {
                   {/*NavLinks*/}
                    <ul className={`md:flex mt-0 font-gilroysemibold font-semibold text-sm transition-all duration-500 ease-in hidden`}>
                        <li className='mr-8 hover:text-primary cursor-pointer'> <Link to={'/checkout'}>Buy BTC</Link> <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Buy USDT</li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Products</li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Price</li>
-                       <li className='mr-8 hover:text-primary cursor-pointer'>Learn</li>
-                       <li className='hover:text-primary cursor-pointer'>Support</li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'><Link to={'/checkout'}>Buy USDT</Link></li>
+                       <li className='mr-8 hover:text-primary cursor-pointer'><Link to={'/checkout'}>Sell E-currencies</Link></li>
+                       <li className='hover:text-primary cursor-pointer' onClick={whatsapp}>Support</li>
                    </ul>
                   {/*NavLinks*/}
 
 
                         {/*Buttons*/}
                            <div className='flex md:mr-10 items-center font-gilroysemibold text-sm'>
-                            <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary'>Sign In</button>
-                            <button className=' text-white bg-primary  md:block hidden p-1 md:px-5 px-3 rounded-lg md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Buy Now</button>
+                           <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary'><Link to={'/about'}>Learn</Link></button>
+                            <button className=' text-white bg-primary  md:block hidden p-1 md:px-5 px-3 rounded-lg md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'><Link to={'/checkout'}>Buy now</Link></button>
 
                              {/*Menu Icon*/}
                               <span className='mt-3 text-3xl md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
@@ -77,11 +78,10 @@ const Navbar = () => {
                         </span>
                               <ul className={`${open ? 'hidden':'float-left pl-12 pr-16 mt-32 font-gilroysemibold text-base transition-all duration-500 ease-in'}`}>
                               <li className='mr-8 hover:text-primary cursor-pointer'> <Link to={'/checkout'}>Buy BTC</Link> <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Buy USDT</li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Products</li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Price</li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'>Learn</li>
-                              <li className='hover:text-primary cursor-pointer mt-4'>Support</li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'><Link to={'/checkout'}>Buy USDT</Link></li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'><Link to={'/checkout'}>Sell e-currencies</Link></li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-4'><Link to={'/about'}>Learn</Link></li>
+                              <li className='hover:text-primary cursor-pointer mt-4' onClick={whatsapp}>Support</li>
                              </ul>
                              </div>
                </div>

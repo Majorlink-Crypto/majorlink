@@ -9,8 +9,19 @@ import "aos/dist/aos.css"
 import bince from '../../Assets/bince.png'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const HeroSection = () => {
+
+     const [name, setname] = useState('')
+
+     const whatsapp = () => {
+          if(name === ''){
+               toast.error('Please input your Name')
+          }else {
+               window.open(`https://wa.me/+905338239262?text=Hello,%20I%20am%20${name}%20and%20I%20will%20like%20to%20start%20trading%20with%20Majorlink%20`, "_blank") 
+          }
+     }
 
      const devDate = (timestamp) => {
           const date = new Date(timestamp);
@@ -59,8 +70,8 @@ const HeroSection = () => {
                     <p className='text-gray-300 font-gilroy text-start md:w-[80%] w-[75%] md:block hidden'>We provide the best and fastest service across the world in swapping e-currencies.
                     We are a registered international company with partners all around</p>
                    <div className='md:flex'>
-                   <input className='bg-white border-primary border-2 p-3 rounded-md mt-6 md:w-[46%] w-[100%] text-black font-gilroy text-sm mr-6' placeholder='Email/Phone number'/>
-                    <button className='bg-primary p-3 rounded-md md:mt-6 mt-2 md:w-[30%] w-[100%] text-white font-gilroy '> Get Started </button>
+                   <input className='bg-white border-primary border-2 p-3 rounded-md mt-6 md:w-[46%] w-[100%] text-black font-gilroy text-sm mr-6' placeholder='Name' value={name} onChange={(e) => setname(e.target.value)}/>
+                    <button className='bg-primary p-3 rounded-md md:mt-6 mt-2 md:w-[30%] w-[100%] text-white font-gilroy ' onClick={whatsapp}> Get Started </button>
                     </div>
                  </div>
 

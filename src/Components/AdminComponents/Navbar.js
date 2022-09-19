@@ -61,7 +61,7 @@ const logout = () => {
 
                         {/*Buttons*/}
                            <div className='flex md:mr-10 items-center font-gilroysemibold text-sm'>
-                            <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary'>Log out</button>
+                            <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary' onClick={logout}>Log out</button>
                             <button className=' text-white bg-primary  md:block hidden p-1 md:px-5 px-3 rounded-lg md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'><ion-icon name={'people-circle-outline'}></ion-icon> Profile</button>
 
                              {/*Menu Icon*/}
@@ -82,12 +82,12 @@ const logout = () => {
                         <ion-icon name={open ? 'menu': 'close'}></ion-icon>
                         </span>
                               <ul className={`${open ? 'hidden':'float-left pl-12 pr-16 mt-12 font-gilroysemibold text-base transition-all duration-500 ease-in'}`}>
-                              <li className='mr-8 hover:text-primary cursor-pointer flex items-center justify-center text-2xl font-poppins'> <Link to={'/checkout'}> <ion-icon name={'home-outline'}></ion-icon>  Home</Link>  </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer flex items-center justify-center text-2xl font-poppins'> <Link to={'/admindashboard'}> <ion-icon name={'home-outline'}></ion-icon>  Home</Link>  </li>
                               <li className='mr-8  hover:text-primary cursor-pointer mt-8 items-center justify-center text-2xl font-poppins '> <Link to={'/services'} > <ion-icon name={'bookmarks-outline'}></ion-icon>  Services </Link></li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'mail-outline'}></ion-icon>  Emails </Link> </li>
+                            {/*  <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'mail-outline'}></ion-icon>  Emails </Link> </li>
                               <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'cog-outline'}></ion-icon>   Settings </Link> </li>
                               <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'ticket-outline'}></ion-icon>   Support</Link> </li>
-                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'people-circle-outline'}></ion-icon>    Profile </Link> </li>
+                              <li className='mr-8 hover:text-primary cursor-pointer mt-8  text-2xl font-poppins'> <Link to={'/construction'} > <ion-icon name={'people-circle-outline'}></ion-icon>    Profile </Link> </li>*/}
                               <li className='hover:text-primary cursor-pointer mt-8  text-2xl font-poppins' onClick={logout}> <ion-icon name={'log-out-outline'}></ion-icon>   Logout</li>
                              </ul>
                              </div>

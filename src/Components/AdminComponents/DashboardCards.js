@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link} from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -33,12 +33,12 @@ const DashboardCards = () => {
                   </span>
 
                   <span className='mr-4 text-xl font-poppins'>
-                     Number of Users
-                      <p className='hover:text-white text-green-300 text-sm font-gilroysemibold'>View all</p>
+                     Majorlink Wesite
+                      <p className='hover:text-white text-green-300 text-sm font-gilroysemibold'><Link to={'/'}>View</Link></p>
                   </span>
 
                   <span className='text-3xl pl-2'>
-                      20
+                      
                   </span>
             </section>
              {/*Card*/}

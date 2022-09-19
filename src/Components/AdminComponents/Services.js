@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { post, defaults, AxiosError } from 'axios'
 import Bitcoin from '../../Assets/Bitcoin.png'
 import Ethereum from '../../Assets/Ethereum.png'
 import Tether from '../../Assets/Tether.png'
@@ -8,6 +9,8 @@ import axios from 'axios'
 import BounceLoader from "react-spinners/BounceLoader";
 
 const Services = () => {
+
+  defaults.baseURL = 'https://main.majorlink.co/api';
 
      const navigate = useNavigate()
      const [services, setservices] = useState([])
@@ -40,43 +43,33 @@ const Services = () => {
      // service list
      const hello = services;
 
-     async function create () {
-          try {
-               if(name === ''){
-                    toast.error('Name is missing')
-               } else if (buy === ''){
-                    toast.error('')
-               } else if (sell === ''){
-                    toast.error('Sell is missing')
-               } else if (symbol === ''){
-                    toast.error('Symbol is missing')
-               }else {
-                    const item = {name, buy, sell, symbol}
-                    await fetch((APIURL, { 
-                         method: 'POST',
-                         body: JSON.stringify(item),
-                         headers: {
-                            Authorization: `Bearer ${token}`,
-                           "Content-Type": 'application/json',
-                           "Accept": "application/json"
-                         }.then(res => res.json())
-                         .then(data => { 
-                           setLoading(false)
-                           if(data.error === true ){
-                             setLoading(false)
-                             toast.info(data.message)
-                           }else{
-                               toast.success('success')
-                               setLoading(false)
-                               navigate('/admindashboard')
-                           }
-                         })
-                    }))
-               }
-          } catch (error) {
-               toast.error(error)
+     const create = async () => {
+          const item = {name, buy, sell, symbol}
+          if(name === ''){
+             toast.error('Please Fill in Name')
+          }else if(buy === '') {
+            toast.error('Please Fill in Buy rate')
+          }else if (sell === ''){
+            toast.error('Please Fill in Sell rate')
+          }else if (symbol === ''){
+               toast.error('Please Fill in Symbol')
+             }else {
+            try {
+              await post(`/admin/services/add`, item, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+                }
+              });
+              toast.success(`Currency created successfully`);
+              
+            }catch (err) {
+              if(err.response){
+                toast.error("something went wrong, please try again later");
+              }  
+            }
           }
-     }
+        }
 
      const populate = []
   return (

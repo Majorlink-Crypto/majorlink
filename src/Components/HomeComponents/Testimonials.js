@@ -21,22 +21,38 @@ const Testimonials = () => {
 
 
              </div>
-                  <Carousel cols={3} rows={1} gap={10} loop hideArrow={false} showDots={true} autoplay={20000}>
+                  <Carousel cols={3} rows={1} gap={10} loop hideArrow={false} showDots={false} autoplay={20000}>
       <Carousel.Item>
        {/*Card*/}
        <div className='mt-10 bg-white p-3' data-aos="fade-up">
                         <section className='flex'>
-                            <img
-                            className='rounded-3xl w-[10%] mr-3'
-                            src={tobi}
-                            alt=''
-                            />
                            <span className='text-start'>
                            <h2>Tobi Olumelo</h2>
                            <h6 className='text-sm font-gilroysemibold'>Artist and song writter</h6>
                            </span>
                         </section>
-                        <p className='text-sm font-gilroysemibold text-gray-600 w-[70%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
+                        <p className='text-sm font-gilroysemibold text-gray-600 w-[90%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
+                       <span className='flex text-yellow-400 mt-3'>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <h2 className='text-black ml-2'>5</h2>
+                       </span>
+                     </div>
+                  {/*Card*/}
+      </Carousel.Item>
+      <Carousel.Item>
+       {/*Card*/}
+       <div className='mt-10 bg-white p-3' data-aos="fade-up">
+                        <section className='flex'>
+                           <span className='text-start'>
+                           <h2>Hassan Adamu</h2>
+                           <h6 className='text-sm font-gilroysemibold'>Lawyer</h6>
+                           </span>
+                        </section>
+                        <p className='text-sm font-gilroysemibold text-gray-600 w-[90%] text-start mt-4'> "Very Favourable Rates" </p>
                        <span className='flex text-yellow-400 mt-3'>
                        <IonIcon name='star'/>
                        <IonIcon name='star'/>
@@ -51,17 +67,32 @@ const Testimonials = () => {
        {/*Card*/}
        <div className='mt-10 bg-white p-3' data-aos="fade-up">
                         <section className='flex'>
-                            <img
-                            className='rounded-3xl w-[10%] mr-3'
-                            src={tobi}
-                            alt=''
-                            />
                            <span className='text-start'>
-                           <h2>Tobi Olumelo</h2>
-                           <h6 className='text-sm font-gilroysemibold'>Artist and song writter</h6>
+                           <h2>Esther Mokanji</h2>
+                           <h6 className='text-sm font-gilroysemibold'>Business Owner</h6>
                            </span>
                         </section>
-                        <p className='text-sm font-gilroysemibold text-gray-600 w-[70%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
+                        <p className='text-sm font-gilroysemibold text-gray-600 w-[90%] text-start mt-4'> "Finding a trusted platform to trade ecurrencies at large quantities for me as a business owner has been challenging but then i came across majorlink two months ago and all my troubles and fear have gone away." </p>
+                       <span className='flex text-yellow-400 mt-3'>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <IonIcon name='star'/>
+                       <h2 className='text-black ml-2'>4</h2>
+                       </span>
+                     </div>
+                  {/*Card*/}
+      </Carousel.Item>
+      <Carousel.Item>
+       {/*Card*/}
+       <div className='mt-10 bg-white p-3' data-aos="fade-up">
+                        <section className='flex'>
+                           <span className='text-start'>
+                           <h2>Mehmet Drupal</h2>
+                           <h6 className='text-sm font-gilroysemibold'>Crypto Trader</h6>
+                           </span>
+                        </section>
+                        <p className='text-sm font-gilroysemibold text-gray-600 w-[90%] text-start mt-4'> "I am a professional Trader and i depend on a reliable exchanger to convert from FIAT to Crypt and vice versa and Majorlink always come through for me." </p>
                        <span className='flex text-yellow-400 mt-3'>
                        <IonIcon name='star'/>
                        <IonIcon name='star'/>
@@ -76,17 +107,12 @@ const Testimonials = () => {
        {/*Card*/}
        <div className='mt-10 bg-white p-3' data-aos="fade-up">
                         <section className='flex'>
-                            <img
-                            className='rounded-3xl w-[10%] mr-3'
-                            src={tobi}
-                            alt=''
-                            />
                            <span className='text-start'>
-                           <h2>Tobi Olumelo</h2>
-                           <h6 className='text-sm font-gilroysemibold'>Artist and song writter</h6>
+                           <h2>Naomi</h2>
+                           <h6 className='text-sm font-gilroysemibold'>Artist</h6>
                            </span>
                         </section>
-                        <p className='text-sm font-gilroysemibold text-gray-600 w-[70%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
+                        <p className='text-sm font-gilroysemibold text-gray-600 w-[90%] text-start mt-4'> "I like how they allow me to trade little amounts when i need to" </p>
                        <span className='flex text-yellow-400 mt-3'>
                        <IonIcon name='star'/>
                        <IonIcon name='star'/>
@@ -101,67 +127,12 @@ const Testimonials = () => {
        {/*Card*/}
        <div className='mt-10 bg-white p-3' data-aos="fade-up">
                         <section className='flex'>
-                            <img
-                            className='rounded-3xl w-[10%] mr-3'
-                            src={tobi}
-                            alt=''
-                            />
                            <span className='text-start'>
-                           <h2>Tobi Olumelo</h2>
-                           <h6 className='text-sm font-gilroysemibold'>Artist and song writter</h6>
+                           <h2>Gauis Raymond</h2>
+                           <h6 className='text-sm font-gilroysemibold'>Blockchain Engineer</h6>
                            </span>
                         </section>
-                        <p className='text-sm font-gilroysemibold text-gray-600 w-[70%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
-                       <span className='flex text-yellow-400 mt-3'>
-                       <IonIcon name='star'/>
-                       <IonIcon name='star'/>
-                       <IonIcon name='star'/>
-                       <IonIcon name='star'/>
-                       <h2 className='text-black ml-2'>4.5</h2>
-                       </span>
-                     </div>
-                  {/*Card*/}
-      </Carousel.Item>
-      <Carousel.Item>
-       {/*Card*/}
-       <div className='mt-10 bg-white p-3' data-aos="fade-up">
-                        <section className='flex'>
-                            <img
-                            className='rounded-3xl w-[10%] mr-3'
-                            src={tobi}
-                            alt=''
-                            />
-                           <span className='text-start'>
-                           <h2>Tobi Olumelo</h2>
-                           <h6 className='text-sm font-gilroysemibold'>Artist and song writter</h6>
-                           </span>
-                        </section>
-                        <p className='text-sm font-gilroysemibold text-gray-600 w-[70%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
-                       <span className='flex text-yellow-400 mt-3'>
-                       <IonIcon name='star'/>
-                       <IonIcon name='star'/>
-                       <IonIcon name='star'/>
-                       <IonIcon name='star'/>
-                       <h2 className='text-black ml-2'>4.5</h2>
-                       </span>
-                     </div>
-                  {/*Card*/}
-      </Carousel.Item>
-      <Carousel.Item>
-       {/*Card*/}
-       <div className='mt-10 bg-white p-3' data-aos="fade-up">
-                        <section className='flex'>
-                            <img
-                            className='rounded-3xl w-[10%] mr-3'
-                            src={tobi}
-                            alt=''
-                            />
-                           <span className='text-start'>
-                           <h2>Tobi Olumelo</h2>
-                           <h6 className='text-sm font-gilroysemibold'>Artist and song writter</h6>
-                           </span>
-                        </section>
-                        <p className='text-sm font-gilroysemibold text-gray-600 w-[70%] text-start mt-4'> "The easy access to trade with majorlink is what i enjoy so much, everything is done so easily and swift" </p>
+                        <p className='text-sm font-gilroysemibold text-gray-600 w-[90%] text-start mt-4'> "As a Blockchain Engineer i constantly need resources like crypto while testing out processes i am building and majorlink is my go to plug." </p>
                        <span className='flex text-yellow-400 mt-3'>
                        <IonIcon name='star'/>
                        <IonIcon name='star'/>
