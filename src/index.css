@@ -7,20 +7,25 @@
 
 @font-face {
   font-family: "YUKITA";
-  src: url("../public/Fonts/yukita-sans.medium.otf");
+  src: url("../public/Fonts/Aeonik-Bold.ttf");
 }
 
 @font-face {
   font-family: "Argentum";
-  src: url("../public/Fonts/ArgentumSans-Bold.ttf");
+  src: url("../public/Fonts/Aeonik-Bold.ttf");
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../public/Fonts/GilroyMedium.ttf");
+  src: url("../public/Fonts/Aeonik-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Aeonik";
+  src: url("../public/Fonts/Aeonik-Regular.ttf");
 }
 
 @font-face {
   font-family: "Gilroy-semiBold";
-  src: url("../public/Fonts/Gilroy-Semibold.ttf");
+  src: url("../public/Fonts/Aeonik-Bold.ttf");
 }

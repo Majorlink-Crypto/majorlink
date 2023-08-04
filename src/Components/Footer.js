@@ -21,7 +21,7 @@ const Footer = () => {
   }
   
   defaults.baseURL = 'https://main.majorlink.co/api';
-  const { token } = JSON.parse(localStorage.getItem('user'));
+  //const { token } = JSON.parse(localStorage.getItem('user'));
 
   const [email, setemail] = useState('')
   const [phone, setphone] = useState('')

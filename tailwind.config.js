@@ -10,6 +10,7 @@ module.exports = {
       fontFamily: {
         yukita: ['YUKITA', 'sans-serif'],
         raleway: ['Raleway', 'sans-serif'],
+        aeonik: ['Aeonik', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
         argentum: ['Argentum', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
