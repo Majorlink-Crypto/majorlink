@@ -56,7 +56,7 @@ const Navbar = () => {
           {/*Buttons*/}
           <div className='flex md:mr-10 items-center font-aeonik text-sm'>
             <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary'><Link to={'/about'}>Learn</Link></button>
-            <button className=' text-white bg-[#111031]  md:block hidden p-1 md:px-8 px-6 rounded-sm md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'><Link to={'/checkout'}>Trade now</Link></button>
+            <button className=' text-white bg-[#0040E3]  md:block hidden p-1 md:px-8 px-6 rounded-sm md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'><Link to={'/checkout'}>Trade now</Link></button>
 
             {/*Menu Icon*/}
             <span className='mt-3 text-3xl md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
