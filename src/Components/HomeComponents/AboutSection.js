@@ -50,7 +50,7 @@ const AboutSection = () => {
                         </div>
                         <div>
                             <p className='text-[#273046] text-sm font-aeonikregular'>Majorlink delivers ultra-fast, efficient trading of crypto and gift cards, elevating your e-currency experience.</p>
-                            <div className='border border-[#273046] rounded-full py-2 px-8 mt-6 items-center justify-center inline-block'>
+                            <div className='cursor-pointer border border-[#273046] rounded-full py-2 px-8 mt-6 items-center justify-center inline-block'>
                                 <h1 className='text-[#273046] font-aeonikmedium text-sm'>Learn more</h1>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ const AboutSection = () => {
                         </div>
                         <div>
                             <p className='text-[#273046] text-sm font-aeonikregular'>Our dedicated support team is always ready to assist you, ensuring a smooth and seamless trading process.</p>
-                            <div className='border border-[#273046] rounded-full py-2 px-8 mt-6 items-center justify-center inline-block'>
+                            <div className='cursor-pointer border border-[#273046] rounded-full py-2 px-8 mt-6 items-center justify-center inline-block'>
                                 <h1 className='text-[#273046] font-aeonikmedium text-sm'>Learn more</h1>
                             </div>
                         </div>

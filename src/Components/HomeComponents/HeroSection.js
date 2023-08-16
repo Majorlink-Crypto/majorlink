@@ -77,13 +77,13 @@ const HeroSection = () => {
 
                                    <h1> Trade on website</h1> </button>*/}
                               <div className='flex items-center md:space-x-6 mt-6 space-x-2'>
-                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%]'>
+                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%] cursor-pointer'>
                                         <img src={google} className='h-5'/>
                                         <div>
                                              <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Google Play Store</p>
-                                        </div>
+                                        </div>  
                                    </span>
-                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%]'>
+                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
                                         <img src={apple} className='h-5'/>
                                         <div>
                                              <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>

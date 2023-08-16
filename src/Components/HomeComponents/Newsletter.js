@@ -22,7 +22,7 @@ const Newsletter = () => {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
 
   const whatsapp = () => {
-    window.open("https://wa.me/+2349071504491")
+    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
   }
 
   return (

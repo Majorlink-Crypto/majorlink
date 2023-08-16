@@ -59,8 +59,12 @@ const Sectionthree = () => {
         }
     };
 
-    const whatsapp = () => {
-        window.open("https://wa.me/+2349071504491")
+    const whatsappbtc = () => {
+        window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20Bitcoin.`, "_blank")
+      }
+
+      const whatsappusdt = () => {
+        window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20USDT.`, "_blank")
       }
     return (
         //Section Container
@@ -72,15 +76,15 @@ const Sectionthree = () => {
                 <p className='text-[#273046] text-sm font-aeonikmedium mt-1 md:w-[40%]'>Get the current market rate as well as calculate your transaction
                     amount based on the rate.</p>
                 <div className='items-center md:flex md:space-x-4 md:mt-10 mt-8 md:space-y-0 space-y-3'>
-                    <div className='items-center flex space-x-2 bg-[#EEF0FF] rounded-full py-2 md:px-6 px-3 border border-[#1B30F5] justify-center md:w-auto w-[50%]'>
+                    <div className='cursor-pointer items-center flex space-x-2 bg-[#EEF0FF] rounded-full py-2 md:px-6 px-3 border border-[#1B30F5] justify-center md:w-auto w-[50%]'>
                         <span className='md:border-4 border-2 border-[#1B30F5] rounded-full p-1'></span>
                         <h1 className='md:text-base text-xs text-[#1B30F5]'>Crypto</h1>
                     </div>
-                    <div className='items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
+                    <div className='cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
                         <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
                         <h1 className='md:text-base text-xs text-[#9DA4E3]'>Gift Cards</h1>
                     </div>
-                    <div className='items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 px-6 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
+                    <div className='cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 px-6 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
                         <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
                         <h1 className='md:text-base text-xs text-[#9DA4E3]'>Rates Calculator</h1>
                     </div>
@@ -104,7 +108,7 @@ const Sectionthree = () => {
                                     </thead>
                                     <tbody className="">
                                         {services.map((service, i) => (
-                                            <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer' onClick={whatsapp}>
+                                            <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer' onClick={service.name === "Bitcoin" ? whatsappbtc : whatsappusdt }>
                                                 <td className="px-6 py-4 whitespace-nowrap flex items-center space-x-4 text-[#273046]">
                                                     {getIcon(service.name)}
                                                     <span className='text-sm font-aeonikmedium'>
@@ -114,7 +118,7 @@ const Sectionthree = () => {
                                                 <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-left">₦{service.buy}/$</td>
                                                 <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-center">₦{service.sell}/$</td>
                                                 <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-right">
-                                                    <button className="text-indigo-600 hover:text-indigo-900 font-gilroy" onClick={whatsapp}>
+                                                    <button className="text-indigo-600 hover:text-indigo-900 font-gilroy" onClick={service.name === "Bitcoin" ? whatsappbtc : whatsappusdt }>
                                                         Trade
                                                     </button>
                                                 </td>
