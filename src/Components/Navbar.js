@@ -25,6 +25,10 @@ const Navbar = () => {
   const whatsapp = () => {
     window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20will%20like%20to%20trade%20my%20to%20cryptocurrency%20&%20giftcards%20`, "_blank")
   }
+
+  const whatsappsup = () => {
+    window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team%20`, "_blank")
+  }
   return (
     //Container for Navbar
     <div>
@@ -51,7 +55,7 @@ const Navbar = () => {
           <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
           <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
           <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
-          <li className='hover:text-black cursor-pointer' onClick={whatsapp}>Support</li>
+          <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support</li>
         </ul>
         {/*NavLinks*/}
         <div className='flex items-center space-x-4'>
