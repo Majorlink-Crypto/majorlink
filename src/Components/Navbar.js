@@ -23,11 +23,11 @@ const Navbar = () => {
   }, [location]);
 */}
   const whatsapp = () => {
-    window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20will%20like%20to%20trade%20my%20to%20cryptocurrency%20&%20giftcards%20`, "_blank")
+    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20&%20giftcards%20`, "_blank")
   }
 
   const whatsappsup = () => {
-    window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team%20`, "_blank")
+    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team%20`, "_blank")
   }
   return (
     //Container for Navbar
@@ -78,7 +78,7 @@ const Navbar = () => {
 
 
       {/* Menu bar for mobile devices */}
-      <div data-aos="fade-left" className='bg-[#4B5DFF] h-full text-[#fff] float-right fixed right-0 top-0 z-10  block motion-safe:animate-fadeIn w-[100%] md:hidden'>
+      {open === false ? <div data-aos="fade-left" className='bg-[#4B5DFF] h-full md:h-0 text-[#fff] float-right fixed right-0 top-0 z-10  block motion-safe:animate-fadeIn w-[100%] md:w-0 md:hidden'>
         <div className={`${open ? 'hidden transition-all duration-500 ease-in' : 'm-12 transition-all duration-500 ease-in'} transition-all duration-500 ease-in`}>
           <div className='flex items-center justify-between'>
             <Link to={'/'} className='flex items-center space-x-2'>
@@ -100,12 +100,12 @@ const Navbar = () => {
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
-              <li className='hover:text-black cursor-pointer' onClick={whatsapp}>Support</li>
+              <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support</li>
             </ul>
             <button onClick={whatsapp} className=' text-black bg-[#fff] py-4 md:px-8 px-12 rounded-full md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
           </div>
         </div>
-      </div>
+      </div> : null}
       {/* Menu bar for mobile devices */}
 
 
