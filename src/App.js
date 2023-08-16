@@ -26,7 +26,7 @@ function App() {
   }, [])
 
   return (
-    <div className='font-yukita'>
+    <div className='font-aeonikmedium'>
       <BrowserRouter>
       <ToastContainer />
        <Routes>

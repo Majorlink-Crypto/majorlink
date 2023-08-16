@@ -14,6 +14,8 @@ import { toast } from 'react-toastify'
 import apple from '../../Assets/apple.png'
 import google from '../../Assets/google.png'
 
+import '../../Assets/Styles/hero.css'
+
 
 const HeroSection = () => {
 
@@ -58,15 +60,15 @@ const HeroSection = () => {
 
      return (
           //Main Hero Container
-          <div className='md:p-20 pt-12 items-center justify-center px-3 bg-[#fafafa] pb-6' >
+          <div className='md:px-20 md:py-24 pt-32 items-center justify-center px-3 bg-[#4B5DFF] pb-6' >
                {/*Hero Contents*/}
                {/*Hero Header TagLine with side Image*/}
-               <div className='md:flex flex flex-col md:flex-row justify-center space-x-8 items-center px-10'>
-                    <div className='text-[#2c3288] text-start '>
-                         <h2 className='md:text-6xl text-4xl font-gilroy tracking-wide'>Trade Quick,</h2>
-                         <h2 className='md:text-6xl text-4xl mt-4 font-gilroy tracking-wide'>Trade Smart with</h2>
-                         <h2 className='md:text-6xl text-4xl mt-4 font-gilroy tracking-wide' data-aos="fade-up">Majorlink 🔥</h2>
-                         <p className='text-[#2c3288] text-base font-aeonik text-start md:w-[66%] w-[75%] mt-8 tracking-wide' data-aos="fade-up">Start trading now to enjoy the best rates. We provide the best and fastest service across the world in swapping e-currencies.</p>
+               <div className='md:flex flex flex-col md:flex-row md:justify-center md:space-x-4 md:items-center md:px-10 px-4'>
+                    <div className='text-[#ffffff] md:w-[60%]'>
+                         <h2 className='md:text-3xl text-xl font-grifter tracking-wide md:mt-20 mt-10'>Trade your GiftCards & Crypto</h2>
+                         <h2 className='bigtext md:text-6xl text-5xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
+                         <p className='text-[#ffffff] text-base font-aeonikregular text-start md:w-[78%] w-[95%] mt-4 tracking-wide' data-aos="fade-up">Start trading now to enjoy the best rates. We provide the best and 
+                         fastest service across the world in swapping e-currencies.</p>
 
 
                          <div className='mt-10' data-aos="fade-up">
@@ -74,19 +76,17 @@ const HeroSection = () => {
                                    <ion-icon name="globe-outline"></ion-icon>
 
                                    <h1> Trade on website</h1> </button>*/}
-                              <div className='flex items-center space-x-6 mt-6'>
-                                   <span className='bg-[#0040E3] rounded-lg py-2 px-14 flex items-center space-x-4'>
-                                        <img src={google} />
+                              <div className='flex items-center md:space-x-6 mt-6 space-x-2'>
+                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%]'>
+                                        <img src={google} className='h-5'/>
                                         <div>
-                                             <p className='font-aeonik text-sm text-white'>Get it on</p>
-                                             <p className='font-aeonik text-base text-white'>Play Store</p>
+                                             <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Google Play Store</p>
                                         </div>
                                    </span>
-                                   <span className='bg-[#0040E3] rounded-lg py-2 px-14 flex items-center space-x-4'>
-                                        <img src={apple} />
+                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%]'>
+                                        <img src={apple} className='h-5'/>
                                         <div>
-                                             <p className='font-aeonik text-sm text-white'>Get it on</p>
-                                             <p className='font-aeonik text-base text-white'>App Store</p>
+                                             <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>
                                         </div>
                                    </span>
 
@@ -95,50 +95,50 @@ const HeroSection = () => {
 
                          {/*RATING*/}
 
-                         <div className='mt-20 flex items-center'>
-                              <h1 className='text-5xl text-[#150d40] font-gilroy'>4.5</h1>
+                         <div className='md:mt-20 mt-14 flex items-center'>
+                              <h1 className='text-5xl text-[#edefff] font-grifter'>4.5</h1>
                               <div>
-                                   <div className='flex items-center space-x-1 ml-4 text-[#f2b12d] text-xl'>
+                                   <div className='flex items-center space-x-1 ml-4 text-[#E8D20E] text-xl'>
                                         <ion-icon name="star"></ion-icon>
                                         <ion-icon name="star"></ion-icon>
                                         <ion-icon name="star"></ion-icon>
                                         <ion-icon name="star"></ion-icon>
                                         <ion-icon name="star-half"></ion-icon>
                                    </div>
-                                   <h1 className='mt-1 ml-1 text-[#919191] flex text-lg items-baseline'>/5 {" "}<p className='font-aeonik text-xs ml-2'>Google Playstore & iOS store</p></h1>
+                                   <h1 className='mt-1 ml-1 text-[#DBDEF9] flex text-lg items-baseline font-grifter'>/5 {" "}<p className='font-aeonik text-xs ml-2'>Google Playstore & iOS store</p></h1>
                               </div>
                          </div>
 
                     </div>
 
-                    <span className='md:mt-0 mt-6' data-aos="fade-left">
+                    <span className='md:mt-0 mt-6 md:w-[40%]' data-aos="fade-left">
                          <img
-                              className='mt-[-20] w-[100%]'
+                              className='mt-[-20] w-[90%] md:flex hidden'
                               src={bince}
                               alt='image'
                          />
                     </span>
                </div>
                {/*Hero Header TagLine with side Image*/}
-               <div>
+               <div className='absolute w-[90%] md:block hidden'>
 
                     {/*Hero Currencies section*/}
-                    <div data-aos="fade-up" className='flex items-start justify-between mt-20 font-gilroy mx-10'>
+                    <div  className='flex items-start justify-between rounded-2xl mt-14 bg-[#F9F9FE] font-gilroy mx-6 py-10 px-10 z-10'>
                          <div className='w-[20%]'>
-                              <h1 className='text-[#2c3288] text-2xl font-gilroy'>$200 Million</h1>
-                              <p className='text-[#2c3288] text-sm mt-1 font-aeonik'>Majorlink's daily trade volume.</p>
+                              <h1 className='text-[#4354ED] text-2xl font-grifter'>$200 Million</h1>
+                              <p className='text-[#5B64AF] text-sm mt-1 font-aeonikmedium'>Majorlink's daily trade volume.</p>
                          </div>
                          <div className='w-[20%]'>
-                              <h1 className='text-[#2c3288] text-2xl font-gilroy'>200K</h1>
-                              <p className='text-[#2c3288] text-sm mt-1 font-aeonik'>Our growing user base.</p>
+                              <h1 className='text-[#4354ED] text-2xl font-grifter'>200K</h1>
+                              <p className='text-[#5B64AF] text-sm mt-1 font-aeonikmedium'>Our growing user base.</p>
                          </div>
                          <div className='w-[20%]'>
-                              <h1 className='text-[#2c3288] text-2xl font-gilroy'>10 Min</h1>
-                              <p className='text-[#2c3288] text-sm mt-1 font-aeonik'>Average completion time.</p>
+                              <h1 className='text-[#4354ED] text-2xl font-grifter'>10 Min</h1>
+                              <p className='text-[#5B64AF] text-sm mt-1 font-aeonikmedium'>Average completion time.</p>
                          </div>
                          <div className='w-[20%]'>
-                              <h1 className='text-[#2c3288] text-2xl font-gilroy'>99.9%</h1>
-                              <p className='text-[#2c3288] text-sm mt-1 font-aeonik'>Guaranteed uptime.</p>
+                              <h1 className='text-[#4354ED] text-2xl font-grifter'>99.9%</h1>
+                              <p className='text-[#5B64AF] text-sm mt-1 font-aeonikmedium'>Guaranteed uptime.</p>
                          </div>
 
                     </div>

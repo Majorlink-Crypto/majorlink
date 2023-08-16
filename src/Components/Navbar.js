@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import MLCOriginal from '../Assets/blackicon.png'
+import MLCOriginal from '../Assets/icon.png'
 import { IonIcon } from "react-ion-icon";
 // eslint-disable-next-line
 import { Link } from 'react-router-dom';
@@ -23,40 +23,43 @@ const Navbar = () => {
   }, [location]);
 */}
   const whatsapp = () => {
-    window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20will%20like%20to%20reach%20out%20to%20the%20Support%20team`, "_blank")
+    window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20will%20like%20to%20trade%20my%20to%20cryptocurrency%20&%20giftcards%20`, "_blank")
   }
   return (
     //Container for Navbar
     <div>
       {/*Navbar Box*/}
-      <div className='mt-3 bg-white flex justify-between items-center md:px-20 px-4  text-black font-raleway md:p-2 py-2'>
+      <div className='pt-6 pb-5 bg-[#4B5DFF] border-b-[#7D89F3] border-b flex justify-between items-center md:px-20 px-4  text-white fixed w-[100%] z-10'>
         {/*Logo*/}
         <span className='md:w-[28%] w-[27%] flex cursor-pointer items-center'>
-          <Link to={'/'} className='flex items-center space-x-1'>
+          <Link to={'/'} className='flex items-center space-x-2'>
             <img
-              className='text-center'
+              className='text-center w-7'
               src={MLCOriginal}
               alt='logo'
             />
-            <h1 className='font-gilroy text-lg tracking-wide text-[#111031]'>MajorLink</h1>
+            <h1 className='font-grifter text-lg mt-1 tracking-wide text-[#ffffff]'>Majorlink</h1>
           </Link>
 
         </span>
         {/*Logo*/}
 
-        <div className='flex items-center space-x-6'>
-          {/*NavLinks*/}
-          <ul className={`md:flex mt-0 font-aeonik text-sm transition-all duration-500 ease-in hidden`}>
-            <li className='mr-8 hover:text-primary cursor-pointer'><Link to={'/'}>Features</Link></li>
-            <li className='hover:text-primary cursor-pointer' onClick={whatsapp}>Support</li>
-          </ul>
-          {/*NavLinks*/}
+        {/*NavLinks*/}
+        <ul className={`md:flex mt-0 font-aeonikmedium text-sm transition-all duration-500 ease-in hidden`}>
+          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Features</Link></li>
+          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>About</Link></li>
+          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
+          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
+          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
+          <li className='hover:text-black cursor-pointer' onClick={whatsapp}>Support</li>
+        </ul>
+        {/*NavLinks*/}
+        <div className='flex items-center space-x-4'>
 
 
           {/*Buttons*/}
-          <div className='flex md:mr-10 items-center font-aeonik text-sm'>
-            <button className='md:mr-6 mr-4 hover:underline md:block hidden hover:text-primary'><Link to={'/about'}>Learn</Link></button>
-            <button className=' text-white bg-[#0040E3]  md:block hidden p-1 md:px-8 px-6 rounded-sm md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'><Link to={'/checkout'}>Trade now</Link></button>
+          <div className='flex md:mr-0 items-center font-aeonikmedium text-sm'>
+            <button onClick={whatsapp} className=' text-black bg-[#fff]  md:block hidden p-1 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade now</button>
 
             {/*Menu Icon*/}
             <span className='mt-3 text-3xl md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
@@ -71,18 +74,32 @@ const Navbar = () => {
 
 
       {/* Menu bar for mobile devices */}
-      <div data-aos="fade-left" className='bg-white h-full text-black float-right fixed right-0 top-0 z-10  block motion-safe:animate-fadeIn'>
+      <div data-aos="fade-left" className='bg-[#4B5DFF] h-full text-[#fff] float-right fixed right-0 top-0 z-10  block motion-safe:animate-fadeIn w-[100%] md:hidden'>
         <div className={`${open ? 'hidden transition-all duration-500 ease-in' : 'm-12 transition-all duration-500 ease-in'} transition-all duration-500 ease-in`}>
-          <span onClick={() => setOpen(!open)} className='pr-10 pt-10 transition-all duration-500 ease-in cursor-pointer'>
-            <ion-icon name={open ? 'menu' : 'close'}></ion-icon>
-          </span>
-          <ul className={`${open ? 'hidden' : 'float-left pl-12 pr-16 mt-32 font-gilroysemibold text-base transition-all duration-500 ease-in'}`}>
-            <li className='mr-8 hover:text-primary cursor-pointer'> <Link to={'/checkout'}>Buy BTC</Link> <span className='bg-primary p-1 rounded-lg text-white'>USD</span> </li>
-            <li className='mr-8 hover:text-primary cursor-pointer mt-4'><Link to={'/checkout'}>Buy USDT</Link></li>
-            <li className='mr-8 hover:text-primary cursor-pointer mt-4'><Link to={'/checkout'}>Sell e-currencies</Link></li>
-            <li className='mr-8 hover:text-primary cursor-pointer mt-4'><Link to={'/about'}>Learn</Link></li>
-            <li className='hover:text-primary cursor-pointer mt-4' onClick={whatsapp}>Support</li>
-          </ul>
+          <div className='flex items-center justify-between'>
+            <Link to={'/'} className='flex items-center space-x-2'>
+              <img
+                className='text-center w-7'
+                src={MLCOriginal}
+                alt='logo'
+              />
+              <h1 className='font-grifter text-lg mt-1 tracking-wide text-[#ffffff]'>Majorlink</h1>
+            </Link>
+            <span onClick={() => setOpen(!open)} className='transition-all duration-500 ease-in cursor-pointer text-3xl'>
+              <ion-icon name={open ? 'menu' : 'close'}></ion-icon>
+            </span>
+          </div>
+          <div className='flex flex-col items-center justify-center text-center mt-20 space-y-10'>
+            <ul className={`${open ? 'hidden' : 'float-left font-aeonikmedium text-lg transition-all duration-500 ease-in space-y-10'}`}>
+              <li className='hover:text-black cursor-pointer'><Link to={'/'}>Features</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/'}>About</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
+              <li className='hover:text-black cursor-pointer' onClick={whatsapp}>Support</li>
+            </ul>
+            <button onClick={whatsapp} className=' text-black bg-[#fff] py-4 md:px-8 px-12 rounded-full md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
+          </div>
         </div>
       </div>
       {/* Menu bar for mobile devices */}

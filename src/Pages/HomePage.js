@@ -13,18 +13,18 @@ import Footer from '../Components/Footer'
 const HomePage = () => {
   return (
     <div>
-        <Navbar/>
-        <HeroSection/>
-        <AboutSection/>
-        <Sectiontwo/>
-        <Sectionthree/>
-        <Sectionfour/>
-        <Testimonials/>
-        <Newsletter/>
-        <Footer/>
+      <Navbar />
+      <HeroSection />
+      <AboutSection />
+      <Sectionthree />
+      <Sectiontwo />
+      <Newsletter />
+      <Footer />
+      <div className='mx-10'>
         <CookieConsent debug={true} className='motion-safe:animate-fadeIn'>
-      By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
-      </CookieConsent >
+          By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+        </CookieConsent>
+      </div>
     </div>
   )
 }

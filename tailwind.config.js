@@ -8,14 +8,10 @@ module.exports = {
         'about': "url('./Assets/aboutbg.png')",
        }),
       fontFamily: {
-        yukita: ['YUKITA', 'sans-serif'],
-        raleway: ['Raleway', 'sans-serif'],
-        aeonik: ['Aeonik', 'sans-serif'],
-        inter: ['Inter', 'sans-serif'],
-        argentum: ['Argentum', 'sans-serif'],
-        poppins: ['Poppins', 'sans-serif'],
-        gilroy: ['Gilroy', 'sans-serif'],
-        gilroysemibold: ['Gilroy-semiBold', 'sans-serif'],
+        aeonikmedium: ['AeonikMedium', 'sans-serif'],
+        aeonikregular: ['AeonikRegular', 'sans-serif'],
+        aeonikbold: ['AeonikBold', 'sans-serif'],
+        grifter: ['Grifter', 'sans-serif'],
       },
       colors: {
         'primary': '#2752E7',

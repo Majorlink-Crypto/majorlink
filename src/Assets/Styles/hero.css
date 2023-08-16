@@ -1,0 +1,6 @@
+.bigtext {
+    background: linear-gradient(200deg, #7482FF 0%, rgba(229, 231, 246, 0.93) 35.53%, rgba(75, 93, 255, 0.60) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
