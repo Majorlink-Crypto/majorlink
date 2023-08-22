@@ -142,6 +142,7 @@ const Footer = () => {
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>FAQs</Link></li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'>Contact Us</li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'>+2349071504491</li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'>+905338239262</li>
             </ul>
           </div>
           {/* Contact Support */}

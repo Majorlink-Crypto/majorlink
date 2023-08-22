@@ -129,7 +129,7 @@ const HeroSection = () => {
                     {/*Hero Currencies section*/}
                     <div className='flex items-start justify-between rounded-2xl mt-14 bg-[#F9F9FE] font-gilroy mx-6 py-10 px-10 z-10'>
                          <div className='w-[20%]'>
-                              <h1 className='text-[#4354ED] text-2xl font-grifter'>$200 Million</h1>
+                              <h1 className='text-[#4354ED] text-2xl font-grifter'>$2 Million</h1>
                               <p className='text-[#5B64AF] text-sm mt-1 font-aeonikmedium'>Majorlink's daily trade volume.</p>
                          </div>
                          <div className='w-[20%]'>
