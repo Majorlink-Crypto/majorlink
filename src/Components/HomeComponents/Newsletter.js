@@ -15,6 +15,7 @@ import img13 from '../../Assets/GiftCards/amex.png';
 
 import apple from '../../Assets/apple.png'
 import google from '../../Assets/google.png'
+import { Link } from 'react-router-dom';
 
 
 const Newsletter = () => {
@@ -59,6 +60,7 @@ const Newsletter = () => {
               <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Google Play Store</p>
             </div>
           </span>
+
           <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
             <img src={apple} className='h-5' />
             <div>
@@ -66,11 +68,15 @@ const Newsletter = () => {
             </div>
           </span>
 
-          <span onClick={whatsapp} className='bg-[#fff] rounded-full text-[#4B5DFF] py-3 px-6 flex items-center space-x-3 cursor-pointer border border-[#4B5DFF]'>
-            <ion-icon name="globe-outline"></ion-icon>
-            <div>
-              <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Trade on the web</p>
-            </div>
+          <span className=''>
+            <Link to={'/checkout'}>
+              <span className='bg-[#fff] rounded-full text-[#4B5DFF] py-3 px-6 flex items-center mt-4 space-x-3 cursor-pointer border border-[#4B5DFF]'>
+                <ion-icon name="globe-outline"></ion-icon>
+                <div>
+                  <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Trade on the web</p>
+                </div>
+              </span>
+            </Link>
           </span>
 
         </div>

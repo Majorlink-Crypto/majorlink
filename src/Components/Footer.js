@@ -102,9 +102,9 @@ const Footer = () => {
             <h2 className='text-[#151923]'>Features</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>Buy Gift cards</Link></li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>Sell Gift cards</li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>Trade Crypro</li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Buy Gift cards</Link></li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Sell Gift cards</Link></li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Trade Crypto</Link></li> 
             </ul>
           </div>
           {/* Center */}
@@ -215,9 +215,9 @@ const Footer = () => {
               <h2 className='text-[#151923]'>Features</h2>
 
               <ul className='mt-4 text-[#3B455C] space-y-4'>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>Buy Gift cards</Link></li>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'>Sell Gift cards</li>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'>Trade Crypro</li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Buy Gift cards</Link></li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Sell Gift cards</Link></li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Trade Crypto</Link></li>
               </ul>
             </div>
             {/* Center */}

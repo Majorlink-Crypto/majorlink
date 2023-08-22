@@ -6,6 +6,7 @@ import axios from 'axios'
 import Bitcoin from '../../Assets/Bitcoin.png'
 import Ethereum from '../../Assets/Ethereum.png'
 import Tether from '../../Assets/Tether.png'
+import { Link } from 'react-router-dom'
 //import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@material-ui/core';
 
 const Sectionthree = () => {
@@ -59,13 +60,6 @@ const Sectionthree = () => {
         }
     };
 
-    const whatsappbtc = () => {
-        window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20Bitcoin.`, "_blank")
-      }
-
-      const whatsappusdt = () => {
-        window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20USDT.`, "_blank")
-      }
     return (
         //Section Container
         <div className='md:mx-20 mx-6 md:mt-0 mt-10 mb-10' data-aos="fade-up">
@@ -108,19 +102,23 @@ const Sectionthree = () => {
                                     </thead>
                                     <tbody className="">
                                         {services.map((service, i) => (
-                                            <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer' onClick={service.name === "Bitcoin" ? whatsappbtc : whatsappusdt }>
-                                                <td className="px-6 py-4 whitespace-nowrap flex items-center space-x-4 text-[#273046]">
-                                                    {getIcon(service.name)}
-                                                    <span className='text-sm font-aeonikmedium'>
-                                                        {service.name} ({getAbbreviation(service.name)})
-                                                    </span>
-                                                </td>
+                                            <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer'>
+                                                <Link to={'/checkout'}>
+                                                    <td className="px-6 py-4 whitespace-nowrap flex items-center space-x-4 text-[#273046]">
+                                                        {getIcon(service.name)}
+                                                        <span className='text-sm font-aeonikmedium'>
+                                                            {service.name} ({getAbbreviation(service.name)})
+                                                        </span>
+                                                    </td>
+                                                </Link>
                                                 <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-left">₦{service.buy}/$</td>
                                                 <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-center">₦{service.sell}/$</td>
                                                 <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-right">
-                                                    <button className="text-indigo-600 hover:text-indigo-900 font-gilroy" onClick={service.name === "Bitcoin" ? whatsappbtc : whatsappusdt }>
-                                                        Trade
-                                                    </button>
+                                                    <Link to={'/checkout'}>
+                                                        <button className="text-indigo-600 hover:text-indigo-900 font-gilroy">
+                                                            Trade
+                                                        </button>
+                                                    </Link>
                                                 </td>
                                             </tr>
                                         ))}
