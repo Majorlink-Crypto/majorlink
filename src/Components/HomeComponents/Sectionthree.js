@@ -71,7 +71,7 @@ const Sectionthree = () => {
         <div className='md:mx-20 mx-6 md:mt-0 mt-10 mb-10' data-aos="fade-up">
 
             {/*Div and contents*/}
-            <div className='items-center md:mt-32'>
+            <div className='items-center md:mt-48'>
                 <h1 className='text-[#273046] text-2xl font-grifter'>Digital Assets Rates</h1>
                 <p className='text-[#273046] text-sm font-aeonikmedium mt-1 md:w-[40%]'>Get the current market rate as well as calculate your transaction
                     amount based on the rate.</p>

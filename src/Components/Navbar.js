@@ -63,7 +63,9 @@ const Navbar = () => {
 
           {/*Buttons*/}
           <div className='flex md:mr-0 items-center font-aeonikmedium text-sm'>
-            <button onClick={whatsapp} className=' text-black bg-[#fff]  md:block hidden p-1 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade now</button>
+            <Link to={'/checkout'}>
+              <button className=' text-black bg-[#fff]  md:block hidden p-1 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade now</button>
+            </Link>
 
             {/*Menu Icon*/}
             <span className='mt-3 text-3xl md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
@@ -102,7 +104,9 @@ const Navbar = () => {
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
               <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support</li>
             </ul>
-            <button onClick={whatsapp} className=' text-black bg-[#fff] py-4 md:px-8 px-12 rounded-full md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
+            <Link to={'/checkout'}>
+              <button className=' text-black bg-[#fff] py-4 md:px-8 px-12 rounded-full md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
+            </Link>
           </div>
         </div>
       </div> : null}

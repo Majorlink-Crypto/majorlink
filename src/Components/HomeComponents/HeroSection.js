@@ -65,10 +65,14 @@ const HeroSection = () => {
                {/*Hero Header TagLine with side Image*/}
                <div className='md:flex flex flex-col md:flex-row md:justify-center md:space-x-4 md:items-center md:px-10 px-4'>
                     <div className='text-[#ffffff] md:w-[60%]'>
+                         <div className='bg-[#273046] py-3 md:px-10 items-center flex rounded-full md:w-[83%]'>
+                              <h1 className='text-white text-xs md:flex hidden'>📢📢📢 Hi there 👋 Our site is currently going through some upgrades 🔧 <br /> kindly bear with us for the time being.</h1>
+                              <h1 className='text-white text-xs md:hidden scale-90'> 📢📢📢  {"   "} Hi there 👋 Our site is currently going through some upgrades 🔧 kindly bear with us for the time being.</h1>
+                         </div>
                          <h2 className='md:text-3xl text-xl font-grifter tracking-wide md:mt-20 mt-10'>Trade your GiftCards & Crypto</h2>
                          <h2 className='bigtext md:text-6xl text-5xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
-                         <p className='text-[#ffffff] text-base font-aeonikregular text-start md:w-[78%] w-[95%] mt-4 tracking-wide' data-aos="fade-up">Start trading now to enjoy the best rates. We provide the best and 
-                         fastest service across the world in swapping e-currencies.</p>
+                         <p className='text-[#ffffff] text-base font-aeonikregular text-start md:w-[78%] w-[95%] mt-4 tracking-wide' data-aos="fade-up">Start trading now to enjoy the best rates. We provide the best and
+                              fastest service across the world in swapping e-currencies.</p>
 
 
                          <div className='mt-10' data-aos="fade-up">
@@ -78,13 +82,13 @@ const HeroSection = () => {
                                    <h1> Trade on website</h1> </button>*/}
                               <div className='flex items-center md:space-x-6 mt-6 space-x-2'>
                                    <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%] cursor-pointer'>
-                                        <img src={google} className='h-5'/>
+                                        <img src={google} className='h-5' />
                                         <div>
                                              <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Google Play Store</p>
-                                        </div>  
+                                        </div>
                                    </span>
                                    <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
-                                        <img src={apple} className='h-5'/>
+                                        <img src={apple} className='h-5' />
                                         <div>
                                              <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>
                                         </div>
@@ -123,7 +127,7 @@ const HeroSection = () => {
                <div className='absolute w-[90%] md:block hidden'>
 
                     {/*Hero Currencies section*/}
-                    <div  className='flex items-start justify-between rounded-2xl mt-14 bg-[#F9F9FE] font-gilroy mx-6 py-10 px-10 z-10'>
+                    <div className='flex items-start justify-between rounded-2xl mt-14 bg-[#F9F9FE] font-gilroy mx-6 py-10 px-10 z-10'>
                          <div className='w-[20%]'>
                               <h1 className='text-[#4354ED] text-2xl font-grifter'>$200 Million</h1>
                               <p className='text-[#5B64AF] text-sm mt-1 font-aeonikmedium'>Majorlink's daily trade volume.</p>

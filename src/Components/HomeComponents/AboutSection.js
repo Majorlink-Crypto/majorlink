@@ -11,7 +11,7 @@ const AboutSection = () => {
     }, []);
     return (
         //Container
-        <div data-aos="fade-up" className='md:mt-48 mt-16 items-center justify-center flex flex-col mb-10'>
+        <div data-aos="fade-up" className='md:mt-32 mt-16 items-center justify-center flex flex-col mb-10'>
             {/*Div and its content*/}
             <div className='rounded-t-lg py-8 md:px-6 items-center justify-center'>
                 <div className='items-center justify-center flex flex-col text-center'>

@@ -15,8 +15,8 @@ const HomePage = () => {
     <div>
       <Navbar />
       <HeroSection />
-      <AboutSection />
       <Sectionthree />
+      <AboutSection />
       <Sectiontwo />
       <Newsletter />
       <Footer />

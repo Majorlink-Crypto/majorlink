@@ -14,6 +14,8 @@ import Services from './Pages/Admin/Services';
 import Construction from './Pages/Construction';
 import About from './Pages/About';
 
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   const [isloggedin, setisloggedin] = useState(false)
 

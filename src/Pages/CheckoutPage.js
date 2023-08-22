@@ -1,165 +1,205 @@
-import React, {useState} from 'react'
-import { patch, get, defaults, AxiosError } from 'axios'
-import { Helmet } from 'react-helmet';
-import {IonIcon} from "react-ion-icon";
+import React, { useState, useEffect } from 'react';
+import spiral from '../Assets/spiral.png'
+import '../Assets/Styles/hero.css'
 import { Link } from 'react-router-dom';
-import Select from 'react-select'
 import { toast } from 'react-toastify';
 
-const CheckoutPage = () => {
-  defaults.baseURL = 'https://main.majorlink.co/api';
-  const { token } = JSON.parse(localStorage.getItem('user'));
+import axios from 'axios'
+import Bitcoin from '../Assets/Bitcoin.png'
+import Tether from '../Assets/Tether.png'
 
-  const [data, setData] = useState([])
-  const [options, setOption] = React.useState([]);
-  const [update, setUpdate] = React.useState(false);
-  const [value, setvalue] = React.useState(false);
-  const [amount, setamount] = React.useState('')
-  const [buyorsell, setbuyorsell] = React.useState('')
-  const [checked, setchecked] = React.useState(false)
-  const [name, setname] = useState('')
-  const [email, setemail] = useState('')
+function CheckoutPage() {
 
+  const [options, setOptions] = useState([]);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [rateType, setRateType] = useState('buy');  // default to 'buy'
+  const [isOpen, setIsOpen] = useState(false);
+  const [amount, setAmount] = useState('');
 
+  const toggleDropdown = () => setIsOpen(!isOpen);
 
-  React.useEffect(() => {
+  useEffect(() => {
 
     const init = async () => {
+      axios.defaults.baseURL = "https://main.majorlink.co/api"
 
-      const { data: dx } = await get("/services/list", {
+      const res = await axios.get('/services/list', {
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          accept: "application/json"
         }
-      })
+      });
 
-      setData(dx)
-
-      const opx = dx.map(({ name, id }, idx) => ({idx , id, value: name, label: name }));
-
-      setOption(opx)
-    
+      setOptions(res.data);
+      setSelectedOption(res.data[0]);  // default to the first option
     }
 
     init();
 
-  }, [update]);
+  }, []);
 
-     // handle selection
-     const handleChanged = (e) => {
-       setvalue(e)
-       console.warn(value.label)
+
+  const calculateNairaAmount = () => {
+    const rate = rateType === 'buy' ? selectedOption?.buy : selectedOption?.sell;
+    return amount * rate;
+  };
+
+  // Function to format numbers with commas
+  const numberWithCommas = (x) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
+  const checkout = async () => {
+    // Check for missing or invalid inputs
+    if (!selectedOption) {
+        toast.error('Please select a currency.');
+        return;
     }
 
-    const handleChange = (e) => {
-       setbuyorsell(e)
-       console.warn(buyorsell.label)
+    if (!rateType) {
+        toast.error('Please select a rate type.');
+        return;
     }
+
+    if (!amount || amount <= 0) {
+        toast.error('Please enter a valid transaction amount.');
+        return;
+    }
+
+    // Main logic: initiate WhatsApp conversation (or any other primary action)
+    const transactionType = rateType === 'buy' ? "purchase" : "sell";
+    const baseMessage = `Good day, I'd like to ${transactionType} $${amount} worth of ${selectedOption.name}. Could you provide further assistance regarding the procedure and any other relevant details? Thank you.`;
+    const encodedMessage = encodeURIComponent(baseMessage);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=+2349071504491&text=${encodedMessage}`;
     
-    const watb = buyorsell.label
-    const wat = value.label
+    window.open(whatsappUrl, '_blank');
 
-    const ooptions = [ 
-      { value: 'Buy', label: 'Buy' },
-      { value: 'Sell', label: 'Sell' },
-    ]
-
-    const checkout = () => {
-     if(amount === ''){
-        toast.error('Please fill in an amount')
-     } else if(name === ''){
-      toast.error('Please fill in your name')
-     }if(email === ''){
-     toast.error('Please fill in your email')
-     }else if (wat === undefined){
-       toast.error('Please Select the Currency you would like to trade')
-     } else if (watb === undefined){
-        toast.error('Please Select if you want to buy or sell')
-     } else if (checked === false){
-      toast.error('Please accept the terms and conditions')
-      }else {
-      window.open(`https://wa.me/+905338239262?text=Hello,%20Majorlink%20I%20am%20${name}%20and%20I%20want%20to%20${watb}%20${amount}%20${wat},%20here%20is%20my%20email%20${email}`, "_blank") 
-      console.log(checked)
-     }
-    }
-  
-  return (
-      //Checkout Main Container
-    <div className='items-center justify-center flex'>
-         <Helmet>
-        <title>Checkout |</title>
-      </Helmet>
-        {/*Center Div*/}
-        <div className='flex flex-col items-start w-fit justify-start md:mt-20 text-center rounded-md bg-herosection md:p-10 md:px-10 px-4 md:pt-10 pt-10 md:pb-10 pb-10'>
-            <span className='text-sm font-gilroysemibold text-gray-400 cursor-pointer mb-3 hover:text-primary flex items-center'>
-            <IonIcon name='arrow-back-outline'/>
-            <h2 className='text-sm font-gilroysemibold text-gray-400 cursor-pointer ml-1 hover:text-primary'> <Link to={'/'}>Home</Link> </h2>
-            </span>
-             <h2 className='text-4xl text-primary text-center'>Quick Checkout</h2>
-             <h2 className='text-2xl text-start'>The fastest checkout system</h2>
-               
-               <section className='mt-7 text-start'>
-               <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Your Name</label>
-             <input className='text-sm font-gilroysemibold p-3 w-[106%] md:w-[126%] border-primary border-2 rounded-md' placeholder='Name' value={name} onChange={(e) => setname(e.target.value)}/>
-               </section>
-
-               <section className='mt-4 text-start'>
-               <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Your Email</label>
-             <input className='text-sm font-gilroysemibold p-3 w-[106%] md:w-[136%] border-primary border-2 rounded-md' placeholder='youremail@example.com' type='email' value={email} onChange={(e) => setemail(e.target.value)}/>
-               </section>
-
-               <section className='mt-4 text-start flex flex-col'>
-               <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Amount you want to transact</label>
-               </section>
-
-
-               <section className='mt-0 text-start flex flex-col text-sm font-gilroysemibold'>
-               <Select
-              onChange={handleChanged}
-              isClearable={false}
-              name='colors'
-              options={options}
-              className='react-select'
-              classNamePrefix='select'
-            />
-
-          <section className='mt-2'>
-          <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Buy or Sell ?</label>
-          <Select
-              onChange={handleChange}
-              isClearable={false}
-              name='colors'
-              options={ooptions}
-              className='react-select'
-              classNamePrefix='select'
-            />
-          </section>
-    
-             <input className='text-sm font-gilroysemibold p-3 mt-2 w-[106%] border-primary border-2 rounded-md mr-2' placeholder='Enter Amount' type='number' value={amount} onChange={(e) => setamount(e.target.value)} />
-               </section>
-
-            {/*   <section className='mt-4 text-start flex flex-col'>
-               <label className='text-sm font-gilroysemibold text-gray-300 text-start'>Amount you will Get in Naira</label>
-
-               </section>
-
-               <section className='mt-0 text-start flex flex-row'>
-             <input disabled className='text-sm font-gilroysemibold p-3 w-[106%] border-primary border-2 rounded-md mr-2' placeholder='400' type='number'  />
-             <span className='mr-3 bg-white text-green-700 p-3 flex items-center justify-center border-2 border-primary rounded-md'>
-               <IonIcon name='cash-outline'/>
-               </span> 
-               </section>*/}
-
-                <section className='mt-3 flex font-gilroysemibold text-sm'>
-                    <input type='checkbox' className='border-2 border-primary' onClick={() => setchecked(!checked)}/>
-                    <p className='ml-2'>I agree to the <span className='hover:text-primary text-gray-400 cursor-pointer'> terms </span> and <span className='hover:text-primary text-gray-400 cursor-pointer'> conditions </span> </p>
-                </section>
-
-                <button className='p-3 bg-primary text-white text-sm font-gilroysemibold mt-4 rounded-md w-[fill]' onClick={checkout}>Checkout</button>
-        </div>
-         {/*Center Div*/}
-    </div>
-     //Checkout Main Container
-  )
+    // If the main logic executes without issues
+    toast.success('Success! Redirecting to WhatsApp...');
+    setAmount("")
 }
 
-export default CheckoutPage
+
+
+
+  return (
+    <div className="flex h-screen">
+
+      {/* Left side (45% width, full height, blue background) */}
+      <div className="hidden md:flex md:w-[40%] bg-[#4B5DFF] h-full flex-shrink-0 overflow-x-hidden">
+        {/* Image in the left side */}
+        <img src={spiral} alt='Spiral' className='w-40 h-40' />
+
+        <div className='items-center justify-center absolute bottom-32 left-12 right-6 self-center'>
+          <h2 className='md:text-xl text-xl font-grifter tracking-wide md:mt-20 mt-10 text-white'>Trade your GiftCards & Crypto</h2>
+          <h2 className='text-[#b4bbf3] md:text-4xl text-5xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
+          <p className='text-[#ffffff] text-base font-aeonikregular text-start mt-4 tracking-wide w-[38%]'>Start trading now to enjoy the best rates. We provide the best and
+            fastest service across the world in swapping e-currencies.</p>
+        </div>
+      </div>
+
+      {/* Right side (remaining width, full height, white background, scrollable) */}
+      <div className="flex-grow  overflow-y-auto bg-white  md:w-[60%] md:px-16 px-6 pb-20 pt-10">
+        {/* Content for the right side */}
+        <div className='bg-[#ffffff] border border-[#dddd] py-3 px-4 items-center rounded-full md:inline-block'>
+          <h1 className='text-[#4B5DFF] text-xs '>📢 {" "}Giftcards are currently in maintenance mode.</h1>
+        </div>
+
+
+        <Link to={'/'}>
+          <h1 className='mt-4'>Go back to website</h1>
+        </Link>
+
+        <h1 className='mt-16 font-grifter text-3xl'>Guided Checkout</h1>
+        <p className='font-aeonikregular text-[#273046] text-xs tracking-wide leading-5'>Quickly start trading, through the guided checkout, scared of how trading online
+          feels so insecure, well we set a guided checkout that leads you straight to us.</p>
+
+        <div className='items-center md:flex md:space-x-4 mt-8 md:space-y-0 space-y-3'>
+          <div className='cursor-pointer items-center flex space-x-2 bg-[#EEF0FF] rounded-full py-2 md:px-6 px-3 border border-[#1B30F5] justify-center md:w-auto w-[50%]'>
+            <span className='md:border-4 border-2 border-[#1B30F5] rounded-full p-1'></span>
+            <h1 className='md:text-sm text-xs text-[#1B30F5]'>Crypto</h1>
+          </div>
+          <div className='cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
+            <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
+            <h1 className='md:text-sm text-xs text-[#9DA4E3]'>Gift Cards</h1>
+          </div>
+        </div>
+
+        <div>
+          {/* Custom Dropdown for Coin Selection */}
+          <div className="relative mt-10 border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] focus:outline-none focus:ring-0 cursor-pointer" onClick={toggleDropdown}>
+            {selectedOption ? (
+              <>
+                <img src={selectedOption.name === 'Bitcoin' ? Bitcoin : Tether} alt={selectedOption.name} className="inline-block mr-6 h-6" />
+                {selectedOption.name}
+              </>
+            ) : 'Select a currency'}
+
+            {isOpen && (
+              <div className="absolute w-full mt-2 border border-[#DDDDDD] rounded-xl bg-white z-10 right-1">
+                {options.map(option => (
+                  <div key={option.id} className="py-3 px-3 cursor-pointer hover:bg-[#f3f3f3]" onClick={() => { setSelectedOption(option); setIsOpen(false) }}>
+                    <img src={option.name === 'Bitcoin' ? Bitcoin : Tether} alt={option.name} className="inline-block mr-6 h-6 items-center" />
+                    {option.name}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Dropdown for Rate Type Selection & Display Rate */}
+          <div className="relative mt-5">
+            <select
+              value={`${rateType} @ ₦${rateType === 'buy' ? selectedOption?.buy : selectedOption?.sell}/$`}
+              onChange={(e) => {
+                const newRateType = e.target.value.startsWith('buy') ? 'buy' : 'sell';
+                setRateType(newRateType);
+              }}
+              className="appearance-none border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] focus:outline-none focus:ring-0"
+            >
+              {selectedOption && [
+                <option key="buy" value={`buy @ ₦${selectedOption?.buy}/$`} className="text-[#737D96] text-aeonikregular">Buy @ ₦{selectedOption?.buy}/$</option>,
+                <option key="sell" value={`sell @ ₦${selectedOption?.sell}/$`} className="text-[#737D96] text-aeonikregular">Sell @ ₦{selectedOption?.sell}/$</option>
+              ]}
+            </select>
+          </div>
+
+          <div className="relative mt-5 border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] flex items-center space-x-4">
+            <span className='text-[#7C9D1D]'>$</span>
+            <input
+              type="number"
+              placeholder="Amount"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              className="w-full bg-transparent focus:outline-none"
+            />
+          </div>
+
+          {/* Display information and amount in Naira */}
+          <div className="mt-10">
+            <h1 className='font-aeonikregular text-[#273046]'>
+              {rateType === 'buy' ? "What you’ll receive in Naira" : "What you will send in Naira"}
+            </h1>
+            <p className='font-aeonikregular text-xs text-[#7280A0] mt-1'>Average confirmation time: 5 to 10 mins.</p>
+            <h1 className="md:text-3xl text-2xl mt-6 font-grifter text-[#323948]">
+              ₦{numberWithCommas(calculateNairaAmount().toFixed(2))}
+            </h1>
+          </div>
+        </div>
+
+        <div onClick={checkout} className='bg-[#4B5DFF] py-4 flex cursor-pointer items-center justify-center mt-20 rounded-lg'>
+          <h1 className='text-white'>Continue to WhatsApp</h1>
+        </div>
+
+
+        <div className='mt-14'>
+          <h1 className='text-[#273046] font-aeonikregular'>Trading on the website directs you to our official WhatsApp contact at
+            <span className='text-black font-aeonikbold'> +2349071504491 </span> Please be aware of scammers, and kindly confirm the phone number is same on our contact page, and the website you are currently on should be www.majorlink.co/checkout</h1>
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+export default CheckoutPage;
