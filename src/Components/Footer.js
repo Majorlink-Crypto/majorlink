@@ -125,9 +125,9 @@ const Footer = () => {
             <h2 className='text-[#151923]'>Legal</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>Terms and Conditions</Link></li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>Privacy Policy</li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>AML Policy</li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/terms'}>Terms and Conditions</Link></li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/privacy'}>Privacy Policy</Link></li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/aml'}>AML Policy</Link></li>
             </ul>
           </div>
           {/* Right */}
@@ -239,9 +239,9 @@ const Footer = () => {
               <h2 className='text-[#151923]'>Legal</h2>
 
               <ul className='mt-4 text-[#3B455C] space-y-4'>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>Terms and Conditions</Link></li>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'>Privacy Policy</li>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'>AML Policy</li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/terms'}>Terms and Conditions</Link></li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/privacy'}>Privacy Policy</Link></li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/aml'}>AML Policy</Link></li>
               </ul>
             </div>
             {/* Right */}

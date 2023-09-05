@@ -16,6 +16,9 @@ import About from './Pages/About';
 
 import 'react-toastify/dist/ReactToastify.css';
 import ContactPage from './Pages/ContactPage';
+import Terms from './Pages/Terms';
+import Privacy from './Pages/Privacy';
+import Aml from './Pages/Aml';
 
 function App() {
   const [isloggedin, setisloggedin] = useState(false)
@@ -39,6 +42,9 @@ function App() {
        <Route path='/construction' element={<Construction/>}></Route>
        <Route path='/about' element={<About/>}></Route>
        <Route path='/contact' element={<ContactPage/>}></Route>
+       <Route path='/terms' element={<Terms/>}></Route>
+       <Route path='/privacy' element={<Privacy/>}></Route>
+       <Route path='/aml' element={<Aml/>}></Route>
        {/*Protected Route*/}
        <Route path='/services' element={(isloggedin === true ? <Services/>  : <Unauthorized/>)}></Route>
        <Route path='/admindashboard' element={(isloggedin === true? <AdminDashboard/>  : <Unauthorized/>)}></Route>
