@@ -70,7 +70,7 @@ const Newsletter = () => {
 
           <span className=''>
             <Link to={'/checkout'}>
-              <span className='bg-[#fff] rounded-full text-[#4B5DFF] py-3 px-6 flex items-center mt-4 space-x-3 cursor-pointer border border-[#4B5DFF]'>
+              <span className='bg-[#fff] rounded-full text-[#4B5DFF] py-3 px-6 flex items-center md:mt-0 mt-4 space-x-3 cursor-pointer border border-[#4B5DFF]'>
                 <ion-icon name="globe-outline"></ion-icon>
                 <div>
                   <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Trade on the web</p>

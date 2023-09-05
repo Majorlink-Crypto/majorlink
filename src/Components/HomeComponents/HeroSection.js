@@ -65,10 +65,7 @@ const HeroSection = () => {
                {/*Hero Header TagLine with side Image*/}
                <div className='md:flex flex flex-col md:flex-row md:justify-center md:space-x-4 md:items-center md:px-10 px-4'>
                     <div className='text-[#ffffff] md:w-[60%]'>
-                         <div className='bg-[#273046] py-3 md:px-10 items-center flex rounded-full md:w-[83%]'>
-                              <h1 className='text-white text-xs md:flex hidden'>📢📢📢 Hi there 👋 Our site is currently going through some upgrades 🔧 <br /> kindly bear with us for the time being.</h1>
-                              <h1 className='text-white text-xs md:hidden scale-90'> 📢📢📢  {"   "} Hi there 👋 Our site is currently going through some upgrades 🔧 kindly bear with us for the time being.</h1>
-                         </div>
+                        
                          <h2 className='md:text-3xl text-xl font-grifter tracking-wide md:mt-20 mt-10'>Trade your GiftCards & Crypto</h2>
                          <h2 className='bigtext md:text-6xl text-5xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
                          <p className='text-[#ffffff] text-base font-aeonikregular text-start md:w-[78%] w-[95%] mt-4 tracking-wide' data-aos="fade-up">Start trading now to enjoy the best rates. We provide the best and

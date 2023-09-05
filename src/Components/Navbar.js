@@ -48,17 +48,16 @@ const Navbar = () => {
         </span>
         {/*Logo*/}
 
-        {/*NavLinks*/}
-        <ul className={`md:flex mt-0 font-aeonikmedium text-sm transition-all duration-500 ease-in hidden`}>
-          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Features</Link></li>
-          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>About</Link></li>
-          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
-          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
-          <li className='mr-12 hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
-          <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support</li>
-        </ul>
-        {/*NavLinks*/}
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-8'>
+          {/*NavLinks*/}
+          <ul className={`md:flex mt-0 font-aeonikmedium text-sm transition-all duration-500 ease-in hidden`}>
+            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/about'}>About</Link></li>
+            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>Blog</Link></li>
+            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>FAQ</Link></li>
+            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
+            <li className='hover:text-[#f2f2f2] cursor-pointer' onClick={whatsappsup}>Support</li>
+          </ul>
+          {/*NavLinks*/}
 
 
           {/*Buttons*/}
@@ -98,10 +97,10 @@ const Navbar = () => {
           <div className='flex flex-col items-center justify-center text-center mt-20 space-y-10'>
             <ul className={`${open ? 'hidden' : 'float-left font-aeonikmedium text-lg transition-all duration-500 ease-in space-y-10'}`}>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Features</Link></li>
-              <li className='hover:text-black cursor-pointer'><Link to={'/'}>About</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/about'}>About</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
-              <li className='hover:text-black cursor-pointer'><Link to={'/'}>Contact</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
               <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support</li>
             </ul>
             <Link to={'/checkout'}>
