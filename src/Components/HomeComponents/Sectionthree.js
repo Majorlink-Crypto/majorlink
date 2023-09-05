@@ -7,6 +7,8 @@ import Bitcoin from '../../Assets/Bitcoin.png'
 import Ethereum from '../../Assets/Ethereum.png'
 import Tether from '../../Assets/Tether.png'
 import { Link } from 'react-router-dom'
+import CryptoTable from './CryptoTable'
+import RatesCalculator from './RatesCalculator'
 //import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@material-ui/core';
 
 const Sectionthree = () => {
@@ -15,6 +17,7 @@ const Sectionthree = () => {
     }, []);
 
     const [services, setServices] = useState([]);
+    const [navmenu, setnavmenu] = useState("Crypto")
 
     useEffect(() => {
         Aos.init({ duration: 1000 });
@@ -60,6 +63,24 @@ const Sectionthree = () => {
         }
     };
 
+    const renderComponent = () => {
+        switch (navmenu) {
+            case 'Crypto':
+                return <CryptoTable />;
+            case 'Rates Calculator':
+                return <RatesCalculator />;
+            default:
+                return <CryptoTable />;
+        }
+    }
+
+    const boxselected = "cursor-pointer items-center flex space-x-2 bg-[#EEF0FF] rounded-full py-2 md:px-6 px-3 border border-[#1B30F5] justify-center md:w-auto w-[50%]"
+    const boxnotselected = "cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 px-6 border border-[#9DA4E3] justify-center md:w-auto w-[50%]"
+    const spanselected = "md:border-4 border-2 border-[#1B30F5] rounded-full p-1"
+    const spannotselected = "md:border-4 border-2 border-[#9DA4E3] rounded-full p-1"
+    const textselected = "md:text-base text-xs text-[#1B30F5]"
+    const textnotselected = "md:text-base text-xs text-[#9DA4E3]"
+
     return (
         //Section Container
         <div className='md:mx-20 mx-6 md:mt-0 mt-10 mb-10' data-aos="fade-up">
@@ -70,65 +91,23 @@ const Sectionthree = () => {
                 <p className='text-[#273046] text-sm font-aeonikmedium mt-1 md:w-[40%]'>Get the current market rate as well as calculate your transaction
                     amount based on the rate.</p>
                 <div className='items-center md:flex md:space-x-4 md:mt-10 mt-8 md:space-y-0 space-y-3'>
-                    <div className='cursor-pointer items-center flex space-x-2 bg-[#EEF0FF] rounded-full py-2 md:px-6 px-3 border border-[#1B30F5] justify-center md:w-auto w-[50%]'>
-                        <span className='md:border-4 border-2 border-[#1B30F5] rounded-full p-1'></span>
-                        <h1 className='md:text-base text-xs text-[#1B30F5]'>Crypto</h1>
+                    <div onClick={() => (setnavmenu("Crypto"))} className={navmenu === "Crypto" ? boxselected : boxnotselected}>
+                        <span className={navmenu === "Crypto" ? spanselected : spannotselected}></span>
+                        <h1 className={navmenu === "Crypto" ? textselected : textnotselected}>Crypto</h1>
                     </div>
-                    <div className='cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
+                    <div className='cursor-not-allowed items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
                         <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
                         <h1 className='md:text-base text-xs text-[#9DA4E3]'>Gift Cards</h1>
                     </div>
-                    <div className='cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 px-6 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
-                        <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
-                        <h1 className='md:text-base text-xs text-[#9DA4E3]'>Rates Calculator</h1>
+                    <div onClick={() => (setnavmenu("Rates Calculator"))} className={navmenu === "Rates Calculator" ? boxselected : boxnotselected}>
+                        <span className={navmenu === "Rates Calculator" ? spanselected : spannotselected}></span>
+                        <h1 className={navmenu === "Rates Calculator" ? textselected : textnotselected}>Rates Calculator</h1>
                     </div>
                 </div>
             </div>
             {/*Div and contents*/}
 
-            <div className='mt-14 w-[100%]'>
-                <div className="w-[100%] flex flex-col mt-8">
-                    <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-2 rounded-2xl bg-[#F9F9FE]">
-                        <div className="py-5 align-middle inline-block min-w-full sm:px-6 lg:px-0">
-                            <div className="overflow-hidden sm:rounded-lg">
-                                <table className="min-w-full ">
-                                    <thead>
-                                        <tr>
-                                            <th className="px-6 py-3 text-left text-sm font-aeonikmedium text-[#5E6985] tracking-wider">Asset</th>
-                                            <th className="px-6 py-3 text-left text-sm font-aeonikmedium text-[#5E6985] tracking-wider">Buy Rate</th>
-                                            <th className="px-6 py-3  text-sm font-aeonikmedium text-[#5E6985] tracking-wider text-center">Sell Rate</th>
-                                            <th className="sm:table-cell px-6 py-3 text-sm font-aeonikmedium text-[#5E6985] tracking-wider text-right md:block hidden">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody className="">
-                                        {services.map((service, i) => (
-                                            <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer'>
-                                                <Link to={'/checkout'}>
-                                                    <td className="px-6 py-4 whitespace-nowrap flex items-center space-x-4 text-[#273046]">
-                                                        {getIcon(service.name)}
-                                                        <span className='text-sm font-aeonikmedium'>
-                                                            {service.name} ({getAbbreviation(service.name)})
-                                                        </span>
-                                                    </td>
-                                                </Link>
-                                                <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-left">₦{service.buy}/$</td>
-                                                <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-center">₦{service.sell}/$</td>
-                                                <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-right">
-                                                    <Link to={'/checkout'}>
-                                                        <button className="text-indigo-600 hover:text-indigo-900 font-gilroy">
-                                                            Trade
-                                                        </button>
-                                                    </Link>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {renderComponent()}
 
         </div>
         //Section Container

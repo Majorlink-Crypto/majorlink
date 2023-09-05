@@ -55,7 +55,7 @@ const Navbar = () => {
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>Blog</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>FAQ</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
-            <li className='hover:text-[#f2f2f2] cursor-pointer' onClick={whatsappsup}>Support</li>
+            <li className='hover:text-[#f2f2f2] cursor-pointer' onClick={whatsappsup}>Support on WhatsApp</li>
           </ul>
           {/*NavLinks*/}
 
@@ -101,7 +101,7 @@ const Navbar = () => {
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
-              <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support</li>
+              <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support on WhatsApp</li>
             </ul>
             <Link to={'/checkout'}>
               <button className=' text-black bg-[#fff] py-4 md:px-8 px-12 rounded-full md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
