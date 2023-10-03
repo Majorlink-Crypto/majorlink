@@ -9,6 +9,7 @@ import Tether from '../../Assets/Tether.png'
 import { Link } from 'react-router-dom'
 import CryptoTable from './CryptoTable'
 import RatesCalculator from './RatesCalculator'
+import GiftCardTable from './GiftCardTable'
 //import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@material-ui/core';
 
 const Sectionthree = () => {
@@ -52,21 +53,12 @@ const Sectionthree = () => {
         }
     };
 
-    const getAbbreviation = (name) => {
-        switch (name) {
-            case 'Bitcoin':
-                return 'BTC';
-            case 'USDT':
-                return 'USDT';
-            default:
-                return '';
-        }
-    };
-
     const renderComponent = () => {
         switch (navmenu) {
             case 'Crypto':
                 return <CryptoTable />;
+            case 'GiftCard':
+                return <GiftCardTable />;
             case 'Rates Calculator':
                 return <RatesCalculator />;
             default:
@@ -95,9 +87,9 @@ const Sectionthree = () => {
                         <span className={navmenu === "Crypto" ? spanselected : spannotselected}></span>
                         <h1 className={navmenu === "Crypto" ? textselected : textnotselected}>Crypto</h1>
                     </div>
-                    <div className='cursor-not-allowed items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
-                        <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
-                        <h1 className='md:text-base text-xs text-[#9DA4E3]'>Gift Cards</h1>
+                    <div onClick={() => (setnavmenu("GiftCard"))} className={navmenu === "GiftCard" ? boxselected : boxnotselected}>
+                        <span className={navmenu === "GiftCard" ? spanselected : spannotselected}></span>
+                        <h1 className={navmenu === "GiftCard" ? textselected : textnotselected}>Gift Cards</h1>
                     </div>
                     <div onClick={() => (setnavmenu("Rates Calculator"))} className={navmenu === "Rates Calculator" ? boxselected : boxnotselected}>
                         <span className={navmenu === "Rates Calculator" ? spanselected : spannotselected}></span>

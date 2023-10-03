@@ -29,7 +29,7 @@ const CryptoTable = () => {
                 }
             });
 
-            setServices(res.data);
+            setServices(res.data.filter(item => item.type === 'Crypto'));
             console.log(res.data)
 
         }
