@@ -22,7 +22,7 @@ const Sectiontwo = () => {
       <p className='text-[#273046] font-aeonikregular text-sm text-center mt-2 tracking-wide md:mx-28'>Every day is a celebration of success! We open our doors to new users, each embarking on their unique crypto journey. With our personalized, flexible approach, we ensure everyone begins their adventure in a way that fits just right. Join us and fuel your path to crypto triumph!</p>
       {/*Contents wrapper*/}
 
-      <div className='items-center justify-center flex flex-col md:mx-10'>
+      <div className='items-center justify-center flex flex-col md:mx-10 mx-4'>
         <Carousel
           cols={1}
           //autoplay={20000}

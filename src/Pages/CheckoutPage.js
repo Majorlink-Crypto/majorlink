@@ -101,9 +101,6 @@ function CheckoutPage() {
       {/* Right side (remaining width, full height, white background, scrollable) */}
       <div className="flex-grow  overflow-y-auto bg-white  md:w-[60%] md:px-16 px-6 pb-20 pt-10">
         {/* Content for the right side */}
-        <div className='bg-[#ffffff] border border-[#dddd] py-3 px-4 items-center rounded-full md:inline-block'>
-          <h1 className='text-[#4B5DFF] text-xs '>📢 {" "}Giftcards are currently in maintenance mode.</h1>
-        </div>
 
 
         <Link to={'/'}>
@@ -117,11 +114,9 @@ function CheckoutPage() {
         <div className='items-center md:flex md:space-x-4 mt-8 md:space-y-0 space-y-3'>
           <div className='cursor-pointer items-center flex space-x-2 bg-[#EEF0FF] rounded-full py-2 md:px-6 px-3 border border-[#1B30F5] justify-center md:w-auto w-[50%]'>
             <span className='md:border-4 border-2 border-[#1B30F5] rounded-full p-1'></span>
-            <h1 className='md:text-sm text-xs text-[#1B30F5]'>Crypto</h1>
-          </div>
-          <div className='cursor-pointer items-center flex space-x-2 bg-[#ffffff] rounded-full py-2 md:px-6 px-3 border border-[#9DA4E3] justify-center md:w-auto w-[50%]'>
-            <span className='md:border-4 border-2 border-[#9DA4E3] rounded-full p-1'></span>
-            <h1 className='md:text-sm text-xs text-[#9DA4E3]'>Gift Cards</h1>
+            <h1 className='md:text-sm text-xs text-[#1B30F5]'>Crypto &</h1>
+            <span className='md:border-4 border-2 border-[#1B30F5] rounded-full p-1'></span>
+            <h1 className='md:text-sm text-xs text-[#1B30F5]'>Gift Cards</h1>
           </div>
         </div>
 
@@ -130,7 +125,7 @@ function CheckoutPage() {
           <div className="relative mt-10 border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] focus:outline-none focus:ring-0 cursor-pointer" onClick={toggleDropdown}>
             {selectedOption ? (
               <>
-                <img src={selectedOption.name === 'Bitcoin' ? Bitcoin : Tether} alt={selectedOption.name} className="inline-block mr-6 h-6" />
+                <img src={selectedOption.icon} alt={selectedOption.name} className="inline-block mr-2 h-6 items-center rounded-full w-6" />
                 {selectedOption.name}
               </>
             ) : 'Select a currency'}
@@ -139,7 +134,7 @@ function CheckoutPage() {
               <div className="absolute w-full mt-2 border border-[#DDDDDD] rounded-xl bg-white z-10 right-1">
                 {options.map(option => (
                   <div key={option.id} className="py-3 px-3 cursor-pointer hover:bg-[#f3f3f3]" onClick={() => { setSelectedOption(option); setIsOpen(false) }}>
-                    <img src={option.name === 'Bitcoin' ? Bitcoin : Tether} alt={option.name} className="inline-block mr-6 h-6 items-center" />
+                    <img src={option.icon} alt={option.name} className="inline-block mr-2 h-6 items-center rounded-full w-6" />
                     {option.name}
                   </div>
                 ))}

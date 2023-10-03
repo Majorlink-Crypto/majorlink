@@ -61,8 +61,8 @@ const GiftCardTable = () => {
                                         {services.map((service, i) => (
                                             <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer'>
                                                 <Link to={'/checkout'}>
-                                                    <td className="px-6 py-4 whitespace-nowrap flex items-center space-x-4 text-[#273046]">
-                                                        <img src={service.imageurl} className='w-6'/>
+                                                    <td className="px-6 py-4 flex items-center space-x-4 text-[#273046]">
+                                                        <img src={service.imageurl} className='w-16'/>
                                                         <span className='text-sm font-aeonikmedium'>
                                                             {service.name} GiftCard
                                                         </span>
