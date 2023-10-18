@@ -55,16 +55,20 @@ const Navbar = () => {
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>Blog</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>FAQ</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
-            <li className='hover:text-[#f2f2f2] cursor-pointer' onClick={whatsappsup}>Support on WhatsApp</li>
           </ul>
           {/*NavLinks*/}
 
 
           {/*Buttons*/}
           <div className='flex md:mr-0 items-center font-aeonikmedium text-sm'>
-            <Link to={'/checkout'}>
-              <button className=' text-black bg-[#fff]  md:block hidden p-1 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade now</button>
-            </Link>
+            <div className='flex items-center space-x-4'>
+              <a href='https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team.%20'>
+                <button className=' text-black bg-[#fff]  md:block hidden p-1 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade on WhatsApp</button>
+              </a>
+              <Link to={'/checkout'}>
+                <button className=' text-black bg-[#fff]  md:block hidden p-1 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade now</button>
+              </Link>
+            </div>
 
             {/*Menu Icon*/}
             <span className='mt-3 text-3xl md:hidden cursor-pointer' onClick={() => setOpen(!open)}>
