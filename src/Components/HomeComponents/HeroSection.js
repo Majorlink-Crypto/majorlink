@@ -65,7 +65,7 @@ const HeroSection = () => {
                {/*Hero Header TagLine with side Image*/}
                <div className='md:flex flex flex-col md:flex-row md:justify-center md:space-x-4 md:items-center md:px-10 px-4'>
                     <div className='text-[#ffffff] md:w-[60%]'>
-                        
+
                          <h2 className='md:text-3xl text-xl font-grifter tracking-wide md:mt-20 mt-10'>Trade your GiftCards & Crypto</h2>
                          <h2 className='bigtext md:text-6xl text-5xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
                          <p className='text-[#ffffff] text-base font-aeonikregular text-start md:w-[78%] w-[95%] mt-4 tracking-wide' data-aos="fade-up">Start trading now to enjoy the best rates. We provide the best and
@@ -78,12 +78,14 @@ const HeroSection = () => {
 
                                    <h1> Trade on website</h1> </button>*/}
                               <div className='flex items-center md:space-x-6 mt-6 space-x-2'>
-                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%] cursor-pointer'>
-                                        <img src={google} className='h-5' />
-                                        <div>
-                                             <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Google Play Store</p>
-                                        </div>
-                                   </span>
+                                   <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
+                                        <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%] cursor-pointer'>
+                                             <img src={google} className='h-5' />
+                                             <div>
+                                                  <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Google Play Store</p>
+                                             </div>
+                                        </span>
+                                   </a>
                                    <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
                                         <img src={apple} className='h-5' />
                                         <div>

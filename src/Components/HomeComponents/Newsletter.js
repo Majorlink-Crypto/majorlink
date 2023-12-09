@@ -54,12 +54,14 @@ const Newsletter = () => {
         <p className='font-aeonikregular text-sm text-center'>Available to you on any device for the best of convenience</p>
 
         <div className='md:flex items-center md:space-x-5 mt-8 md:space-y-0 space-y-4'>
-          <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
-            <img src={google} className='h-5' />
-            <div>
-              <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Google Play Store</p>
-            </div>
-          </span>
+          <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
+            <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
+              <img src={google} className='h-5' />
+              <div>
+                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Google Play Store</p>
+              </div>
+            </span>
+          </a>
 
           <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
             <img src={apple} className='h-5' />

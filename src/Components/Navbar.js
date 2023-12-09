@@ -105,8 +105,11 @@ const Navbar = () => {
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
-              <li className='hover:text-black cursor-pointer' onClick={whatsappsup}>Support on WhatsApp</li>
+
             </ul>
+            <a href='https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team.%20'>
+              <button className=' text-black bg-[#fff] py-3 md:px-8 px-6 rounded-full md:h-10 md:mt-0 md:mr-0  hover:border-gray-400'>Trade on WhatsApp</button>
+            </a>
             <Link to={'/checkout'}>
               <button className=' text-black bg-[#fff] py-4 md:px-8 px-12 rounded-full md:h-10 md:mt-0 md:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
             </Link>

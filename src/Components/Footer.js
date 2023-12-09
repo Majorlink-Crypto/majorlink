@@ -104,7 +104,7 @@ const Footer = () => {
             <ul className='mt-4 text-[#3B455C] space-y-4'>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Buy Gift cards</Link></li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Sell Gift cards</Link></li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Trade Crypto</Link></li> 
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/checkout'}>Trade Crypto</Link></li>
             </ul>
           </div>
           {/* Center */}
@@ -171,12 +171,14 @@ const Footer = () => {
                 <IonIcon name='logo-facebook' color='#273046' />
               </span>
             </section>
-            <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-              <img src={google} className='h-5' />
-              <div>
-                <p className='font-aeonikmedium text-sm text-[#ffffff]'>Google Play Store</p>
-              </div>
-            </span>
+            <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
+              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
+                <img src={google} className='h-5' />
+                <div>
+                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Google Play Store</p>
+                </div>
+              </span>
+            </a>
             <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
               <img src={apple} className='h-5' />
               <div>
@@ -283,12 +285,14 @@ const Footer = () => {
             </span>
           </section>
           <div className='flex items-center mt-6 space-x-4'>
-            <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-              <img src={google} className='h-5' />
-              <div>
-                <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Google Play Store</p>
-              </div>
-            </span>
+            <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
+              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
+                <img src={google} className='h-5' />
+                <div>
+                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Google Play Store</p>
+                </div>
+              </span>
+            </a>
             <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
               <img src={apple} className='h-5' />
               <div>
