@@ -179,12 +179,15 @@ const Footer = () => {
                 </div>
               </span>
             </a>
-            <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-              <img src={apple} className='h-5' />
-              <div>
-                <p className='font-aeonikmedium text-sm text-[#ffffff]'>Apple App Store</p>
-              </div>
-            </span>
+            <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
+              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
+                <img src={apple} className='h-5' />
+                <div>
+
+                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Apple App Store</p>
+                </div>
+              </span>
+            </a>
 
           </div>
         </div>
@@ -293,12 +296,15 @@ const Footer = () => {
                 </div>
               </span>
             </a>
-            <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-              <img src={apple} className='h-5' />
-              <div>
-                <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Apple App Store</p>
-              </div>
-            </span>
+            <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
+              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
+                <img src={apple} className='h-5' />
+                <div>
+
+                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Apple App Store</p>
+                </div>
+              </span>
+            </a>
 
           </div>
         </div>

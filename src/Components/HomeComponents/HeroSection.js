@@ -77,7 +77,7 @@ const HeroSection = () => {
                                    <ion-icon name="globe-outline"></ion-icon>
 
                                    <h1> Trade on website</h1> </button>*/}
-                              <div className='flex items-center md:space-x-6 mt-6 space-x-2'>
+                              <div className='md:flex items-center md:space-x-6 mt-6 space-y-2'>
                                    <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
                                         <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%] cursor-pointer'>
                                              <img src={google} className='h-5' />
@@ -86,12 +86,14 @@ const HeroSection = () => {
                                              </div>
                                         </span>
                                    </a>
-                                   <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
-                                        <img src={apple} className='h-5' />
-                                        <div>
-                                             <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>
-                                        </div>
-                                   </span>
+                                   <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
+                                        <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
+                                             <img src={apple} className='h-5' />
+                                             <div>
+                                                  <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>
+                                             </div>
+                                        </span>
+                                   </a>
 
                               </div>
                          </div>

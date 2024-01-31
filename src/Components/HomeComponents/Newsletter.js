@@ -63,12 +63,15 @@ const Newsletter = () => {
             </span>
           </a>
 
-          <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
-            <img src={apple} className='h-5' />
-            <div>
-              <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Apple App Store</p>
-            </div>
-          </span>
+          <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
+
+            <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
+              <img src={apple} className='h-5' />
+              <div>
+                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Apple App Store</p>
+              </div>
+            </span>
+          </a>
 
           <span className=''>
             <Link to={'/checkout'}>
