@@ -87,7 +87,7 @@ const HeroSection = () => {
                                         </span>
                                    </a>
                                    <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
-                                        <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
+                                        <span className='bg-[#fff] rounded-full md:mt-0 mt-4 md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
                                              <img src={apple} className='h-5' />
                                              <div>
                                                   <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>
