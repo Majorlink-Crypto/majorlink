@@ -173,18 +173,18 @@ const Footer = () => {
             </section>
             <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-                <img src={google} className='h-5' />
+                <img src={google} alt="google" className='h-5' />
                 <div>
-                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Google Play Store</p>
+                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Play Store</p>
                 </div>
               </span>
             </a>
             <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-                <img src={apple} className='h-5' />
+                <img src={apple} alt="apple" className='h-5' />
                 <div>
 
-                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Apple App Store</p>
+                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>App Store</p>
                 </div>
               </span>
             </a>
@@ -198,7 +198,7 @@ const Footer = () => {
       {/*MOBILE DEVICE FOOTER*/}
 
       <div className='md:hidden mb-10'>
-        <div className='items-center flex flex-col justify-center text-center'>
+        <div className='items-center flex px-2 flex-col justify-center text-center'>
           <div>
             {/* Logo  */}
             <section className='flex items-center space-x-2 justify-center'>
@@ -292,7 +292,7 @@ const Footer = () => {
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
                 <img src={google} className='h-5' />
                 <div>
-                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Google Play Store</p>
+                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Play Store</p>
                 </div>
               </span>
             </a>
@@ -301,7 +301,7 @@ const Footer = () => {
                 <img src={apple} className='h-5' />
                 <div>
 
-                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Apple App Store</p>
+                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>App Store</p>
                 </div>
               </span>
             </a>

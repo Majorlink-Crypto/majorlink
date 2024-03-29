@@ -82,7 +82,7 @@ const HeroSection = () => {
                                         <span className='bg-[#fff] rounded-full md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[58%] cursor-pointer'>
                                              <img src={google} className='h-5' />
                                              <div>
-                                                  <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Google Play Store</p>
+                                                  <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Play Store</p>
                                              </div>
                                         </span>
                                    </a>
@@ -90,7 +90,7 @@ const HeroSection = () => {
                                         <span className='bg-[#fff] rounded-full md:mt-0 mt-4 md:py-4 py-4 md:px-10 px-3 flex items-center justify-center space-x-2 md:w-auto w-[56%] cursor-pointer'>
                                              <img src={apple} className='h-5' />
                                              <div>
-                                                  <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>Apple App Store</p>
+                                                  <p className='font-aeonikmedium md:text-sm text-xs text-[#4B5DFF]'>App Store</p>
                                              </div>
                                         </span>
                                    </a>

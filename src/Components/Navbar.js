@@ -15,13 +15,6 @@ const Navbar = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  {/*const location = useLocation();
-  useEffect(() => {
-      // eslint-disable-next-line
-     console.log(open ? 'close': setOpen(!open))
-     // eslint-disable-next-line
-  }, [location]);
-*/}
   const whatsapp = () => {
     window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
   }
@@ -33,7 +26,7 @@ const Navbar = () => {
     //Container for Navbar
     <div>
       {/*Navbar Box*/}
-      <div className='pt-6 pb-5 bg-[#4B5DFF] border-b-[#7D89F3] border-b flex justify-between items-center md:px-20 px-4  text-white fixed w-[100%] z-10'>
+      <div className='pt-6 pb-5 bg-[#4B5DFF] border-b-[#7D89F3] border-b flex justify-between items-center md:px-18 px-4  text-white fixed w-[100%] z-10'>
         {/*Logo*/}
         <span className='md:w-[28%] w-[27%] flex cursor-pointer items-center'>
           <Link to={'/'} className='flex items-center space-x-2'>
@@ -52,7 +45,7 @@ const Navbar = () => {
           {/*NavLinks*/}
           <ul className={`md:flex mt-0 font-aeonikmedium text-sm transition-all duration-500 ease-in hidden`}>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/about'}>About</Link></li>
-            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>Blog</Link></li>
+            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/blog'}>Blog</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>FAQ</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
           </ul>
