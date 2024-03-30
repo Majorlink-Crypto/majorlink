@@ -8,6 +8,9 @@ module.exports = {
         'about': "url('./Assets/aboutbg.png')",
        }),
       screens: {
+        'mm': {
+          min: '410px'
+        },
         'smm': {
           max: "1000px"
         },

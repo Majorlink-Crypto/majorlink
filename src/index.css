@@ -103,4 +103,22 @@ body {
 
 .swiper-nav{
   opacity:1;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+}
+
+
+@media (max-width: 1024px) {
+  .videoview .swiper-nav{
+    opacity: 0;
+  }
+
+  .videoview:hover .swiper-nav{
+    opacity: 1;
+  }
+
+  .videoview .swiper-button-disabled.swiper-nav{
+    opacity: 0.4;
+  }
+
 }

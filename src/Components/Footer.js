@@ -56,13 +56,13 @@ const Footer = () => {
   }
   return (
     //Main Container
-    <div className='md:mx-12 md:mt-40 md:p-10 mt-20'>
-      <div className='md:block hidden'>
+    <div className='lg:mx-12 lg:mt-40 lg:p-10 mt-20'>
+      <div className='lg:block hidden'>
         {/* Footer Content */}
-        <div className='md:flex justify-between'>
+        <div className='lg:flex justify-between'>
 
           {/* Logo and social media icons */}
-          <div className='md:mr-1 mr-0'>
+          <div className='lg:mr-1 mr-0'>
             {/* Logo  */}
             <section className='flex items-center space-x-2'>
               <img
@@ -98,7 +98,7 @@ const Footer = () => {
           {/* Logo and social media icons */}
 
           {/* Center */}
-          <div className='text-sm font-aeonikmedium md:mr-20 mr-0'>
+          <div className='text-sm font-aeonikmedium lg:mr-20 mr-0'>
             <h2 className='text-[#151923]'>Features</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -110,7 +110,7 @@ const Footer = () => {
           {/* Center */}
 
           {/* Right */}
-          <div className='text-sm font-gilroysemibold md:mr-20 mr-0 md:block hidden'>
+          <div className='text-sm font-gilroysemibold lg:mr-20 mr-0 lg:block hidden'>
             <h2 className='text-[#151923]'>Company</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -121,7 +121,7 @@ const Footer = () => {
           {/* Right */}
 
           {/* Right */}
-          <div className='text-sm font-gilroysemibold md:mr-10 mr-0'>
+          <div className='text-sm font-gilroysemibold lg:mr-10 mr-0'>
             <h2 className='text-[#151923]'>Legal</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -132,10 +132,8 @@ const Footer = () => {
           </div>
           {/* Right */}
 
-
-
           {/* Contact Support */}
-          <div className='text-sm font-gilroysemibold md:mt-0 mt-10 md:pb-0 pb-4 flex flex-col'>
+          <div className='text-sm font-gilroysemibold lg:mt-0 mt-10 lg:pb-0 pb-4 flex flex-col'>
             <h2 className='text-[#151923]'>Support</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -197,7 +195,7 @@ const Footer = () => {
 
       {/*MOBILE DEVICE FOOTER*/}
 
-      <div className='md:hidden mb-10'>
+      <div className='lg:hidden mb-10'>
         <div className='items-center flex px-2 flex-col justify-center text-center'>
           <div>
             {/* Logo  */}
@@ -215,9 +213,11 @@ const Footer = () => {
             <p className='font-aeonikregular text-sm mt-1 text-center'>cards & crypto to cash instantly.</p>
           </div>
 
-          <div className='mt-14 flex items-start justify-center space-x-7 text-start'>
+          <div style={{
+            // gridTemplateColumns: '4'
+          }} className='mt-14 w-[95%] mm:grid-cols-3 grid-cols-2 sm:grid-cols-4 min-w-[320px] md:w-[80%] grid text-left gap-9'>
             {/* Center */}
-            <div className='text-sm font-aeonikmedium md:mr-20 mr-0'>
+            <div className='text-sm font-aeonikmedium lg:mr-20 mr-0'>
               <h2 className='text-[#151923]'>Features</h2>
 
               <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -229,7 +229,7 @@ const Footer = () => {
             {/* Center */}
 
             {/* Right */}
-            <div className='text-sm font-gilroysemibold md:mr-20 mr-0'>
+            <div className='text-sm font-gilroysemibold lg:mr-20 mr-0'>
               <h2 className='text-[#151923]'>Company</h2>
 
               <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -240,7 +240,7 @@ const Footer = () => {
             {/* Right */}
 
             {/* Right */}
-            <div className='text-sm font-gilroysemibold md:mr-10 mr-0'>
+            <div className='text-sm font-gilroysemibold lg:mr-10 mr-0'>
               <h2 className='text-[#151923]'>Legal</h2>
 
               <ul className='mt-4 text-[#3B455C] space-y-4'>
@@ -250,23 +250,21 @@ const Footer = () => {
               </ul>
             </div>
             {/* Right */}
-          </div>
 
-        </div>
-        <div className='mt-6 items-start justify-start text-start mx-6'>
-          {/* Contact Support */}
-          <div className='text-sm font-gilroysemibold md:mt-0 mt-10 md:pb-0 pb-4 flex flex-col'>
+            <div className='text-sm font-gilroysemibold lg:mr-10 mr-0'>
             <h2 className='text-[#151923]'>Support</h2>
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>FAQs</Link></li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/contact'}>Contact Us</Link></li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>+2349071504491</li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>+905338239262</li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'tel:+2349071504491'}>+2349071504491</Link></li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'tel:+905338239262'}>+905338239262</Link></li>
             </ul>
           </div>
-          {/* Contact Support */}
+          </div>
+
         </div>
+      
 
         <div className='mt-10 items-center flex flex-col justify-center text-center'>
           <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2023 MajorLink Technologies, Ltd.</h2>
@@ -292,7 +290,7 @@ const Footer = () => {
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
                 <img src={google} className='h-5' />
                 <div>
-                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>Play Store</p>
+                  <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>Play Store</p>
                 </div>
               </span>
             </a>
@@ -301,7 +299,7 @@ const Footer = () => {
                 <img src={apple} className='h-5' />
                 <div>
 
-                  <p className='font-aeonikmedium md:text-sm text-xs text-[#ffffff]'>App Store</p>
+                  <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>App Store</p>
                 </div>
               </span>
             </a>

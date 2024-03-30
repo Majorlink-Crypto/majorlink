@@ -154,7 +154,7 @@ const Blog = () => {
                 </Swiper>
                 </div>
 
-                <div className="w-[calc(100%-400px)] smm:w-full relative px-6 bg-white min-h-[calc(100vh-85px)]">
+                <div className="w-[calc(100%-400px)] smm:w-full relative px-6 bg-white min-h-[calc(100vh-85px)] videoview smm:min-h-fit">
                     <Swiper
                         slidesPerView={1}
                         navigation={{
@@ -163,14 +163,15 @@ const Blog = () => {
                         }}
                         observer={true}
                         observeslidechildren={true}
-                        modules={[Navigation]}
+                        keyboard={true}
+                        modules={[Navigation, Keyboard]}
                         ref={videoRef}
                         className="videoview-slider"
                         onSlideChange={() => {
                             document?.querySelectorAll('.slideref')?.forEach(e => e.pause())
                         }}
                     >
-                        {videosData[videoIndex]?.map((e, i) => <SwiperSlide key={nanoid()} className="relative">
+                        {videosData[videoIndex]?.map((e, i) => <SwiperSlide key={nanoid()} className="relative h-fit">
                             <video ref={slideRef} controls className="w-full slideref bg-black h-[calc(100vh-85px)]">
                                 <source src={e} type="video/mp4" />
                                 Your browser does not support the video tag.
