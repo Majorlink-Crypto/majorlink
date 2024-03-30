@@ -19,6 +19,7 @@ import ContactPage from './Pages/ContactPage';
 import Terms from './Pages/Terms';
 import Privacy from './Pages/Privacy';
 import Aml from './Pages/Aml';
+import Blog from './Pages/blog';
 
 function App() {
   const [isloggedin, setisloggedin] = useState(false)
@@ -41,6 +42,7 @@ function App() {
        <Route path='/adminye' element={<AdminLogin/>}></Route>
        <Route path='/construction' element={<Construction/>}></Route>
        <Route path='/about' element={<About/>}></Route>
+       <Route path="/blog" element={<Blog />}/>
        <Route path='/contact' element={<ContactPage/>}></Route>
        <Route path='/terms' element={<Terms/>}></Route>
        <Route path='/privacy' element={<Privacy/>}></Route>
