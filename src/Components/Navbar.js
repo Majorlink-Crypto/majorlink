@@ -45,7 +45,7 @@ const Navbar = () => {
           {/*NavLinks*/}
           <ul className={`lg:flex mt-0 font-aeonikmedium text-sm transition-all duration-500 ease-in hidden`}>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/about'}>About</Link></li>
-            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/blog'}>Blog</Link></li>
+            <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/gallery'}>Gallery</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/'}>FAQ</Link></li>
             <li className='mr-12 hover:text-[#f2f2f2] cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
           </ul>
