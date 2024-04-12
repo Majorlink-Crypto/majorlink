@@ -10,6 +10,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { nanoid } from "nanoid";
 
+
 const Gallery = () => {
 
     const [showUp, setShowUp] = useState(false)

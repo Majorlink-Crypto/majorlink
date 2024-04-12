@@ -1,11 +1,11 @@
-import { patch, get, defaults, AxiosError } from 'axios'
+import axios from 'axios'
 import React from 'react'
 import Select from 'react-select'
 import { toast } from 'react-toastify';
 
 const Update = () => {
 
-  defaults.baseURL = 'https://main.majorlink.co/api';
+  axios.defaults.baseURL = 'https://main.majorlink.co/api';
 
   const [data, setData] = React.useState([])
   
@@ -21,7 +21,7 @@ const Update = () => {
 
     const init = async () => {
 
-      const { data: dx } = await get("/services/list", {
+      const { data: dx } = await axios.get("/services/list", {
         headers: {
           "Content-Type": "application/json"
         }
@@ -72,7 +72,7 @@ const Update = () => {
         }
 
     try {
-    await patch(`/admin/services/${selected.id}`, newx, {
+    await axios.patch(`/admin/services/${selected.id}`, newx, {
       headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
