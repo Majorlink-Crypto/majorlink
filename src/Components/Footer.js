@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import MLCOriginal from '../Assets/iconblue.png'
-import { post, defaults, AxiosError } from 'axios'
+import axios from 'axios'
 import { IonIcon } from "react-ion-icon";
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify';
@@ -23,12 +23,12 @@ const Footer = () => {
     window.open("https://wa.me/+2349071504491")
   }
 
-  defaults.baseURL = 'https://main.majorlink.co/api';
+  axios.defaults.baseURL = "https://main.majorlink.co/api";
   //const { token } = JSON.parse(localStorage.getItem('user'));
 
-  const [email, setemail] = useState('')
-  const [phone, setphone] = useState('')
-  const [message, setmessage] = useState('')
+  const [email] = useState('')
+  const [phone] = useState('')
+  const [message] = useState('')
 
   const send = async () => {
     const item = { email, message, phone }
@@ -40,7 +40,7 @@ const Footer = () => {
       toast.error('Please Fill in Message')
     } else {
       try {
-        await post(`/contact_us`, item, {
+        await axios.post(`/contact_us`, item, {
           headers: {
             'Content-Type': 'application/json',
           }

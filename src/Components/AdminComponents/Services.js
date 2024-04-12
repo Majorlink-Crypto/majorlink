@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { post, defaults, AxiosError } from 'axios'
-import Bitcoin from '../../Assets/Bitcoin.png'
-import Ethereum from '../../Assets/Ethereum.png'
-import Tether from '../../Assets/Tether.png'
-import { Link, useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 import axios from 'axios'
+import Ethereum from '../../Assets/Ethereum.png'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import BounceLoader from "react-spinners/BounceLoader";
 
 const Services = () => {
 
-  defaults.baseURL = 'https://main.majorlink.co/api';
+  axios.defaults.baseURL = 'https://main.majorlink.co/api';
 
      const navigate = useNavigate()
      const [services, setservices] = useState([])
@@ -55,7 +52,7 @@ const Services = () => {
                toast.error('Please Fill in Symbol')
              }else {
             try {
-              await post(`/admin/services/add`, item, {
+              await axios.post(`/admin/services/add`, item, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${token}`
