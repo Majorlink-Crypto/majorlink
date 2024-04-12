@@ -15,13 +15,14 @@ const Navbar = () => {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const whatsapp = () => {
-    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
-  }
+  // const whatsapp = () => {
+  //   window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
+  // }
 
-  const whatsappsup = () => {
-    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team.%20`, "_blank")
-  }
+  // const whatsappsup = () => {
+  //   window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20reach%20out%20to%20the%20support%20team.%20`, "_blank")
+  // }
+  
   return (
     //Container for Navbar
     <div>

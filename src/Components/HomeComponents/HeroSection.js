@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import arrowright from '../../Assets/arrowright.png'
-import Bitcoin from '../../Assets/Bitcoin.png'
-import Ethereum from '../../Assets/Ethereum.png'
-import Tether from '../../Assets/Tether.png'
-import MLCOriginal from '../../Assets/blackicon.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import bince from '../../Assets/bince.png'
-import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { IonIcon } from "react-ion-icon";
-import { toast } from 'react-toastify'
 import apple from '../../Assets/apple.png'
 import google from '../../Assets/google.png'
 
@@ -19,21 +11,21 @@ import '../../Assets/Styles/hero.css'
 
 const HeroSection = () => {
 
-     const [name, setname] = useState('')
+     // const [name, setname] = useState('')
 
-     const whatsapp = () => {
-          window.open(`https://wa.me/+905338239262?text=Hello,%20I%20am%20and%20I%20will%20like%20to%20start%20trading%20with%20Majorlink%20`, "_blank")
-     }
+     // const whatsapp = () => {
+     //      window.open(`https://wa.me/+905338239262?text=Hello,%20I%20am%20and%20I%20will%20like%20to%20start%20trading%20with%20Majorlink%20`, "_blank")
+     // }
 
-     const devDate = (timestamp) => {
-          const date = new Date(timestamp);
-          const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec']
+     // const devDate = (timestamp) => {
+     //      const date = new Date(timestamp);
+     //      const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Nov', 'Dec']
 
-          const hour = date.getHours() % 12 || 12;
+     //      const hour = date.getHours() % 12 || 12;
 
-          return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} ${hour}:${date.getMinutes()}${hour >= 12 ? "PM" : "AM"}.`;
+     //      return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()} ${hour}:${date.getMinutes()}${hour >= 12 ? "PM" : "AM"}.`;
 
-     }
+     // }
 
      const [services, setServices] = useState([]);
 
@@ -120,7 +112,7 @@ const HeroSection = () => {
                          <img
                               className='mt-[-20] w-[90%] md:flex hidden'
                               src={bince}
-                              alt='image'
+                              alt='img'
                          />
                     </span>
                </div>

@@ -3,10 +3,7 @@ import spiral from '../Assets/spiral.png'
 import '../Assets/Styles/hero.css'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
 import axios from 'axios'
-import Bitcoin from '../Assets/Bitcoin.png'
-import Tether from '../Assets/Tether.png'
 
 function CheckoutPage() {
 

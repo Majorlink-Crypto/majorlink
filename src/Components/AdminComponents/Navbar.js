@@ -17,13 +17,7 @@ const Navbar = () => {
     Aos.init({duration: 2000});
   }, []);
 
- {/*const location = useLocation();
-  useEffect(() => {
-      // eslint-disable-next-line
-     console.log(open ? 'close': setOpen(!open))
-     // eslint-disable-next-line
-  }, [location]);
-*/}
+ 
 
 const logout = () => {
   localStorage.clear()

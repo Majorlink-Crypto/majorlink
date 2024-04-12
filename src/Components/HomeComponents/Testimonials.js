@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import tobi from '../../Assets/tobi.jpg'
 import Aos from 'aos'
 import {IonIcon} from "react-ion-icon";
 import "aos/dist/aos.css"

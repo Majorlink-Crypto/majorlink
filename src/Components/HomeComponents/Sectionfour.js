@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react'
-import security from '../../Assets/security.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 
-import exp1 from "../../Assets/exp1.jpeg"
 
 const Sectionfour = () => {
     useEffect(() => {

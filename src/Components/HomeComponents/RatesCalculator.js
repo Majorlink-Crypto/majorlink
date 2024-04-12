@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 import axios from 'axios'
-import Bitcoin from '../../Assets/Bitcoin.png'
-import Tether from '../../Assets/Tether.png'
 
 function RatesCalculator() {
 
@@ -47,35 +44,35 @@ function RatesCalculator() {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
-  const checkout = async () => {
-    // Check for missing or invalid inputs
-    if (!selectedOption) {
-        toast.error('Please select a currency.');
-        return;
-    }
+//   const checkout = async () => {
+//     // Check for missing or invalid inputs
+//     if (!selectedOption) {
+//         toast.error('Please select a currency.');
+//         return;
+//     }
 
-    if (!rateType) {
-        toast.error('Please select a rate type.');
-        return;
-    }
+//     if (!rateType) {
+//         toast.error('Please select a rate type.');
+//         return;
+//     }
 
-    if (!amount || amount <= 0) {
-        toast.error('Please enter a valid transaction amount.');
-        return;
-    }
+//     if (!amount || amount <= 0) {
+//         toast.error('Please enter a valid transaction amount.');
+//         return;
+//     }
 
-    // Main logic: initiate WhatsApp conversation (or any other primary action)
-    const transactionType = rateType === 'buy' ? "purchase" : "sell";
-    const baseMessage = `Good day, I'd like to ${transactionType} $${amount} worth of ${selectedOption.name}. Could you provide further assistance regarding the procedure and any other relevant details? Thank you.`;
-    const encodedMessage = encodeURIComponent(baseMessage);
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=+2349071504491&text=${encodedMessage}`;
+//     // Main logic: initiate WhatsApp conversation (or any other primary action)
+//     const transactionType = rateType === 'buy' ? "purchase" : "sell";
+//     const baseMessage = `Good day, I'd like to ${transactionType} $${amount} worth of ${selectedOption.name}. Could you provide further assistance regarding the procedure and any other relevant details? Thank you.`;
+//     const encodedMessage = encodeURIComponent(baseMessage);
+//     const whatsappUrl = `https://api.whatsapp.com/send?phone=+2349071504491&text=${encodedMessage}`;
     
-    window.open(whatsappUrl, '_blank');
+//     window.open(whatsappUrl, '_blank');
 
-    // If the main logic executes without issues
-    toast.success('Success! Redirecting to WhatsApp...');
-    setAmount("")
-}
+//     // If the main logic executes without issues
+//     toast.success('Success! Redirecting to WhatsApp...');
+//     setAmount("")
+// }
 
 
 

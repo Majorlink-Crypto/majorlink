@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react'
-import arrow from '../../Assets/arrow.png'
-import learnaboutuscard from '../../Assets/learnaboutuscard.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
-import abtright from '../../Assets/abtright.png'
 import { Link } from 'react-router-dom'
 
 const AboutSection = () => {

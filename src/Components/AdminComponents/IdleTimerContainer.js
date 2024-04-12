@@ -2,7 +2,7 @@ import {React, useRef } from 'react'
 import IdleTimer from 'react-idle-timer'
 import { toast } from 'react-toastify'
 // ** React Imports
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 function IdleTimerContainer() {

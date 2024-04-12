@@ -1,6 +1,5 @@
 // VideoPlaceholder.js
 import React from 'react';
-import { BsFillChatLeftDotsFill } from 'react-icons/bs';
 import ambvideo from '../../Assets/videos/amb.mp4'
 import { Link } from 'react-router-dom';
 

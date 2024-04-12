@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import img1 from '../../Assets/GiftCards/googleplay.png';
 import img2 from '../../Assets/GiftCards/amazon.png';
 import img3 from '../../Assets/GiftCards/itunes.png';
@@ -22,9 +22,9 @@ const Newsletter = () => {
 
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
 
-  const whatsapp = () => {
-    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
-  }
+  // const whatsapp = () => {
+  //   window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
+  // }
 
   return (
     //Container

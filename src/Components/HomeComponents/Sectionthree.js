@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import transact from "../../Assets/transact.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import Bitcoin from "../../Assets/Bitcoin.png";
 import Ethereum from "../../Assets/Ethereum.png";
 import Tether from "../../Assets/Tether.png";
-import { Link } from "react-router-dom";
 import CryptoTable from "./CryptoTable";
 import RatesCalculator from "./RatesCalculator";
 import GiftCardTable from "./GiftCardTable";
@@ -149,16 +147,16 @@ const Sectionthree = () => {
  
   };
 
-  const getIcon = (name) => {
-    switch (name) {
-      case "Bitcoin":
-        return <img src={Bitcoin} alt="Bitcoin Icon" className="h-6" />;
-      case "USDT":
-        return <img src={Tether} alt="USDT Icon" className="h-6" />;
-      default:
-        return null;
-    }
-  };
+  // const getIcon = (name) => {
+  //   switch (name) {
+  //     case "Bitcoin":
+  //       return <img src={Bitcoin} alt="Bitcoin Icon" className="h-6" />;
+  //     case "USDT":
+  //       return <img src={Tether} alt="USDT Icon" className="h-6" />;
+  //     default:
+  //       return null;
+  //   }
+  // };
 
   const renderComponent = () => {
     switch (navmenu) {
