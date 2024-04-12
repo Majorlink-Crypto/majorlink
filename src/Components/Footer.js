@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MLCOriginal from '../Assets/iconblue.png'
 import axios from 'axios'
 import { IonIcon } from "react-ion-icon";
 import { Link } from 'react-router-dom'
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 
 import apple from '../Assets/appstoren.png'
 import google from '../Assets/playstoren.png'
@@ -26,34 +26,35 @@ const Footer = () => {
   axios.defaults.baseURL = "https://main.majorlink.co/api";
   //const { token } = JSON.parse(localStorage.getItem('user'));
 
-  const [email] = useState('')
-  const [phone] = useState('')
-  const [message] = useState('')
+  // const [email] = useState('')
+  // const [phone] = useState('')
+  // const [message] = useState('')
 
-  const send = async () => {
-    const item = { email, message, phone }
-    if (email === '') {
-      toast.error('Please Fill in Email')
-    } else if (phone === '') {
-      toast.error('Please Fill in Phone')
-    } else if (message === '') {
-      toast.error('Please Fill in Message')
-    } else {
-      try {
-        await axios.post(`/contact_us`, item, {
-          headers: {
-            'Content-Type': 'application/json',
-          }
-        });
-        toast.success(`Message sent successfully`);
+  // const send = async () => {
+  //   const item = { email, message, phone }
+  //   if (email === '') {
+  //     toast.error('Please Fill in Email')
+  //   } else if (phone === '') {
+  //     toast.error('Please Fill in Phone')
+  //   } else if (message === '') {
+  //     toast.error('Please Fill in Message')
+  //   } else {
+  //     try {
+  //       await axios.post(`/contact_us`, item, {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         }
+  //       });
+  //       toast.success(`Message sent successfully`);
 
-      } catch (err) {
-        if (err.response) {
-          toast.error("something went wrong, please check that your email is correct and try again");
-        }
-      }
-    }
-  }
+  //     } catch (err) {
+  //       if (err.response) {
+  //         toast.error("something went wrong, please check that your email is correct and try again");
+  //       }
+  //     }
+  //   }
+  // }
+
   return (
     //Main Container
     <div className='lg:mx-12 lg:mt-40 lg:p-10 mt-20'>
@@ -288,7 +289,7 @@ const Footer = () => {
           <div className='flex items-center mt-6 space-x-4'>
             <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-                <img src={google} className='h-5' />
+                <img alt={'play store'} src={google} className='h-5' />
                 <div>
                   <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>Play Store</p>
                 </div>
@@ -296,7 +297,7 @@ const Footer = () => {
             </a>
             <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-                <img src={apple} className='h-5' />
+                <img src={apple} alt={'app store'} className='h-5' />
                 <div>
 
                   <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>App Store</p>

@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import transact from '../../Assets/transact.png'
 import Aos from 'aos'
 import "aos/dist/aos.css"
 import axios from 'axios'
-import Bitcoin from '../../Assets/Bitcoin.png'
-import Ethereum from '../../Assets/Ethereum.png'
-import Tether from '../../Assets/Tether.png'
 import { Link } from 'react-router-dom'
 //import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@material-ui/core';
 
@@ -62,7 +58,7 @@ const GiftCardTable = () => {
                                             <tr key={i} className='hover:bg-[#f2f2f2] cursor-pointer'>
                                                 <Link to={'/checkout'}>
                                                     <td className="px-6 py-4 flex items-center space-x-4 text-[#273046]">
-                                                        <img src={service.imageurl} className='w-16'/>
+                                                        <img alt={'service img'} src={service.imageurl} className='w-16'/>
                                                         <span className='text-sm font-aeonikmedium'>
                                                             {service.name} GiftCard
                                                         </span>

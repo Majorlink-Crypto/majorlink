@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Ethereum from '../../Assets/Ethereum.png'
-import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import BounceLoader from "react-spinners/BounceLoader";
 
@@ -9,7 +8,6 @@ const Services = () => {
 
   axios.defaults.baseURL = 'https://main.majorlink.co/api';
 
-     const navigate = useNavigate()
      const [services, setservices] = useState([])
      const user = JSON.parse(localStorage.getItem('user'))
      const token = user.token
@@ -18,7 +16,8 @@ const Services = () => {
      const [sell, addsell] = useState('')
      const [symbol, addsymbol] = useState('')
      const [loading, setLoading] = useState(false);  
-     const APIURL = ('https://main.majorlink.co/api/admin/services/add')
+
+    //  const APIURL = ('https://main.majorlink.co/api/admin/services/add')
 
      useEffect(() => {
        const init = async () => {
@@ -68,7 +67,6 @@ const Services = () => {
           }
         }
 
-     const populate = []
   return (
 
       //Main Container
