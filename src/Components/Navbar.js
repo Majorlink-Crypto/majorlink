@@ -96,7 +96,7 @@ const Navbar = () => {
             <ul className={`${open ? 'hidden' : 'float-left font-aeonikmedium text-lg transition-all duration-500 ease-in space-y-10'}`}>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>Features</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/about'}>About</Link></li>
-              <li className='hover:text-black cursor-pointer'><Link to={'/'}>Blog</Link></li>
+              <li className='hover:text-black cursor-pointer'><Link to={'/gallery'}>Gallery</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/'}>FAQs</Link></li>
               <li className='hover:text-black cursor-pointer'><Link to={'/contact'}>Contact</Link></li>
 
@@ -105,7 +105,7 @@ const Navbar = () => {
               <button className=' text-black bg-[#fff] py-3 lg:px-8 px-6 rounded-full lg:h-10 lg:mt-0 lg:mr-0  hover:border-gray-400'>Trade on WhatsApp</button>
             </a>
             <Link to={'/checkout'}>
-              <button className=' text-black bg-[#fff] py-4 lg:px-8 px-12 rounded-full lg:h-10 lg:mt-0 lg:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
+              <button className=' text-black bg-[#fff] py-4 w-full lg:px-8 px-12 rounded-full lg:h-10 lg:mt-0 lg:mr-0 mr-6 hover:border-gray-400'>Trade now</button>
             </Link>
           </div>
         </div>
