@@ -9,6 +9,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { nanoid } from "nanoid";
+import ScrollToTop from "../Components/scrollTop";
 
 
 const Gallery = () => {
@@ -88,6 +89,7 @@ const Gallery = () => {
     return (
         <>
             <Navbar />
+            <ScrollToTop />
             <div className="min-h-[calc(100vh-85px)] relative top-[85px] flex items-center smm:flex-col w-full justify-between bg-[#e4e4e4c1]">
                 
                 <div className="h-[300px] hidden smm:block w-full mb-2 bg-white">

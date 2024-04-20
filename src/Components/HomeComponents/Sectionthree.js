@@ -194,8 +194,8 @@ const Sectionthree = () => {
                   Bitcoin (BTC)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                 ${bitcoin[0]?.quote?.USD?.price !== undefined
-                    ? bitcoin[0]?.quote?.USD?.price
+                 ${bitcoin?.[0]?.quote?.USD?.price !== undefined
+                    ? bitcoin?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -210,8 +210,8 @@ const Sectionthree = () => {
                   Ethereum (ETH)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${ethereum[0]?.quote?.USD?.price !== undefined
-                    ? ethereum[0]?.quote?.USD?.price
+                  ${ethereum?.[0]?.quote?.USD?.price !== undefined
+                    ? ethereum?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -226,8 +226,8 @@ const Sectionthree = () => {
                   USDT ($)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${tether[0]?.quote?.USD?.price !== undefined
-                    ? tether[0]?.quote?.USD?.price
+                  ${tether?.[0]?.quote?.USD?.price !== undefined
+                    ? tether?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -242,8 +242,8 @@ const Sectionthree = () => {
                   BNB (BNB)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${bnb[0]?.quote?.USD?.price !== undefined
-                    ? bnb[0]?.quote?.USD?.price
+                  ${bnb?.[0]?.quote?.USD?.price !== undefined
+                    ? bnb?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -258,8 +258,8 @@ const Sectionthree = () => {
                   Litecoin (LTC)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${ltc[0]?.quote?.USD?.price !== undefined
-                    ? ltc[0]?.quote?.USD?.price
+                  ${ltc?.[0]?.quote?.USD?.price !== undefined
+                    ? ltc?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}

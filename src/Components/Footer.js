@@ -116,7 +116,7 @@ const Footer = () => {
 
             <ul className='mt-4 text-[#3B455C] space-y-4'>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>About</Link></li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>Blog</li>
+              <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/gallery'}>Gallery</Link></li>
             </ul>
           </div>
           {/* Right */}
@@ -235,7 +235,7 @@ const Footer = () => {
 
               <ul className='mt-4 text-[#3B455C] space-y-4'>
                 <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>About</Link></li>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'>Blog</li>
+                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/gallery'}>Gallery</Link></li>
               </ul>
             </div>
             {/* Right */}
