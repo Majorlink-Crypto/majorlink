@@ -151,7 +151,7 @@ const Footer = () => {
         {/* Footer Content */}
 
         <div className='flex justify-between mt-52 items-baseline'>
-          <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2023 MajorLink Technologies, Ltd.</h2>
+          <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2024 MajorLink Technologies, Ltd.</h2>
 
           <div className='flex items-center space-x-5 mb-10'>
             <section className='flex mt-6 text-[#646464] text-xl mb-4'>
@@ -269,7 +269,7 @@ const Footer = () => {
         </div>
 
         <div className='mt-10 items-center flex flex-col justify-center text-center'>
-          <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2023 MajorLink Technologies, Ltd.</h2>
+          <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2024 MajorLink Technologies, Ltd.</h2>
           <section className='flex mt-6 text-[#646464] text-xl mb-4'>
             <span className='mr-4 cursor-pointer' onClick={whatsapp}>
               <IonIcon name='logo-whatsapp' color='#eeee' />

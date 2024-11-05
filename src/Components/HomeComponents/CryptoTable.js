@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import transact from "../../Assets/transact.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import Bitcoin from "../../Assets/Bitcoin.png";
-import Ethereum from "../../Assets/Ethereum.png";
 import Tether from "../../Assets/Tether.png";
 import { Link } from "react-router-dom";
-//import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@material-ui/core';
 
 const CryptoTable = () => {
   useEffect(() => {
@@ -95,10 +92,10 @@ const CryptoTable = () => {
                           </td>
                         </Link>
                         <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-left">
-                          ₦{service.buy}/$
+                          ₦{service.web_buy}/$
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-center">
-                          ₦{service.sell}/$
+                          ₦{service.web_sell}/$
                         </td>
                         <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-right">
                           <Link to={"/checkout"}>
