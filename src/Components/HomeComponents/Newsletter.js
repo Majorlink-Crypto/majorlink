@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import img1 from '../../Assets/GiftCards/googleplay.png';
 import img2 from '../../Assets/GiftCards/amazon.png';
 import img3 from '../../Assets/GiftCards/itunes.png';
@@ -22,9 +22,9 @@ const Newsletter = () => {
 
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13];
 
-  const whatsapp = () => {
-    window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
-  }
+  // const whatsapp = () => {
+  //   window.open(`https://wa.me/+2349071504491?text=Hello,%20Majorlink%20I%20would%20like%20to%20trade%20my%20cryptocurrency%20or%20giftcards.%20`, "_blank")
+  // }
 
   return (
     //Container
@@ -56,9 +56,9 @@ const Newsletter = () => {
         <div className='md:flex items-center md:space-x-5 mt-8 md:space-y-0 space-y-4'>
           <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
             <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
-              <img src={google} className='h-5' />
+              <img src={google} alt="google" className='h-5' />
               <div>
-                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Google Play Store</p>
+                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Play Store</p>
               </div>
             </span>
           </a>
@@ -66,9 +66,9 @@ const Newsletter = () => {
           <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
 
             <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
-              <img src={apple} className='h-5' />
+              <img src={apple} alt="apple" className='h-5' />
               <div>
-                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Apple App Store</p>
+                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>App Store</p>
               </div>
             </span>
           </a>

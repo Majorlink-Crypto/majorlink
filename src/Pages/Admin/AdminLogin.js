@@ -13,6 +13,7 @@ const AdminLogin = () => {
     const navigate = useNavigate()
     
     const APIURL = ('https://main.majorlink.co/api/admin/login')
+    
     const [email, setemail] = useState('')
      const [password, setpassword] = useState('')
 
@@ -20,7 +21,7 @@ const AdminLogin = () => {
         async function login() {
             const item = {email, password}
             if (email.length) {
-                if (email.match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) !== null) {
+                if (email.match(/^([a-zA-Z0-9_\-.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) !== null) {
                   setLoading(true)
                 fetch((APIURL), {
                  method: 'POST',

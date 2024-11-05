@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Navbar from '../Components/Navbar'
 import CookieConsent from 'react-cookie-consent'
 import HeroSection from '../Components/HomeComponents/HeroSection'
 import Sectiontwo from '../Components/HomeComponents/Sectiontwo'
 import Sectionthree from '../Components/HomeComponents/Sectionthree'
-import Sectionfour from '../Components/HomeComponents/Sectionfour'
 import AboutSection from '../Components/HomeComponents/AboutSection'
-import Testimonials from '../Components/HomeComponents/Testimonials'
 import Newsletter from '../Components/HomeComponents/Newsletter'
 import Footer from '../Components/Footer'
 

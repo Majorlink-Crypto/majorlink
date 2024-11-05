@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import transact from "../../Assets/transact.png";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import Bitcoin from "../../Assets/Bitcoin.png";
 import Ethereum from "../../Assets/Ethereum.png";
 import Tether from "../../Assets/Tether.png";
-import { Link } from "react-router-dom";
 import CryptoTable from "./CryptoTable";
 import RatesCalculator from "./RatesCalculator";
 import GiftCardTable from "./GiftCardTable";
@@ -149,16 +147,16 @@ const Sectionthree = () => {
  
   };
 
-  const getIcon = (name) => {
-    switch (name) {
-      case "Bitcoin":
-        return <img src={Bitcoin} alt="Bitcoin Icon" className="h-6" />;
-      case "USDT":
-        return <img src={Tether} alt="USDT Icon" className="h-6" />;
-      default:
-        return null;
-    }
-  };
+  // const getIcon = (name) => {
+  //   switch (name) {
+  //     case "Bitcoin":
+  //       return <img src={Bitcoin} alt="Bitcoin Icon" className="h-6" />;
+  //     case "USDT":
+  //       return <img src={Tether} alt="USDT Icon" className="h-6" />;
+  //     default:
+  //       return null;
+  //   }
+  // };
 
   const renderComponent = () => {
     switch (navmenu) {
@@ -196,8 +194,8 @@ const Sectionthree = () => {
                   Bitcoin (BTC)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                 ${bitcoin[0]?.quote?.USD?.price !== undefined
-                    ? bitcoin[0]?.quote?.USD?.price
+                 ${bitcoin?.[0]?.quote?.USD?.price !== undefined
+                    ? bitcoin?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -212,8 +210,8 @@ const Sectionthree = () => {
                   Ethereum (ETH)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${ethereum[0]?.quote?.USD?.price !== undefined
-                    ? ethereum[0]?.quote?.USD?.price
+                  ${ethereum?.[0]?.quote?.USD?.price !== undefined
+                    ? ethereum?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -228,8 +226,8 @@ const Sectionthree = () => {
                   USDT ($)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${tether[0]?.quote?.USD?.price !== undefined
-                    ? tether[0]?.quote?.USD?.price
+                  ${tether?.[0]?.quote?.USD?.price !== undefined
+                    ? tether?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -244,8 +242,8 @@ const Sectionthree = () => {
                   BNB (BNB)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${bnb[0]?.quote?.USD?.price !== undefined
-                    ? bnb[0]?.quote?.USD?.price
+                  ${bnb?.[0]?.quote?.USD?.price !== undefined
+                    ? bnb?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}
@@ -260,8 +258,8 @@ const Sectionthree = () => {
                   Litecoin (LTC)
                 </h1>
                 <h1 className="text-[#273046] text-md font-aeonikmedium">
-                  ${ltc[0]?.quote?.USD?.price !== undefined
-                    ? ltc[0]?.quote?.USD?.price
+                  ${ltc?.[0]?.quote?.USD?.price !== undefined
+                    ? ltc?.[0]?.quote?.USD?.price
                         .toFixed(2)
                         .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
                     : "Getting the price..."}

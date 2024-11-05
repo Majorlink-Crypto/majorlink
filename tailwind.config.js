@@ -7,6 +7,17 @@ module.exports = {
         'newsletter': "url('./Assets/newsletter.png')",
         'about': "url('./Assets/aboutbg.png')",
        }),
+      screens: {
+        'mm': {
+          min: '410px'
+        },
+        'smm': {
+          max: "1000px"
+        },
+        'mmm': {
+          max: '850px'
+        }
+      },
       fontFamily: {
         aeonikmedium: ['AeonikMedium', 'sans-serif'],
         aeonikregular: ['AeonikRegular', 'sans-serif'],
