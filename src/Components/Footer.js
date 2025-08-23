@@ -141,7 +141,6 @@ const Footer = () => {
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>FAQs</Link></li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/contact'}>Contact Us</Link></li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'>+2349071504491</li>
-              <li className='cursor-pointer hover:text-[#4B5DFF]'>+905338239262</li>
             </ul>
           </div>
           {/* Contact Support */}
@@ -174,16 +173,7 @@ const Footer = () => {
               <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
                 <img src={google} alt="google" className='h-5' />
                 <div>
-                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Play Store</p>
-                </div>
-              </span>
-            </a>
-            <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
-              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-                <img src={apple} alt="apple" className='h-5' />
-                <div>
-
-                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>App Store</p>
+                  <p className='font-aeonikmedium text-sm text-[#ffffff]'>Download on Playstore</p>
                 </div>
               </span>
             </a>
@@ -259,7 +249,6 @@ const Footer = () => {
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/'}>FAQs</Link></li>
               <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'/contact'}>Contact Us</Link></li>
                 <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'tel:+2349071504491'}>+2349071504491</Link></li>
-                <li className='cursor-pointer hover:text-[#4B5DFF]'><Link to={'tel:+905338239262'}>+905338239262</Link></li>
             </ul>
           </div>
           </div>
@@ -268,7 +257,7 @@ const Footer = () => {
       
 
         <div className='mt-10 items-center flex flex-col justify-center text-center'>
-          <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2024 MajorLink Technologies, Ltd.</h2>
+          <h2 className='text-start font-gilroysemibold text-sm text-[#3B455C] mt-10'> © 2025 MajorLink Technologies, Ltd.</h2>
           <section className='flex mt-6 text-[#646464] text-xl mb-4'>
             <span className='mr-4 cursor-pointer' onClick={whatsapp}>
               <IonIcon name='logo-whatsapp' color='#eeee' />
@@ -288,19 +277,10 @@ const Footer = () => {
           </section>
           <div className='flex items-center mt-6 space-x-4'>
             <a href='https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp'>
-              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
+              <span className='rounded-full py-4 px-6 flex items-center space-x-2 bg-[#273046] cursor-pointer'>
                 <img alt={'play store'} src={google} className='h-5' />
                 <div>
-                  <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>Play Store</p>
-                </div>
-              </span>
-            </a>
-            <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
-              <span className='rounded-full py-4 px-6 flex items-center space-x-3 bg-[#273046] cursor-pointer'>
-                <img src={apple} alt={'app store'} className='h-5' />
-                <div>
-
-                  <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>App Store</p>
+                  <p className='font-aeonikmedium lg:text-sm text-xs text-[#ffffff]'>Download on Playstore</p>
                 </div>
               </span>
             </a>

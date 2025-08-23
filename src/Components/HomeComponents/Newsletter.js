@@ -58,17 +58,7 @@ const Newsletter = () => {
             <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
               <img src={google} alt="google" className='h-5' />
               <div>
-                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Play Store</p>
-              </div>
-            </span>
-          </a>
-
-          <a href='https://apps.apple.com/us/app/majorlink/id6472656224'>
-
-            <span className='bg-[#fff] rounded-full py-3 px-6 flex items-center space-x-3 border border-[#4B5DFF] cursor-pointer'>
-              <img src={apple} alt="apple" className='h-5' />
-              <div>
-                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>App Store</p>
+                <p className='font-aeonikmedium text-sm text-[#4B5DFF]'>Download on Playstore</p>
               </div>
             </span>
           </a>
