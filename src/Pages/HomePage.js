@@ -2,10 +2,15 @@ import React from 'react'
 import Navbar from '../Components/Navbar'
 import CookieConsent from 'react-cookie-consent'
 import HeroSection from '../Components/HomeComponents/HeroSection'
-import Sectiontwo from '../Components/HomeComponents/Sectiontwo'
+import StatsBar from '../Components/HomeComponents/StatsBar'
+import FeaturesSection from '../Components/HomeComponents/FeaturesSection'
+import ServicesSection from '../Components/HomeComponents/ServicesSection'
+import HowItWorks from '../Components/HomeComponents/HowItWorks'
 import Sectionthree from '../Components/HomeComponents/Sectionthree'
-import AboutSection from '../Components/HomeComponents/AboutSection'
-import Newsletter from '../Components/HomeComponents/Newsletter'
+import FaqSection from '../Components/HomeComponents/FaqSection'
+import AppShowcaseSection from '../Components/HomeComponents/AppShowcaseSection'
+import TestimonialsSection from '../Components/HomeComponents/TestimonialsSection'
+import CtaBanner from '../Components/HomeComponents/CtaBanner'
 import Footer from '../Components/Footer'
 
 const HomePage = () => {
@@ -13,10 +18,15 @@ const HomePage = () => {
     <div>
       <Navbar />
       <HeroSection />
+      <StatsBar />
+      <ServicesSection />
+      <HowItWorks />
       <Sectionthree />
-      <AboutSection />
-      <Sectiontwo />
-      <Newsletter />
+      <FeaturesSection />
+      <FaqSection />
+      <AppShowcaseSection />
+      <TestimonialsSection />
+      <CtaBanner />
       <Footer />
       <div className='mx-10'>
         <CookieConsent debug={true} className='motion-safe:animate-fadeIn'>
