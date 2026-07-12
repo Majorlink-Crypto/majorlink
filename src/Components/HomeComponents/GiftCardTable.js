@@ -1,97 +1,86 @@
 import React, { useEffect, useState } from "react";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
-//import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@material-ui/core';
+import { RATES_SECTION_CONTENT } from "../../data/content";
+import { TEXT_STYLES, textStyle } from "../../data/constants";
+
+const { giftCardTable: t, coins } = RATES_SECTION_CONTENT;
+
+const formatRate = (value) => {
+  if (!value) return "—";
+  return "₦" + Number(value).toLocaleString("en-NG");
+};
 
 const GiftCardTable = () => {
-  useEffect(() => {
-    Aos.init({ duration: 1000 });
-  }, []);
-
   const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Aos.init({ duration: 1000 });
-
     const init = async () => {
-      axios.defaults.baseURL = "https://main.majorlink.co/api";
-
-      const res = await axios.get("/services/list", {
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json",
-        },
-      });
-
-      setServices(res.data.filter((item) => item.type === "GiftCard"));
-      console.log(res.data);
+      try {
+        const res = await axios.get("https://main.majorlink.co/api/services/list", {
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json",
+          },
+        });
+        setServices(res.data.filter((item) => item.type === "GiftCard"));
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
     };
-
     init();
   }, []);
 
   return (
-    //Section Container
-    <div className="">
-      <div className="mt-14 w-[100%]">
-        <div className="w-[100%] flex flex-col mt-8">
-          <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-2 rounded-2xl bg-[#F9F9FE]">
-            <div className="py-5 align-middle inline-block min-w-full sm:px-6 lg:px-0">
-              <div className="overflow-hidden sm:rounded-lg">
-                <table className="min-w-full ">
-                  <thead>
-                    <tr>
-                      <th className="px-6 py-3 text-left text-sm font-aeonikmedium text-[#5E6985] tracking-wider">
-                        Asset
-                      </th>
-                      <th className="px-6 py-3 text-left text-sm font-aeonikmedium text-[#5E6985] tracking-wider">
-                        Buy Rate
-                      </th>
-                      <th className="px-6 py-3  text-sm font-aeonikmedium text-[#5E6985] tracking-wider text-center">
-                        Sell Rate
-                      </th>
-                      <th className="sm:table-cell px-6 py-3 text-sm font-aeonikmedium text-[#5E6985] tracking-wider text-right md:block hidden">
-                        Action
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="">
-                    {services.map((service, i) => (
-                      <tr key={i} className="hover:bg-[#f2f2f2] cursor-pointer">
-                        <Link to={"/checkout"}>
-                          <td className="px-6 py-4 flex items-center space-x-4 text-[#273046]">
-                            <img alt={'service img'} src={service.imageurl} className="w-16" />
-                            <span className="text-sm font-aeonikmedium">
-                              {service.name} GiftCard
-                            </span>
-                          </td>
-                        </Link>
-                        <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-left">
-                          ₦{service.buy}/$
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap font-gilroy animate-pulse text-[#273046] text-center">
-                          ₦{service.sell}/$
-                        </td>
-                        <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-right">
-                          <Link to={"/checkout"}>
-                            <button className="text-indigo-600 hover:text-indigo-900 font-gilroy">
-                              Trade
-                            </button>
-                          </Link>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="bg-[#F4F4F8] rounded-2xl overflow-hidden">
+      {/* Table header */}
+      <div className="grid grid-cols-3 px-5 py-3 border-b border-[#E4E4ED]">
+        <span style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnAsset}</span>
+        <span style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnBuyRate}</span>
+        <span style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnSellRate}</span>
       </div>
+
+      {/* Rows */}
+      {loading ? (
+        <div className="flex justify-center items-center py-10 text-sm text-[#8A90A4]">
+          {t.loadingText}
+        </div>
+      ) : services.length === 0 ? (
+        <div className="flex justify-center items-center py-10 text-sm text-[#8A90A4]">
+          {t.emptyText}
+        </div>
+      ) : (
+        services.map((service, i) => {
+          const coin = coins[service.name];
+          return (
+            <Link to="/checkout" key={i}>
+              <div className="grid grid-cols-3 items-center px-5 py-3 hover:bg-[#EBEBF5] transition-colors duration-150 cursor-pointer border-b border-[#E4E4ED] last:border-0">
+                <div className="flex items-center space-x-3">
+                  <img
+                    src={coin?.icon || service.imageurl}
+                    alt={service.name}
+                    className="w-7 h-7 rounded-full object-cover"
+                    onError={(e) => { e.target.onerror = null; e.target.src = service.imageurl; }}
+                  />
+                  <span style={textStyle(TEXT_STYLES.ratesTableValue)}>
+                    {service.name}
+                  </span>
+                </div>
+                <span className="animate-pulse" style={textStyle(TEXT_STYLES.ratesTableValue)}>
+                  {formatRate(service.buy)}/$
+                </span>
+                <span className="animate-pulse" style={textStyle(TEXT_STYLES.ratesTableValue)}>
+                  {formatRate(service.sell)}
+                </span>
+              </div>
+            </Link>
+          );
+        })
+      )}
     </div>
-    //Section Container
   );
 };
 

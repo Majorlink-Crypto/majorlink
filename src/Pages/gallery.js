@@ -1,207 +1,261 @@
-import { useEffect, useRef, useState } from "react";
-import Navbar from "../Components/Navbar"
-import { ImArrowUp2 } from "react-icons/im";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
-import { IoArrowBackCircleOutline, IoArrowForwardCircleOutline } from "react-icons/io5";
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { nanoid } from "nanoid";
-import ScrollToTop from "../Components/scrollTop";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Navbar from '../Components/Navbar';
+import FeaturesSection from '../Components/HomeComponents/FeaturesSection';
+import CtaBanner from '../Components/HomeComponents/CtaBanner';
+import Footer from '../Components/Footer';
+import { RATES_PAGE_CONTENT, RATES_SECTION_CONTENT } from '../data/content';
+import { EXTERNAL_LINKS, TEXT_STYLES, textStyle } from '../data/constants';
 
+const { heading, headingLine2, tabs, card, panel } = RATES_PAGE_CONTENT;
+const { coins } = RATES_SECTION_CONTENT;
 
+const formatRate = (value) => {
+  if (!value && value !== 0) return '—';
+  return '₦' + Number(value).toLocaleString('en-NG');
+};
 
 const Gallery = () => {
+  const [activeTab, setActiveTab] = useState('crypto');
+  const [cryptoServices, setCryptoServices] = useState([]);
+  const [giftCardServices, setGiftCardServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedService, setSelectedService] = useState(null);
+  const [tradeType, setTradeType] = useState('buy'); // 'buy' | 'sell'
+  const [inputAmount, setInputAmount] = useState('');
 
-    const [showUp, setShowUp] = useState(false)
-
-    const videoRef = useRef();
-
-    const slideRef = useRef();
-
-    const navRef = useRef();
-
-    const navRef2 = useRef();
-
-    const [videoIndex, setVideoIndex] = useState('onboarding');
-
-    const baseUrl = window.location.origin;
-
-    const videosData = {
-      onboarding: [`/videos/gallery_video2.mp4`],
-      funToWatch: [
-        `/videos/gallery_video3.mp4`,`/videos/gallery_video4.mp4`,
-        `/videos/gallery_video5.mp4`,
-        `/videos/gallery_video6.mp4`
-      ],
+  useEffect(() => {
+    const init = async () => {
+      try {
+        const res = await axios.get('https://main.majorlink.co/api/services/list', {
+          headers: { 'Content-Type': 'application/json', accept: 'application/json' },
+        });
+        setCryptoServices(res.data.filter((s) => s.type === 'Crypto'));
+        setGiftCardServices(res.data.filter((s) => s.type === 'GiftCard'));
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
+      }
     };
+    init();
+  }, []);
 
-    const navData = [
-      {
-        title: "Onboarding",
-        dataIndex: "onboarding",
-        description:
-          "Explore our quick onboarding videos covering setup, tips for success, troubleshooting, and next steps to get started smoothly.",
-      },
-      {
-        title: "Fun to Watch",
-        dataIndex: "funToWatch",
-        description:
-          "Dive into our entertaining videos for a fun glimpse into our company culture, products, and services. Let's enjoy the ride together!",
-      },
-    ];
+  const services = activeTab === 'crypto' ? cryptoServices : giftCardServices;
 
-    useEffect(() => {
-
-        const handleScroll = () => {
-            setShowUp(window.scrollY > 90 || window.pageYOffset > 90)
-        }
-
-        window.addEventListener('scroll', handleScroll)
-
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll)
-        }
-    }, [])
-
-    const slideChange = (swipeSlide) => {
-
-        document?.querySelectorAll('.slideref')?.forEach(e => e.pause())
-
-        switch (swipeSlide.activeIndex) {
-            case 0:
-                setVideoIndex('onboarding')
-                break;
-            case 1:
-                setVideoIndex('funToWatch')
-                break;
-            default:
-                setVideoIndex('onboarding')
-        }
-
-        // videoRef?.current?.swiper.slideTo(0)
-        videoRef?.current?.swiper.update()
-
+  // Compute the rate for the selected service based on buy/sell
+  const getRate = (service) => {
+    if (!service) return 0;
+    if (activeTab === 'crypto') {
+      return tradeType === 'buy' ? service.web_buy : service.web_sell;
     }
+    return tradeType === 'buy' ? service.buy : service.sell;
+  };
 
-    return (
-        <>
-            <Navbar />
-            <ScrollToTop />
-            <div className="min-h-[calc(100vh-85px)] relative top-[85px] flex items-center smm:flex-col w-full justify-between bg-[#e4e4e4c1]">
-                
-                <div className="h-[300px] hidden smm:block w-full mb-2 bg-white">
-                    <Swiper
-                        freeMode={true}
-                        slidesPerView={1}
-                        keyboard={true}
-                        pagination={{
-                            clickable: true
-                        }}
-                        breakpoints={{
-                            550: {
-                                slidesPerView: 2,
-                                pagination: false
-                            },
-                            850: {
-                                slidesPerView: 3,
-                                pagination: false
-                            },
-                        
-                        }}
-                        centeredSlides={true}
-                        modules={[Keyboard, Pagination]}
-                        onSlideChange={slideChange}
-                        ref={navRef}
-                        className="vertical-slider">
+  const rate = getRate(selectedService);
+  const receivedAmount = inputAmount && rate ? (parseFloat(inputAmount) / rate).toFixed(6) : '';
 
-                        {navData.map((e, i) => <SwiperSlide key={i} className="cursor-pointer" onClick={() => {
-                            navRef?.current?.swiper.slideTo(i)
-                        }}>
-                            <div className="w-full px-6">
-                                <h2 className="font-bold text-left font-grifter text-[30px] after:content-[''] after:absolute after:w-[100px] after:h-[5px] after:rounded-[6rem] relative after:bottom-0 after:left-0 after:bg-[#4B5DFF] text-[#7482FF] mb-2">{e.title}</h2>
+  const openWhatsApp = () => {
+    if (!selectedService) return;
+    const msg = `Hi, I would like to ${tradeType} ${selectedService.name} at ₦${rate}. Amount: ₦${inputAmount || '0'}`;
+    window.open(`${EXTERNAL_LINKS.whatsapp}&text=${encodeURIComponent(msg)}`);
+  };
 
-                                <span className="text-[#5d5d5d] font-aeonikregular text-[14px] text-left">
-                                   {e.description}
-                                </span>
-                            </div>
-                        </SwiperSlide>)}
-                        
-                    </Swiper>
-                </div>
+  const getCoinMeta = (name) => coins[name] || null;
 
-                <div className="h-[calc(100vh-85px)] min-w-[350px] smm:hidden max-w-[500px] w-full  mr-2 bg-white">
-                    <Swiper
-                    direction={'vertical'}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    freeMode={true}
-                    slidesPerView={3}
-                    mousewheel={true}
-                    keyboard={true}
-                    centeredSlides={true}
-                    modules={[Pagination, Mousewheel, Keyboard]}
-                    onSlideChange={slideChange}
-                    ref={navRef2}
-                    className="vertical-slider">
-                    {navData.map((e, i) => <SwiperSlide key={i} className="cursor-pointer" onClick={() => {
-                            navRef2?.current?.swiper.slideTo(i)
-                        }}>
-                       <div className="w-full px-6">
-                                <h2 className="font-bold text-left font-grifter text-[30px] after:content-[''] after:absolute after:w-[100px] after:h-[5px] after:rounded-[6rem] relative after:bottom-0 after:left-0 after:bg-[#4B5DFF] text-[#7482FF] mb-2">{e.title}</h2>
-                            
-                                <span className="text-[#5d5d5d] font-aeonikregular text-[14px] text-left">
-                                    {e.description}
-                                </span>
-                        </div> 
-                    </SwiperSlide>)}
-                </Swiper>
-                </div>
+  return (
+    <div className="bg-white min-h-screen">
+      <Navbar />
 
-                <div className="w-[calc(100%-400px)] smm:w-full relative px-6 bg-white min-h-[calc(100vh-85px)] videoview smm:min-h-fit">
-                    <Swiper
-                        slidesPerView={1}
-                        navigation={{
-                            nextEl: '.next',
-                            prevEl: '.prev'
-                        }}
-                        observer={true}
-                        observeslidechildren={true}
-                        keyboard={true}
-                        modules={[Navigation, Keyboard]}
-                        ref={videoRef}
-                        className="videoview-slider"
-                        onSlideChange={() => {
-                            document?.querySelectorAll('.slideref')?.forEach(e => e.pause())
-                        }}
-                    >
-                        {videosData[videoIndex]?.map((e, i) => <SwiperSlide key={nanoid()} className="relative h-fit">
-                            <video ref={slideRef} controls className="w-full slideref bg-black h-[calc(100vh-85px)]">
-                                <source src={`${baseUrl}${e}`} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        </SwiperSlide>)}
-                    </Swiper>
-                    <div className="absolute z-40 w-[calc(100%-60px)] left-0 right-0 top-0 bottom-0 m-auto flex justify-between h-fit items-center">
-                        <div className="bg-white p-[2px] swiper-nav cursor-pointer prev rounded-[50%]">
-                        <IoArrowBackCircleOutline className="h-[43px] w-[43px]" style={{
+      {/* ── Main content area ── */}
+      <div className="flex pt-24 min-h-screen relative">
 
-                        }}/></div>
+        {/* Left / Main rates area */}
+        <div
+          className="flex-1 px-6 md:px-16 py-10 transition-all duration-300"
+          style={{ filter: selectedService ? 'brightness(0.6)' : 'none' }}
+          onClick={() => selectedService && setSelectedService(null)}
+        >
+          {/* Page heading */}
+          <h1 className="mb-10" style={textStyle(TEXT_STYLES.ratesPageHeading)}>
+            {heading}<br />{headingLine2}
+          </h1>
 
-                        <div className="bg-white p-[2px] next cursor-pointer swiper-nav rounded-[50%]"><IoArrowForwardCircleOutline className="h-[43px]  w-[43px]" /></div>
+          {/* Tab switcher */}
+          <div className="flex items-center border-b border-[#E4E4ED] mb-8">
+            <button
+              onClick={(e) => { e.stopPropagation(); setActiveTab('crypto'); setSelectedService(null); }}
+              className={`pb-3 mr-8 transition-colors ${
+                activeTab === 'crypto'
+                  ? 'border-b-2 border-[#4B5DFF]'
+                  : ''
+              }`}
+              style={activeTab === 'crypto' ? textStyle(TEXT_STYLES.ratesTabActive) : textStyle(TEXT_STYLES.ratesTabInactive)}
+            >
+              {tabs.crypto}
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); setActiveTab('giftCard'); setSelectedService(null); }}
+              className={`pb-3 transition-colors ${
+                activeTab === 'giftCard'
+                  ? 'border-b-2 border-[#27272A]'
+                  : ''
+              }`}
+              style={activeTab === 'giftCard' ? textStyle(TEXT_STYLES.ratesTabActive) : textStyle(TEXT_STYLES.ratesTabInactive)}
+            >
+              {tabs.giftCard}
+            </button>
+          </div>
+
+          {/* Card grid */}
+          {loading ? (
+            <p className="text-sm text-[#8A90A4] font-aeonikmedium">{panel.loadingText}</p>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {services.map((service, i) => {
+                const meta = getCoinMeta(service.name);
+                const buyRate  = activeTab === 'crypto' ? service.web_buy  : service.buy;
+                const sellRate = activeTab === 'crypto' ? service.web_sell : service.sell;
+                const isSelected = selectedService?.id === service.id;
+
+                return (
+                  <div
+                    key={i}
+                    onClick={(e) => { e.stopPropagation(); setSelectedService(service); setTradeType('buy'); setInputAmount(''); }}
+                    className={`bg-[#F4F4F8] rounded-2xl p-5 cursor-pointer transition-all duration-200 ${
+                      isSelected ? 'ring-2 ring-[#1B30F5]' : 'hover:bg-[#EBEBF5]'
+                    }`}
+                  >
+                    {/* Coin icon */}
+                    <img
+                      src={meta?.icon || service.imageurl}
+                      alt={service.name}
+                      className="w-10 h-10 rounded-full mb-3"
+                      onError={(e) => { e.target.onerror = null; e.target.src = service.imageurl; }}
+                    />
+
+                    {/* Name */}
+                    <p className="mb-4" style={textStyle(TEXT_STYLES.ratesCardTitle)}>
+                      {service.name}{meta ? ` (${meta.symbol})` : ''}
+                    </p>
+
+                    {/* Rates row */}
+                    <div className="flex space-x-6">
+                      <div>
+                        <p className="mb-1" style={textStyle(TEXT_STYLES.ratesCardLabel)}>{card.buyRateLabel}</p>
+                        <p style={textStyle(TEXT_STYLES.ratesCardValue)}>
+                          {formatRate(buyRate)}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="mb-1" style={textStyle(TEXT_STYLES.ratesCardLabel)}>{card.sellRateLabel}</p>
+                        <p style={textStyle(TEXT_STYLES.ratesCardValue)}>
+                          {formatRate(sellRate)}
+                        </p>
+                      </div>
                     </div>
-                </div>
+                  </div>
+                );
+              })}
             </div>
+          )}
+        </div>
 
-            {showUp && <div data-aos-duration="500" data-aos="zoom-in-down" onClick={() => window.scrollTo(0, 0)} className="moveup flex rounded-[50%] bg-[#4B5DFF] items-center justify-center fixed h-[60px] z-50 w-[60px] bottom-[95px] cursor-pointer right-[24px]">
-                <ImArrowUp2 className="text-[#fff] text-[28px] h-[28px] w-[28px]"/>
-            </div>}
-        </>
-    )
-}
+        {/* ── Right slide-in panel ── */}
+        <div
+          className={`fixed top-0 right-0 h-full w-full md:w-[380px] bg-white shadow-2xl z-50 flex flex-col p-8 pt-24 transition-transform duration-400 ease-in-out ${
+            selectedService ? 'translate-x-0' : 'translate-x-full'
+          }`}
+          onClick={(e) => e.stopPropagation()}
+          style={{ transitionDuration: '350ms' }}
+        >
+          {selectedService && (
+            <>
+              {/* Coin header */}
+              <div className="flex items-center space-x-3 mb-6">
+                <img
+                  src={getCoinMeta(selectedService.name)?.icon || selectedService.imageurl}
+                  alt={selectedService.name}
+                  className="w-12 h-12 rounded-full"
+                />
+                <div>
+                  <p style={textStyle(TEXT_STYLES.ratesCardTitle)}>
+                    {selectedService.name}
+                    {getCoinMeta(selectedService.name) && ` (${getCoinMeta(selectedService.name).symbol})`}
+                  </p>
+                </div>
+              </div>
+
+              {/* Buy / Sell toggle */}
+              <div className="flex items-center space-x-3 mb-6">
+                <button
+                  onClick={() => { setTradeType('buy'); setInputAmount(''); }}
+                  className={`px-4 py-1 rounded-full text-sm font-aeonikmedium border transition-colors ${
+                    tradeType === 'buy'
+                      ? 'bg-white border-[#273046] text-[#273046]'
+                      : 'border-[#E4E4ED] text-[#8A90A4]'
+                  }`}
+                >
+                  {panel.buyLabel}
+                </button>
+                <button
+                  onClick={() => { setTradeType('sell'); setInputAmount(''); }}
+                  className={`px-4 py-1 rounded-full text-sm font-aeonikmedium border transition-colors ${
+                    tradeType === 'sell'
+                      ? 'bg-white border-[#273046] text-[#273046]'
+                      : 'border-[#E4E4ED] text-[#8A90A4]'
+                  }`}
+                >
+                  {panel.sellLabel}
+                </button>
+              </div>
+
+              {/* Amount input */}
+              <div className="mb-2">
+                <div className="flex items-center">
+                  <span className="text-[#273046] font-gilroy text-3xl font-bold mr-1">₦</span>
+                  <input
+                    type="number"
+                    value={inputAmount}
+                    onChange={(e) => setInputAmount(e.target.value)}
+                    placeholder={panel.inputPlaceholder}
+                    className="text-[#C0C5D0] font-gilroy text-3xl font-bold w-full outline-none bg-transparent placeholder-[#C0C5D0]"
+                  />
+                </div>
+                <p className="mt-1" style={textStyle(TEXT_STYLES.ratesCardLabel)}>
+                  {formatRate(rate)}/{getCoinMeta(selectedService.name)?.symbol || selectedService.name}
+                </p>
+              </div>
+
+              {/* You will receive */}
+              <div className="bg-[#F4F4F8] rounded-xl p-4 mb-8 mt-4">
+                <p className="mb-2" style={textStyle(TEXT_STYLES.ratesCardLabel)}>{panel.youWillReceiveLabel}</p>
+                <div className="flex items-center">
+                  <span className="text-[#C0C5D0] font-gilroy text-2xl font-bold mr-1">₦</span>
+                  <span className="text-[#C0C5D0] font-gilroy text-2xl font-bold">
+                    {receivedAmount || panel.inputPlaceholder}
+                  </span>
+                </div>
+              </div>
+
+              {/* CTA button */}
+              <button
+                onClick={openWhatsApp}
+                className="w-full bg-[#1B30F5] text-white font-aeonikmedium text-sm py-4 rounded-xl hover:bg-[#1425CC] transition-colors"
+              >
+                {panel.ctaButton}
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* Features, CTA, Footer */}
+      <FeaturesSection />
+      <CtaBanner />
+      <Footer />
+    </div>
+  );
+};
 
 export default Gallery;

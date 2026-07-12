@@ -6,6 +6,8 @@ module.exports = {
       backgroundImage: theme => ({
         'newsletter': "url('./Assets/newsletter.png')",
         'about': "url('./Assets/aboutbg.png')",
+        'hero-bg': "url('/images/hero_bg.png')",
+        'hero-cloud': "url('/images/hero_cloud.png')",
        }),
       screens: {
         'mm': {
@@ -19,20 +21,62 @@ module.exports = {
         }
       },
       fontFamily: {
-        aeonikmedium: ['AeonikMedium', 'sans-serif'],
+        // ── New design system fonts ───────────────────────────────────────
+        onest:   ['Onest', 'sans-serif'],
+        archivo: ['Archivo', 'sans-serif'],
+        switzer: ['Switzer', 'sans-serif'],
+        sora:    ['Sora', 'sans-serif'],
+        // ── Legacy fonts (kept for existing sections) ─────────────────────
+        aeonikmedium:  ['AeonikMedium', 'sans-serif'],
         aeonikregular: ['AeonikRegular', 'sans-serif'],
-        aeonikbold: ['AeonikBold', 'sans-serif'],
-        grifter: ['Grifter', 'sans-serif'],
+        aeonikbold:    ['AeonikBold', 'sans-serif'],
+        grifter:       ['Grifter', 'sans-serif'],
+      },
+      fontSize: {
+        // Hero-specific sizes from Figma spec
+        'hero':        ['68px', { lineHeight: '100%' }],
+        'hero-body':   ['19px', { lineHeight: '140%' }],
+        'nav-link':    ['16px', { lineHeight: 'auto' }],
+        'brand-name':  ['20px', { lineHeight: '110%' }],
+        'store-sub':   ['10.56px', { lineHeight: '20.16px' }],
+        'store-main':  ['15.36px', { lineHeight: '20.16px' }],
+        // Additional Figma sizes
+        'stat-value':  ['30px', { lineHeight: '100%' }],
+        'service-title': ['27px', { lineHeight: '100%' }],
+        'section-title': ['34px', { lineHeight: '100%' }],
+        'feature-title': ['19px', { lineHeight: '140%' }],
+        'feature-desc':  ['17px', { lineHeight: '140%' }],
       },
       colors: {
-        'primary': '#2752E7',
-        'secondary': '#FFF8EE',
-        'numbers': '#D0DBFF',
+        // ── New design tokens ─────────────────────────────────────────────
+        'zinc': {
+          50:  '#FAFAFA',
+          100: '#F4F4F5',
+          200: '#E4E4E7',
+          300: '#D4D4D8',
+          400: '#A1A1AA',
+          500: '#71717A',
+          600: '#52525B',
+          700: '#3F3F46',
+          800: '#27272A',
+          900: '#18181B',
+          950: '#09090B',
+        },
+        'brand': {
+          blue:      '#3B3BF9',
+          blueDark:  '#2C2CDB',
+          blueLight: '#6B6BFC',
+          indigo:    '#4B5DFF',
+        },
+        // ── Legacy colors (kept for existing sections) ────────────────────
+        'primary':    '#2752E7',
+        'secondary':  '#FFF8EE',
+        'numbers':    '#D0DBFF',
         'headertext': '#2C3131',
-        'right': '#345D9D',
-        'border': '#E3E3E3',
-         'herosection': '#fafafa',
-         'bitcoin': '#F7931A',
+        'right':      '#345D9D',
+        'border':     '#E3E3E3',
+        'herosection':'#fafafa',
+        'bitcoin':    '#F7931A',
       },
     },
   },
