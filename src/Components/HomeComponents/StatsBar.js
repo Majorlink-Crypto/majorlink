@@ -10,7 +10,7 @@ const StatsBar = () => {
       data-aos="fade-up"
       data-aos-duration="600"
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-8 py-6 md:py-8 grid grid-cols-2 lg:grid-cols-4 gap-y-6 md:gap-y-8 gap-x-4">
+      <div className="max-w-5xl mx-auto px-6 md:px-8 py-6 md:py-8 grid grid-cols-2 lg:grid-cols-4 gap-y-6 md:gap-y-8 gap-x-24">
         {HERO_STATS.map((stat, index) => (
           <div key={index} className="flex flex-col items-start">
             <span

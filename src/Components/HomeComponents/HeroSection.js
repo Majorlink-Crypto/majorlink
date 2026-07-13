@@ -66,19 +66,19 @@ const HeroSection = () => {
       >
         {/* H1 headline */}
         <h1
-          className="font-onest font-extrabold text-zinc-900 max-w-3xl mx-auto hero-fade-up"
+          className="font-onest font-extrabold text-zinc-900 max-w-4xl mx-auto hero-fade-up"
           style={{
-            fontSize: 'clamp(28px, 6vw, 68px)',
+            fontSize: 'clamp(28px, 5.5vw, 68px)',
             lineHeight: '100%',
             letterSpacing: '-0.02em',
           }}
         >
-          {headline}
+          Move Crypto & <br /> Cash Without Limits
         </h1>
 
         {/* Body paragraph */}
         <p
-          className="font-archivo text-zinc-900 mt-4 md:mt-6 max-w-md mx-auto hero-fade-up-delay-1"
+          className="font-archivo text-zinc-900 mt-4 md:mt-6 max-w-[410px] mx-auto hero-fade-up-delay-1"
           style={{ fontSize: 'clamp(15px, 3.5vw, 19px)', lineHeight: '140%', fontWeight: 400 }}
         >
           {body}
