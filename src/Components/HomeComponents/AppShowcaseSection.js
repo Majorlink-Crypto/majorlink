@@ -10,6 +10,8 @@ const AppShowcaseSection = () => {
     <section
       className="w-full flex justify-center"
       aria-label="App showcase"
+      data-aos="fade-up"
+      data-aos-duration="900"
     >
       <div
         className="relative overflow-hidden w-full"
@@ -34,8 +36,6 @@ const AppShowcaseSection = () => {
         <div
           className="relative flex items-center justify-center h-full"
           style={{ zIndex: 2, transform: 'translateY(8%)' }}
-          data-aos="zoom-in"
-          data-aos-duration="900"
         >
           <img
             src="/images/phone_big.png"
