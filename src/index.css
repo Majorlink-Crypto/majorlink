@@ -61,7 +61,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  height: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -100,7 +99,6 @@ body {
     margin: auto;
     min-width: 320px;
     overflow-x: hidden;
-    height: 100%;
 }
 
 .swiper-pagination-bullet-active{
