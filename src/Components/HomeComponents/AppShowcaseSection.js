@@ -1,11 +1,6 @@
-import React, { useEffect } from 'react';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import React from 'react';
 
 const AppShowcaseSection = () => {
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true });
-  }, []);
   return (
     <section
       className="w-full flex justify-center"

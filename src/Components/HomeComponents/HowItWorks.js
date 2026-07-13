@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { HOW_IT_WORKS_CONTENT } from '../../data/content';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
   const { heading, subheading, steps } = HOW_IT_WORKS_CONTENT;
   const current = steps[activeStep];
-
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true });
-  }, []);
 
   return (
     <section

@@ -3,8 +3,6 @@ import tobi from '../../Assets/tobi.jpg';
 import esther from '../../Assets/esther.jpg';
 import majone from '../../Assets/majone.png';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const TESTIMONIALS = [
   {
@@ -42,7 +40,6 @@ const TestimonialsSection = () => {
   const t = TESTIMONIALS[active];
 
   useEffect(() => {
-    Aos.init({ duration: 800, once: true });
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % TESTIMONIALS.length);
     }, 3000);

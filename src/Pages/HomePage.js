@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 import Navbar from '../Components/Navbar'
 import CookieConsent from 'react-cookie-consent'
 import HeroSection from '../Components/HomeComponents/HeroSection'
@@ -14,6 +16,11 @@ import CtaBanner from '../Components/HomeComponents/CtaBanner'
 import Footer from '../Components/Footer'
 
 const HomePage = () => {
+  useEffect(() => {
+    Aos.init({ duration: 800, once: true, startEvent: 'load' })
+    Aos.refresh()
+  }, [])
+
   return (
     <div>
       <Navbar />
@@ -28,9 +35,22 @@ const HomePage = () => {
       <TestimonialsSection />
       <CtaBanner />
       <Footer />
-      <CookieConsent debug={true} className="motion-safe:animate-fadeIn" containerClasses="mx-4 md:mx-10">
-          By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
-        </CookieConsent>
+      <CookieConsent
+        debug={true}
+        style={{
+          left: 0,
+          right: 0,
+          width: '100%',
+          margin: 0,
+          padding: '14px 24px',
+          alignItems: 'center',
+          gap: '16px',
+          boxSizing: 'border-box',
+        }}
+        buttonStyle={{ flexShrink: 0, marginLeft: 'auto' }}
+      >
+        By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+      </CookieConsent>
     </div>
   )
 }

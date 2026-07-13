@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Aos from "aos";
-import "aos/dist/aos.css";
 import CryptoTable from "./CryptoTable";
-import GiftCardTable from "./GiftCardTable";
 import { RATES_SECTION_CONTENT } from "../../data/content";
 import { TEXT_STYLES, textStyle } from "../../data/constants";
 
 const Sectionthree = () => {
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true });
-  }, []);
 
   const { heading, subheading, viewAllLabel } = RATES_SECTION_CONTENT;
 
@@ -40,10 +34,9 @@ const Sectionthree = () => {
           </Link>
         </div>
 
-        {/* Side-by-side tables */}
-        <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
+        {/* Single table */}
+        <div className="w-full">
           <CryptoTable />
-          <GiftCardTable />
         </div>
       </div>
     </div>

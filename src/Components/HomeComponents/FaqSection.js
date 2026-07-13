@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FAQ_CONTENT } from '../../data/content';
 import { EXTERNAL_LINKS, TEXT_STYLES, textStyle } from '../../data/constants';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
-
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true });
-  }, []);
 
   return (
     <section

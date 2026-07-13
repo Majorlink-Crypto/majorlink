@@ -1,16 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { CTA_BANNER_CONTENT } from '../../data/content';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const { headingPart1, headingPart2, headingLine2, appStore, playStore } = CTA_BANNER_CONTENT;
 
 const CtaBanner = () => {
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true });
-  }, []);
-
   return (
     <section
       className="w-full bg-[#4B5DFF] px-4 sm:px-6 md:px-20 py-10 md:py-16 flex flex-col items-center justify-center text-center"

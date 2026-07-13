@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { HERO_STATS } from '../../data/content';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
 
 const StatsBar = () => {
-  useEffect(() => {
-    Aos.init({ duration: 800, once: true });
-  }, []);
   return (
     <section
       className="w-full bg-[#FAFAFA]"
