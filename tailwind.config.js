@@ -20,6 +20,25 @@ module.exports = {
           max: '850px'
         }
       },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(24px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.92)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        fadeIn: 'fadeIn 0.6s ease-out forwards',
+        fadeUp: 'fadeUp 0.6s ease-out forwards',
+        scaleIn: 'scaleIn 0.7s ease-out forwards',
+      },
       fontFamily: {
         // ── New design system fonts ───────────────────────────────────────
         onest:   ['Onest', 'sans-serif'],

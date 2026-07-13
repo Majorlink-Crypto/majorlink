@@ -66,7 +66,7 @@ const HeroSection = () => {
       >
         {/* H1 headline */}
         <h1
-          className="font-onest font-extrabold text-zinc-900 max-w-3xl mx-auto"
+          className="font-onest font-extrabold text-zinc-900 max-w-3xl mx-auto hero-fade-up"
           style={{
             fontSize: 'clamp(28px, 6vw, 68px)',
             lineHeight: '100%',
@@ -78,14 +78,14 @@ const HeroSection = () => {
 
         {/* Body paragraph */}
         <p
-          className="font-archivo text-zinc-900 mt-4 md:mt-6 max-w-md mx-auto"
+          className="font-archivo text-zinc-900 mt-4 md:mt-6 max-w-md mx-auto hero-fade-up-delay-1"
           style={{ fontSize: 'clamp(15px, 3.5vw, 19px)', lineHeight: '140%', fontWeight: 400 }}
         >
           {body}
         </p>
 
         {/* App Store + Google Play buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-8 md:mt-10">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-8 md:mt-10 hero-fade-up-delay-2">
           <StoreButton btn={appStore}  iconSrc="/logo/apple.svg" />
           <StoreButton btn={playStore} iconSrc="/logo/play_store.svg" />
         </div>

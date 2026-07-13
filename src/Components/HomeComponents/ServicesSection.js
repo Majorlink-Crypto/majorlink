@@ -7,7 +7,13 @@ const ServicesSection = () => {
     <section className="w-full bg-white px-4 sm:px-6 md:px-20 py-8 md:py-10 animate-fadeIn" aria-label="Services">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
         {SERVICES_CONTENT.map((service, index) => (
-          <div key={index} className="flex flex-col">
+          <div
+            key={index}
+            className="flex flex-col"
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-delay={index * 150}
+          >
             {/* Card image container */}
             <div className="bg-[#F4F4F8] rounded-3xl overflow-hidden w-full max-w-[413px] h-auto md:h-[500px] flex items-end justify-center mx-auto">
               <img

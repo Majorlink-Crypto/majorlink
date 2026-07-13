@@ -9,7 +9,7 @@ import { TEXT_STYLES, textStyle } from "../../data/constants";
 
 const Sectionthree = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    Aos.init({ duration: 800, once: true });
   }, []);
 
   const { heading, subheading, viewAllLabel } = RATES_SECTION_CONTENT;

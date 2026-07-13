@@ -11,6 +11,9 @@ const FeaturesSection = () => {
           <div
             key={index}
             className="bg-[#F4F4F8] rounded-2xl p-5 md:p-6 flex flex-col"
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay={index * 100}
           >
             {/* Icon */}
             <div className="mb-6 md:mb-8">

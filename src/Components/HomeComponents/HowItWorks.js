@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HOW_IT_WORKS_CONTENT } from '../../data/content';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
   const { heading, subheading, steps } = HOW_IT_WORKS_CONTENT;
   const current = steps[activeStep];
+
+  useEffect(() => {
+    Aos.init({ duration: 800, once: true });
+  }, []);
 
   return (
     <section
@@ -20,6 +26,8 @@ const HowItWorks = () => {
         {/* Heading */}
         <h2
           className="text-center font-onest font-bold"
+          data-aos="fade-up"
+          data-aos-duration="600"
           style={{
             fontSize: 'clamp(24px, 5vw, 34px)',
             lineHeight: '100%',
@@ -30,6 +38,9 @@ const HowItWorks = () => {
         </h2>
         <p
           className="text-center mt-3 font-archivo"
+          data-aos="fade-up"
+          data-aos-duration="600"
+          data-aos-delay="100"
           style={{
             fontSize: 'clamp(15px, 3vw, 19px)',
             lineHeight: '140%',
@@ -86,7 +97,12 @@ const HowItWorks = () => {
         </div>
 
         {/* Phone mockup image */}
-        <div className="flex items-center justify-center w-full">
+        <div
+          className="flex items-center justify-center w-full"
+          data-aos="zoom-in"
+          data-aos-duration="700"
+          data-aos-delay="200"
+        >
           <img
             key={activeStep}
             src={current.image}

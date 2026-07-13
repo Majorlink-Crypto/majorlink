@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FAQ_CONTENT } from '../../data/content';
 import { EXTERNAL_LINKS, TEXT_STYLES, textStyle } from '../../data/constants';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 
 const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggle = (i) => setOpenIndex(openIndex === i ? null : i);
+
+  useEffect(() => {
+    Aos.init({ duration: 800, once: true });
+  }, []);
 
   return (
     <section
@@ -20,6 +26,8 @@ const FaqSection = () => {
         <div className="md:w-[36%] flex-shrink-0">
           <h2
             className="font-onest font-bold"
+            data-aos="fade-up"
+            data-aos-duration="600"
             style={{
               fontSize: 'clamp(24px, 5vw, 34px)',
               lineHeight: '110%',
@@ -62,7 +70,13 @@ const FaqSection = () => {
         {/* ── Right Column — Accordion ── */}
         <div className="flex-1 flex flex-col gap-4">
           {FAQ_CONTENT.map((item, i) => (
-            <div key={i} className="bg-[#F7F7F7] rounded-2xl p-4">
+            <div
+              key={i}
+              className="bg-[#F7F7F7] rounded-2xl p-4"
+              data-aos="fade-up"
+              data-aos-duration="500"
+              data-aos-delay={i * 80}
+            >
               <button
                 className="w-full flex items-start justify-between text-left gap-4"
                 onClick={() => toggle(i)}

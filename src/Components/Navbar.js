@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { IonIcon } from 'react-ion-icon';
 import { NAV_CONTENT } from '../data/content';
@@ -6,12 +6,23 @@ import { TEXT_STYLES, textStyle } from '../data/constants';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header>
       {/* ── Desktop Navbar ────────────────────────────────────────────────── */}
       <nav
-        className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-4 sm:px-6 lg:px-16 py-4 md:py-5"
+        className={`fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-4 sm:px-6 lg:px-16 py-4 md:py-5 transition-all duration-300 ${
+          scrolled
+            ? 'bg-white/80 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.06)]'
+            : 'bg-transparent'
+        }`}
         aria-label="Main navigation"
       >
         {/* Logo — left */}

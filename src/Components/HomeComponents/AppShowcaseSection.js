@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const AppShowcaseSection = () => {
+  useEffect(() => {
+    Aos.init({ duration: 800, once: true });
+  }, []);
   return (
     <section
       className="w-full flex justify-center"
@@ -29,6 +34,8 @@ const AppShowcaseSection = () => {
         <div
           className="relative flex items-center justify-center h-full"
           style={{ zIndex: 2, transform: 'translateY(8%)' }}
+          data-aos="zoom-in"
+          data-aos-duration="900"
         >
           <img
             src="/images/phone_big.png"

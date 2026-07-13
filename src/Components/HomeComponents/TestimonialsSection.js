@@ -3,6 +3,8 @@ import tobi from '../../Assets/tobi.jpg';
 import esther from '../../Assets/esther.jpg';
 import majone from '../../Assets/majone.png';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const TESTIMONIALS = [
   {
@@ -40,6 +42,7 @@ const TestimonialsSection = () => {
   const t = TESTIMONIALS[active];
 
   useEffect(() => {
+    Aos.init({ duration: 800, once: true });
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % TESTIMONIALS.length);
     }, 3000);
@@ -51,6 +54,8 @@ const TestimonialsSection = () => {
       className="w-full py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center justify-center relative overflow-hidden"
       style={{ background: '#4B5DFF', minHeight: '420px' }}
       aria-label="Testimonials"
+      data-aos="fade-up"
+      data-aos-duration="800"
     >
       {/* Large decorative quote mark */}
       <div
