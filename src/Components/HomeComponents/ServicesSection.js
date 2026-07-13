@@ -9,13 +9,13 @@ const ServicesSection = () => {
         {SERVICES_CONTENT.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col"
+            className="flex flex-col max-w-[413px] mx-auto w-full"
             data-aos="fade-up"
             data-aos-duration="600"
             data-aos-delay={index * 150}
           >
             {/* Card image container */}
-            <div className="bg-[#F4F4F8] rounded-3xl overflow-hidden w-full max-w-[413px] h-auto md:h-[500px] flex items-end justify-center mx-auto">
+            <div className="bg-[#F4F4F8] rounded-3xl overflow-hidden w-full h-auto md:h-[500px] flex items-end justify-center">
               <img
                 src={service.image}
                 alt={service.imageAlt}

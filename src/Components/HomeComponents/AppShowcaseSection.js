@@ -14,7 +14,7 @@ const AppShowcaseSection = () => {
       >
         {/* Background photo */}
         <img
-          src="/images/background.png"
+          src="/images/background.webp"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
@@ -33,7 +33,7 @@ const AppShowcaseSection = () => {
           style={{ zIndex: 2, transform: 'translateY(8%)' }}
         >
           <img
-            src="/images/phone_big.png"
+            src="/images/phone_big.webp"
             alt="Majorlink app on phone showing wallet balance and transactions"
             style={{
               width: 'clamp(200px, 55vw, 780px)',

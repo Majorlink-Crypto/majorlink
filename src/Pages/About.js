@@ -33,7 +33,7 @@ const About = () => {
           {/* Right Column: App mockup / Visual illustration */}
           <div className="flex items-center justify-center">
             <img 
-              src="/images/phone_w_bg.png" 
+              src="/images/phone_w_bg.webp" 
               alt="Majorlink App Transactions illustration" 
               className="w-full max-w-lg object-contain"
             />

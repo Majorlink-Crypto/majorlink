@@ -22,7 +22,7 @@ const CtaBanner = () => {
       }}>
         <span>{headingPart1} </span>
         <img
-          src="/images/phone_small.png"
+          src="/images/phone_small.webp"
           alt="Majorlink app"
           className="inline-block w-8 md:w-10 align-middle mx-1 -rotate-12"
         />

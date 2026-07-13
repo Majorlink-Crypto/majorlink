@@ -46,7 +46,7 @@ const HowItWorks = () => {
         </p>
 
         {/* Step tabs */}
-        <div className="w-full grid grid-cols-3 gap-2 sm:gap-4 mt-8 md:mt-12 mb-8 md:mb-12">
+        <div className="w-full grid grid-cols-3 gap-6 sm:gap-12 md:gap-24 mt-8 md:mt-12 mb-8 md:mb-12">
           {steps.map((step, index) => {
             const isActive = index === activeStep;
             return (
@@ -67,7 +67,7 @@ const HowItWorks = () => {
                   {step.title}
                 </span>
                 <span
-                  className="font-archivo mt-1 transition-colors duration-300 hidden sm:block"
+                  className="font-archivo mt-1 transition-colors duration-300 hidden sm:block max-w-[180px] mx-auto"
                   style={{
                     fontSize: 'clamp(11px, 1.5vw, 14px)',
                     lineHeight: '140%',
@@ -77,14 +77,6 @@ const HowItWorks = () => {
                 >
                   {step.description}
                 </span>
-
-                {/* Active indicator dot */}
-                <span
-                  className="mt-3 w-1.5 h-1.5 rounded-full transition-all duration-300"
-                  style={{
-                    backgroundColor: isActive ? '#3B3BF9' : 'transparent',
-                  }}
-                />
               </button>
             );
           })}

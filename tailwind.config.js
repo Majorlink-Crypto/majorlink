@@ -6,8 +6,8 @@ module.exports = {
       backgroundImage: theme => ({
         'newsletter': "url('./Assets/newsletter.png')",
         'about': "url('./Assets/aboutbg.png')",
-        'hero-bg': "url('/images/hero_bg.png')",
-        'hero-cloud': "url('/images/hero_cloud.png')",
+        'hero-bg': "url('/images/hero_bg.webp')",
+        'hero-cloud': "url('/images/hero_cloud.webp')",
        }),
       screens: {
         'mm': {

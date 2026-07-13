@@ -280,9 +280,9 @@ export const EXTERNAL_LINKS = {
 // ── Image Paths ─────────────────────────────────────────────────────────────────
 // Using absolute public paths so components don't need to manage relative paths
 export const IMAGES = {
-  heroBg:    '/images/hero_bg.png',
-  heroCloud: '/images/hero_cloud.png',
-  logo:      '/logo192.png',          // fallback; Navbar uses src/Assets/icon.png
+  heroBg:    '/images/hero_bg.webp',
+  heroCloud: '/images/hero_cloud.webp',
+  logo:      '/logo192.webp',          // fallback; Navbar uses src/Assets/icon.png
 };
 
 // ── Z-Index Scale ───────────────────────────────────────────────────────────────

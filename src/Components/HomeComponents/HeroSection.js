@@ -44,7 +44,7 @@ const HeroSection = () => {
     >
       {/* Layer 1 — sky background */}
       <img
-        src="/images/hero_bg.png"
+        src="/images/hero_bg.webp"
         alt={bgImageAlt}
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
         style={{ zIndex: 0, objectPosition: 'center -80px' }}
@@ -53,7 +53,7 @@ const HeroSection = () => {
 
       {/* Layer 2 — cloud + crypto icons (all baked into the PNG) */}
       <img
-        src="/images/hero_cloud.png"
+        src="/images/hero_cloud.webp"
         alt={cloudAlt}
         className="absolute inset-0 w-full h-full object-cover object-top"
         style={{ zIndex: 1 }}

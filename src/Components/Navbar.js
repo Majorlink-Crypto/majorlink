@@ -11,13 +11,13 @@ const Navbar = () => {
     <header>
       {/* ── Desktop Navbar ────────────────────────────────────────────────── */}
       <nav
-        className="fixed top-0 left-0 right-0 z-10 flex items-center justify-between px-4 sm:px-6 lg:px-16 py-4 md:py-5"
+        className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 lg:px-16 py-4 md:py-5 bg-white/85 backdrop-blur-md border-b border-zinc-100/50"
         aria-label="Main navigation"
       >
         {/* Logo — left */}
         <Link to="/" className="flex items-center space-x-2 shrink-0">
           <img
-            src="/logo192.png"
+            src="/logo192.webp"
             alt={NAV_CONTENT.logoAlt}
             className="w-7 h-7 object-contain"
           />

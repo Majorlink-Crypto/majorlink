@@ -123,19 +123,19 @@ export const FEATURES_CONTENT = [
 
 export const SERVICES_CONTENT = [
   {
-    image:       '/images/send_receive.png',
+    image:       '/images/send_receive.webp',
     imageAlt:    'Globe representing send and receive',
     title:       'Send & Receive',
     description: 'Move crypto and cash securely.',
   },
   {
-    image:       '/images/swap_crypto.png',
+    image:       '/images/swap_crypto.webp',
     imageAlt:    'Gold Bitcoin coins representing crypto swap',
     title:       'Swap Crypto',
     description: 'Convert crypto to Naira instantly.',
   },
   {
-    image:       '/images/giftcard.png',
+    image:       '/images/giftcard.webp',
     imageAlt:    'Various gift cards fanned out',
     title:       'Trade Gift Cards',
     description: 'Buy and sell gift cards at great rates.',
@@ -152,19 +152,19 @@ export const HOW_IT_WORKS_CONTENT = {
     {
       title:       'Create Your Account',
       description: 'Sign up and set up your wallet in minutes.',
-      image:       '/images/simple_fast_reliable1.png',
+      image:       '/images/simple_fast_reliable1.webp',
       imageAlt:    'App screen showing KYC verification step',
     },
     {
       title:       'Send, Swap, or Trade',
       description: 'Transfer crypto, convert currencies, or trade gift cards easily.',
-      image:       '/images/simple_fast_reliable2.png',
+      image:       '/images/simple_fast_reliable2.webp',
       imageAlt:    'App screen showing send, receive, convert and bill payment options',
     },
     {
       title:       'Get Paid Instantly',
       description: 'Receive payouts directly to your wallet or bank account.',
-      image:       '/images/simple_fast_reliable2.png',
+      image:       '/images/simple_fast_reliable2.webp',
       imageAlt:    'App screen showing transaction history and wallet balance',
     },
   ],
@@ -228,7 +228,7 @@ export const FOOTER_CONTENT = {
         { label: 'Privacy Policy',    to: ROUTES.privacy },
         { label: 'Terms of Service',  to: ROUTES.terms },
         { label: 'AML Policy',        to: ROUTES.aml },
-        { label: 'KYC Verification',  to: ROUTES.home },
+        // { label: 'KYC Verification',  to: ROUTES.home },
       ],
     },
     {
