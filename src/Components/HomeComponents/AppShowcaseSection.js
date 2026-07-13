@@ -8,7 +8,7 @@ const AppShowcaseSection = () => {
     >
       <div
         className="relative overflow-hidden w-full"
-        style={{ height: '858px' }}
+        style={{ height: 'clamp(400px, 60vw, 858px)' }}
       >
         {/* Background photo */}
         <img
@@ -34,7 +34,7 @@ const AppShowcaseSection = () => {
             src="/images/phone_big.png"
             alt="Majorlink app on phone showing wallet balance and transactions"
             style={{
-              width: 'clamp(380px, 55vw, 780px)',
+              width: 'clamp(200px, 55vw, 780px)',
               marginBottom: 0,
               filter: 'drop-shadow(0 32px 72px rgba(0,0,0,0.32))',
             }}

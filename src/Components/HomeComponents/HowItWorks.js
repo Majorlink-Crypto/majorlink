@@ -9,30 +9,39 @@ const HowItWorks = () => {
 
   return (
     <section
-      className="w-full py-20 px-6 lg:px-16"
+      className="w-full py-12 md:py-20 px-4 sm:px-6 lg:px-16"
       style={{
         background: 'linear-gradient(180deg, #F0F0FF 0%, #F8F8FF 40%, #FFFFFF 100%)',
       }}
       aria-label="How it works"
     >
-      <div className="max-w-4xl mx-auto flex flex-col items-center">
+      <div className="max-w-4xl mx-auto flex flex-col items-center px-4 sm:px-0">
 
         {/* Heading */}
         <h2
-          className="text-center"
-          style={textStyle(TEXT_STYLES.sectionHeading)}
+          className="text-center font-onest font-bold"
+          style={{
+            fontSize: 'clamp(24px, 5vw, 34px)',
+            lineHeight: '100%',
+            color: '#18181B',
+          }}
         >
           {heading}
         </h2>
         <p
-          className="text-center mt-3"
-          style={textStyle(TEXT_STYLES.sectionSub)}
+          className="text-center mt-3 font-archivo"
+          style={{
+            fontSize: 'clamp(15px, 3vw, 19px)',
+            lineHeight: '140%',
+            fontWeight: 400,
+            color: '#71717A',
+          }}
         >
           {subheading}
         </p>
 
         {/* Step tabs */}
-        <div className="w-full grid grid-cols-3 gap-4 mt-12 mb-12">
+        <div className="w-full grid grid-cols-3 gap-2 sm:gap-4 mt-8 md:mt-12 mb-8 md:mb-12">
           {steps.map((step, index) => {
             const isActive = index === activeStep;
             return (
@@ -45,7 +54,7 @@ const HowItWorks = () => {
                 <span
                   className="font-onest font-bold transition-colors duration-300"
                   style={{
-                    fontSize: '16px',
+                    fontSize: 'clamp(12px, 2vw, 16px)',
                     lineHeight: '120%',
                     color: isActive ? '#18181B' : '#A1A1AA',
                   }}
@@ -53,9 +62,9 @@ const HowItWorks = () => {
                   {step.title}
                 </span>
                 <span
-                  className="font-archivo mt-1 transition-colors duration-300"
+                  className="font-archivo mt-1 transition-colors duration-300 hidden sm:block"
                   style={{
-                    fontSize: '14px',
+                    fontSize: 'clamp(11px, 1.5vw, 14px)',
                     lineHeight: '140%',
                     fontWeight: 400,
                     color: isActive ? '#18181B' : '#D4D4D8',
@@ -84,8 +93,8 @@ const HowItWorks = () => {
             alt={current.imageAlt}
             className="object-contain"
             style={{
-              maxHeight: '540px',
-              maxWidth: '320px',
+              maxHeight: 'clamp(300px, 50vw, 540px)',
+              maxWidth: 'clamp(200px, 40vw, 320px)',
               width: '100%',
               animation: 'fadeInUp 0.35s ease',
             }}

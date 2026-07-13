@@ -37,10 +37,10 @@ const GiftCardTable = () => {
   return (
     <div className="bg-[#F4F4F8] rounded-2xl overflow-hidden">
       {/* Table header */}
-      <div className="grid grid-cols-3 px-5 py-3 border-b border-[#E4E4ED]">
-        <span style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnAsset}</span>
-        <span style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnBuyRate}</span>
-        <span style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnSellRate}</span>
+      <div className="grid grid-cols-3 px-3 sm:px-5 py-3 border-b border-[#E4E4ED]">
+        <span className="text-xs sm:text-sm" style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnAsset}</span>
+        <span className="text-xs sm:text-sm" style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnBuyRate}</span>
+        <span className="text-xs sm:text-sm" style={textStyle(TEXT_STYLES.ratesTableHeader)}>{t.columnSellRate}</span>
       </div>
 
       {/* Rows */}
@@ -57,22 +57,22 @@ const GiftCardTable = () => {
           const coin = coins[service.name];
           return (
             <Link to="/checkout" key={i}>
-              <div className="grid grid-cols-3 items-center px-5 py-3 hover:bg-[#EBEBF5] transition-colors duration-150 cursor-pointer border-b border-[#E4E4ED] last:border-0">
-                <div className="flex items-center space-x-3">
+              <div className="grid grid-cols-3 items-center px-3 sm:px-5 py-3 hover:bg-[#EBEBF5] transition-colors duration-150 cursor-pointer border-b border-[#E4E4ED] last:border-0">
+                <div className="flex items-center space-x-2 sm:space-x-3">
                   <img
                     src={coin?.icon || service.imageurl}
                     alt={service.name}
-                    className="w-7 h-7 rounded-full object-cover"
+                    className="w-5 h-5 sm:w-7 sm:h-7 rounded-full object-cover"
                     onError={(e) => { e.target.onerror = null; e.target.src = service.imageurl; }}
                   />
-                  <span style={textStyle(TEXT_STYLES.ratesTableValue)}>
+                  <span className="text-xs sm:text-base" style={textStyle(TEXT_STYLES.ratesTableValue)}>
                     {service.name}
                   </span>
                 </div>
-                <span className="animate-pulse" style={textStyle(TEXT_STYLES.ratesTableValue)}>
+                <span className="animate-pulse text-xs sm:text-base" style={textStyle(TEXT_STYLES.ratesTableValue)}>
                   {formatRate(service.buy)}/$
                 </span>
-                <span className="animate-pulse" style={textStyle(TEXT_STYLES.ratesTableValue)}>
+                <span className="animate-pulse text-xs sm:text-base" style={textStyle(TEXT_STYLES.ratesTableValue)}>
                   {formatRate(service.sell)}
                 </span>
               </div>

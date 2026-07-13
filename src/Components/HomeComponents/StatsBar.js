@@ -8,15 +8,27 @@ const StatsBar = () => {
       className="w-full bg-[#FAFAFA]"
       aria-label="Key statistics"
     >
-      <div className="max-w-5xl mx-auto px-8 py-8 grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4">
+      <div className="max-w-5xl mx-auto px-6 md:px-8 py-6 md:py-8 grid grid-cols-2 lg:grid-cols-4 gap-y-6 md:gap-y-8 gap-x-4">
         {HERO_STATS.map((stat, index) => (
           <div key={index} className="flex flex-col items-start">
-            <span style={textStyle(TEXT_STYLES.statValue)}>
+            <span
+              className="font-onest font-bold"
+              style={{
+                fontSize: 'clamp(22px, 4vw, 30px)',
+                lineHeight: '100%',
+                color: '#18181B',
+              }}
+            >
               {stat.value}
             </span>
             <span
-              className="mt-1"
-              style={textStyle(TEXT_STYLES.statLabel)}
+              className="mt-1 font-archivo"
+              style={{
+                fontSize: 'clamp(14px, 2.5vw, 19px)',
+                lineHeight: '140%',
+                fontWeight: 400,
+                color: '#52525B',
+              }}
             >
               {stat.label}
             </span>

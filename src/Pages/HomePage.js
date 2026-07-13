@@ -28,11 +28,9 @@ const HomePage = () => {
       <TestimonialsSection />
       <CtaBanner />
       <Footer />
-      <div className='mx-10'>
-        <CookieConsent debug={true} className='motion-safe:animate-fadeIn'>
-          By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
+      <CookieConsent debug={true} className="motion-safe:animate-fadeIn" containerClasses="mx-4 md:mx-10">
+          By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.
         </CookieConsent>
-      </div>
     </div>
   )
 }

@@ -7,11 +7,17 @@ const { headingPart1, headingPart2, headingLine2, appStore, playStore } = CTA_BA
 const CtaBanner = () => {
   return (
     <section
-      className="w-full bg-[#4B5DFF] px-6 md:px-20 py-16 flex flex-col items-center justify-center text-center"
+      className="w-full bg-[#4B5DFF] px-4 sm:px-6 md:px-20 py-10 md:py-16 flex flex-col items-center justify-center text-center"
       aria-label="Download the app"
     >
       {/* Heading with phone image inline */}
-      <h2 className="mb-2" style={textStyle(TEXT_STYLES.ctaHeading)}>
+      <h2 className="mb-2" style={{
+        fontFamily: 'Onest, sans-serif',
+        fontWeight: 600,
+        fontSize: 'clamp(28px, 7vw, 68px)',
+        lineHeight: '100%',
+        color: '#FAFAFA',
+      }}>
         <span>{headingPart1} </span>
         <img
           src="/images/phone_small.png"
@@ -20,7 +26,13 @@ const CtaBanner = () => {
         />
         <span> {headingPart2}</span>
       </h2>
-      <h2 className="mb-10" style={textStyle(TEXT_STYLES.ctaHeading)}>
+      <h2 className="mb-6 md:mb-10" style={{
+        fontFamily: 'Onest, sans-serif',
+        fontWeight: 600,
+        fontSize: 'clamp(28px, 7vw, 68px)',
+        lineHeight: '100%',
+        color: '#FAFAFA',
+      }}>
         {headingLine2}
       </h2>
 

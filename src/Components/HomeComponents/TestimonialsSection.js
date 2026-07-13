@@ -48,14 +48,14 @@ const TestimonialsSection = () => {
 
   return (
     <section
-      className="w-full py-20 px-6 flex flex-col items-center justify-center relative overflow-hidden"
+      className="w-full py-12 md:py-20 px-4 sm:px-6 flex flex-col items-center justify-center relative overflow-hidden"
       style={{ background: '#4B5DFF', minHeight: '420px' }}
       aria-label="Testimonials"
     >
       {/* Large decorative quote mark */}
       <div
         className="text-white font-grifter select-none pointer-events-none mb-4"
-        style={{ fontSize: '72px', lineHeight: 1, opacity: 0.9 }}
+        style={{ fontSize: 'clamp(48px, 10vw, 72px)', lineHeight: 1, opacity: 0.9 }}
         aria-hidden="true"
       >
         ❝
@@ -63,8 +63,12 @@ const TestimonialsSection = () => {
 
       {/* Quote */}
       <blockquote
-        className="text-center max-w-2xl mx-auto"
-        style={textStyle(TEXT_STYLES.testimonialQuote)}
+        className="text-center max-w-2xl mx-auto px-4 sm:px-0 font-archivo font-medium"
+        style={{
+          fontSize: 'clamp(18px, 4vw, 27px)',
+          lineHeight: '180%',
+          color: '#FAFAFA',
+        }}
       >
         {t.quote}
       </blockquote>

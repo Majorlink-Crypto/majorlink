@@ -11,14 +11,21 @@ const FaqSection = () => {
   return (
     <section
       id="faq"
-      className="w-full bg-[#FAFAFA] px-6 md:px-20 py-16"
+      className="w-full bg-[#FAFAFA] px-4 sm:px-6 md:px-20 py-10 md:py-16"
       aria-label="FAQ"
     >
       <div className="flex flex-col md:flex-row gap-12 md:gap-20">
 
         {/* ── Left Column ── */}
         <div className="md:w-[36%] flex-shrink-0">
-          <h2 style={textStyle(TEXT_STYLES.faqHeading)}>
+          <h2
+            className="font-onest font-bold"
+            style={{
+              fontSize: 'clamp(24px, 5vw, 34px)',
+              lineHeight: '110%',
+              color: '#0D1B2A',
+            }}
+          >
             Things You Might Be<br />Wondering About
           </h2>
 

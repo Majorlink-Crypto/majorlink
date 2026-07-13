@@ -10,8 +10,8 @@ const Footer = () => {
     <footer className="w-full bg-white border-t border-[#F0F0F0] relative overflow-hidden" aria-label="Footer">
 
       {/* Main footer grid */}
-      <div className="px-6 md:px-16 pt-14 pb-6">
-        <div className="flex flex-col md:flex-row md:justify-between gap-10">
+      <div className="px-4 sm:px-6 md:px-16 pt-10 md:pt-14 pb-6">
+        <div className="flex flex-col md:flex-row md:justify-between gap-8 md:gap-10">
 
           {/* Brand column */}
           <div className="md:max-w-[220px]">

@@ -39,8 +39,7 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#FAFAFA]"
-      style={{ height: '1024px', paddingTop: '65px' }}
+      className="relative w-full overflow-hidden bg-[#FAFAFA] pt-[65px] min-h-[600px] md:min-h-[800px] lg:min-h-[1024px]"
       aria-label="Hero section"
     >
       {/* Layer 1 — sky background */}
@@ -63,14 +62,13 @@ const HeroSection = () => {
 
       {/* Layer 3 — centered text content + CTAs */}
       <div
-        className="relative flex flex-col items-center justify-center text-center px-6"
-        style={{ zIndex: 2, height: 'calc(1024px - 65px)', paddingBottom: '260px' }}
+        className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 z-[2] min-h-[calc(600px-65px)] md:min-h-[calc(800px-65px)] lg:min-h-[calc(1024px-65px)] pb-20 md:pb-40 lg:pb-[260px]"
       >
         {/* H1 headline */}
         <h1
           className="font-onest font-extrabold text-zinc-900 max-w-3xl mx-auto"
           style={{
-            fontSize: 'clamp(36px, 6vw, 68px)',
+            fontSize: 'clamp(28px, 6vw, 68px)',
             lineHeight: '100%',
             letterSpacing: '-0.02em',
           }}
@@ -80,14 +78,14 @@ const HeroSection = () => {
 
         {/* Body paragraph */}
         <p
-          className="font-archivo text-zinc-900 mt-6 max-w-md mx-auto"
-          style={{ fontSize: '19px', lineHeight: '140%', fontWeight: 400 }}
+          className="font-archivo text-zinc-900 mt-4 md:mt-6 max-w-md mx-auto"
+          style={{ fontSize: 'clamp(15px, 3.5vw, 19px)', lineHeight: '140%', fontWeight: 400 }}
         >
           {body}
         </p>
 
         {/* App Store + Google Play buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mt-10">
+        <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-8 md:mt-10">
           <StoreButton btn={appStore}  iconSrc="/logo/apple.svg" />
           <StoreButton btn={playStore} iconSrc="/logo/play_store.svg" />
         </div>

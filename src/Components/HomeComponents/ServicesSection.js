@@ -4,26 +4,38 @@ import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-white px-6 md:px-20 py-10 animate-fadeIn" aria-label="Services">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <section className="w-full bg-white px-4 sm:px-6 md:px-20 py-8 md:py-10 animate-fadeIn" aria-label="Services">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
         {SERVICES_CONTENT.map((service, index) => (
           <div key={index} className="flex flex-col">
             {/* Card image container */}
-            <div className="bg-[#F4F4F8] rounded-3xl overflow-hidden w-full max-w-[413px] h-[500px] flex items-end justify-center mx-auto">
+            <div className="bg-[#F4F4F8] rounded-3xl overflow-hidden w-full max-w-[413px] h-auto md:h-[500px] flex items-end justify-center mx-auto">
               <img
                 src={service.image}
                 alt={service.imageAlt}
-                className="w-full"
+                className="w-full object-cover"
               />
             </div>
             {/* Text area below card */}
             <div className="mt-4 text-left">
-              <h3 style={textStyle(TEXT_STYLES.serviceTitle)}>
+              <h3
+                className="font-onest font-bold"
+                style={{
+                  fontSize: 'clamp(20px, 4vw, 27px)',
+                  lineHeight: '100%',
+                  color: '#18181B',
+                }}
+              >
                 {service.title}
               </h3>
               <p
-                className="mt-1"
-                style={textStyle(TEXT_STYLES.serviceDesc)}
+                className="mt-1 font-archivo"
+                style={{
+                  fontSize: 'clamp(15px, 3vw, 19px)',
+                  lineHeight: '140%',
+                  fontWeight: 400,
+                  color: '#18181B',
+                }}
               >
                 {service.description}
               </p>
