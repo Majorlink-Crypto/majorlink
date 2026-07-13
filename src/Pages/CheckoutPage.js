@@ -82,16 +82,18 @@ function CheckoutPage() {
   return (
     <div className="flex h-screen">
 
-      {/* Left side (45% width, full height, blue background) */}
-      <div className="hidden md:flex md:w-[40%] bg-[#4B5DFF] h-full flex-shrink-0 overflow-x-hidden">
-        {/* Image in the left side */}
-        <img src={spiral} alt='Spiral' className='w-40 h-40' />
+      {/* Left side (40% width, full height, blue background) */}
+      <div className="hidden md:flex md:w-[40%] bg-[#4B5DFF] h-full flex-shrink-0 flex-col overflow-hidden relative">
+        {/* Spiral decoration top-left */}
+        <img src={spiral} alt='Spiral' className='w-40 h-40 flex-shrink-0' />
 
-        <div className='items-center justify-center absolute bottom-32 left-12 right-6 self-center'>
-          <h2 className='md:text-xl text-xl font-grifter tracking-wide md:mt-20 mt-10 text-white'>Trade your GiftCards & Crypto</h2>
-          <h2 className='text-[#b4bbf3] md:text-4xl text-5xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
-          <p className='text-[#ffffff] text-base font-aeonikregular text-start mt-4 tracking-wide w-[38%]'>Start trading now to enjoy the best rates. We provide the best and
-            fastest service across the world in swapping e-currencies.</p>
+        {/* Centered text content */}
+        <div className='flex flex-col justify-end flex-1 px-12 pb-20'>
+          <h2 className='text-xl font-grifter tracking-wide text-white'>Trade your GiftCards &amp; Crypto</h2>
+          <h2 className='text-[#b4bbf3] text-4xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
+          <p className='text-white text-base font-aeonikregular mt-4 tracking-wide leading-relaxed max-w-[280px]'>
+            Start trading now to enjoy the best rates. We provide the best and fastest service across the world in swapping e-currencies.
+          </p>
         </div>
       </div>
 

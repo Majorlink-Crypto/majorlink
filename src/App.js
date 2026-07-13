@@ -33,7 +33,7 @@ function App() {
   }, [])
 
   return (
-    <div className='font-aeonikmedium'>
+    <div className='font-aeonikmedium h-full'>
       <BrowserRouter>
       <ToastContainer />
        <Routes>
