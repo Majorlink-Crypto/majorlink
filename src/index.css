@@ -1,3 +1,5 @@
+@import 'lenis/dist/lenis.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,9 +59,8 @@
   }
 }
 
-/* Smooth scroll behavior */
+/* Smooth scroll handled by Lenis */
 html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -167,4 +168,30 @@ body {
     opacity: 0.4;
   }
 
+}
+
+@keyframes spin-clockwise {
+  from {
+    transform: rotate(-90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-counterclockwise {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-clockwise {
+  animation: spin-clockwise 2s ease-out 1 forwards;
+}
+
+.animate-spin-counterclockwise {
+  animation: spin-counterclockwise 2s ease-out 1 forwards;
 }

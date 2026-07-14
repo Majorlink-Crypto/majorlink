@@ -29,7 +29,7 @@ const HeroSection = () => {
           Aos.init({ duration: 1000 });
 
           const init = async () => {
-               axios.defaults.baseURL = "https://main.majorlink.co/api"
+               axios.defaults.baseURL = "/v1"
 
                const res = await axios.get('/services/list', {
                     headers: {

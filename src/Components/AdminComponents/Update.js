@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 const Update = () => {
 
-  axios.defaults.baseURL = 'https://main.majorlink.co/api';
+  axios.defaults.baseURL = '/v1';
 
   const [data, setData] = React.useState([])
   
@@ -21,7 +21,7 @@ const Update = () => {
 
     const init = async () => {
 
-      const { data: dx } = await axios.get("/services/list", {
+      const { data: dx } = await axios.get("https://main.majorlink.co/api/services/list", {
         headers: {
           "Content-Type": "application/json"
         }

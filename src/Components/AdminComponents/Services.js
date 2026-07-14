@@ -6,7 +6,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 
 const Services = () => {
 
-  axios.defaults.baseURL = 'https://main.majorlink.co/api';
+  axios.defaults.baseURL = '/v1';
 
      const [services, setservices] = useState([])
      const user = JSON.parse(localStorage.getItem('user'))
@@ -17,7 +17,7 @@ const Services = () => {
      const [symbol, addsymbol] = useState('')
      const [loading, setLoading] = useState(false);  
 
-    //  const APIURL = ('https://main.majorlink.co/api/admin/services/add')
+    //  const APIURL = ('/v1/admin/services/add')
 
      useEffect(() => {
        const init = async () => {

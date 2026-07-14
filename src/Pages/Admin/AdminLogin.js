@@ -12,7 +12,7 @@ const AdminLogin = () => {
 
     const navigate = useNavigate()
     
-    const APIURL = ('https://main.majorlink.co/api/admin/login')
+    const APIURL = ('/v1/admin/login')
     
     const [email, setemail] = useState('')
      const [password, setpassword] = useState('')

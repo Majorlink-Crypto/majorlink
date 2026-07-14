@@ -9,45 +9,42 @@ function CheckoutPage() {
 
   const [options, setOptions] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [rateType, setRateType] = useState('buy');  // default to 'buy'
+  const [rateType, setRateType] = useState('buy');
   const [isOpen, setIsOpen] = useState(false);
   const [amount, setAmount] = useState('');
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   useEffect(() => {
-
     const init = async () => {
-      axios.defaults.baseURL = "https://main.majorlink.co/api"
-
-      const res = await axios.get('/services/list', {
-        headers: {
-          "Content-Type": "application/json",
-          accept: "application/json"
-        }
-      });
-
-      setOptions(res.data);
-      setSelectedOption(res.data[0]);  // default to the first option
+      try {
+        const res = await axios.get('/v1/crypto/rates', {
+          headers: {
+            "Content-Type": "application/json",
+            accept: "application/json"
+          }
+        });
+        const assets = res.data?.data?.assets;
+        const data = Array.isArray(assets) ? assets : [];
+        setOptions(data);
+        if (data.length > 0) setSelectedOption(data[0]);
+      } catch (e) {
+        console.error(e);
+      }
     }
-
     init();
-
   }, []);
 
-
   const calculateNairaAmount = () => {
-    const rate = rateType === 'buy' ? selectedOption?.buy : selectedOption?.sell;
+    const rate = selectedOption?.ngnSellRate || 0;
     return amount * rate;
   };
 
-  // Function to format numbers with commas
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   const checkout = async () => {
-    // Check for missing or invalid inputs
     if (!selectedOption) {
         toast.error('Please select a currency.');
         return;
@@ -63,7 +60,6 @@ function CheckoutPage() {
         return;
     }
 
-    // Main logic: initiate WhatsApp conversation (or any other primary action)
     const transactionType = rateType === 'buy' ? "purchase" : "sell";
     const baseMessage = `Good day, I'd like to ${transactionType} $${amount} worth of ${selectedOption.name}. Could you provide further assistance regarding the procedure and any other relevant details? Thank you.`;
     const encodedMessage = encodeURIComponent(baseMessage);
@@ -71,23 +67,14 @@ function CheckoutPage() {
     
     window.open(whatsappUrl, '_blank');
 
-    // If the main logic executes without issues
     toast.success('Success! Redirecting to WhatsApp...');
     setAmount("")
-}
-
-
-
+  }
 
   return (
     <div className="flex h-screen">
-
-      {/* Left side (40% width, full height, blue background) */}
       <div className="hidden md:flex md:w-[40%] bg-[#4B5DFF] h-full flex-shrink-0 flex-col overflow-hidden relative">
-        {/* Spiral decoration top-left */}
         <img src={spiral} alt='Spiral' className='w-40 h-40 flex-shrink-0' />
-
-        {/* Centered text content */}
         <div className='flex flex-col justify-end flex-1 px-12 pb-20'>
           <h2 className='text-xl font-grifter tracking-wide text-white'>Trade your GiftCards &amp; Crypto</h2>
           <h2 className='text-[#b4bbf3] text-4xl mt-4 font-grifter tracking-wide'>Easy with Speed.</h2>
@@ -97,11 +84,7 @@ function CheckoutPage() {
         </div>
       </div>
 
-      {/* Right side (remaining width, full height, white background, scrollable) */}
-      <div className="flex-grow  overflow-y-auto bg-white  md:w-[60%] md:px-16 px-6 pb-20 pt-10">
-        {/* Content for the right side */}
-
-
+      <div className="flex-grow overflow-y-auto bg-white md:w-[60%] md:px-16 px-6 pb-20 pt-10">
         <Link to={'/'}>
           <h1 className='mt-4'>Go back to website</h1>
         </Link>
@@ -120,11 +103,10 @@ function CheckoutPage() {
         </div>
 
         <div>
-          {/* Custom Dropdown for Coin Selection */}
           <div className="relative mt-10 border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] focus:outline-none focus:ring-0 cursor-pointer" onClick={toggleDropdown}>
             {selectedOption ? (
               <>
-                <img src={selectedOption.icon} alt={selectedOption.name} className="inline-block mr-2 h-6 items-center rounded-full w-6" />
+                <img src={selectedOption.image} alt={selectedOption.name} className="inline-block mr-2 h-6 items-center rounded-full w-6" />
                 {selectedOption.name}
               </>
             ) : 'Select a currency'}
@@ -133,7 +115,7 @@ function CheckoutPage() {
               <div className="absolute w-full mt-2 border border-[#DDDDDD] rounded-xl bg-white z-10 right-1">
                 {options.map(option => (
                   <div key={option.id} className="py-3 px-3 cursor-pointer hover:bg-[#f3f3f3]" onClick={() => { setSelectedOption(option); setIsOpen(false) }}>
-                    <img src={option.icon} alt={option.name} className="inline-block mr-2 h-6 items-center rounded-full w-6" />
+                    <img src={option.image} alt={option.name} className="inline-block mr-2 h-6 items-center rounded-full w-6" />
                     {option.name}
                   </div>
                 ))}
@@ -141,20 +123,14 @@ function CheckoutPage() {
             )}
           </div>
 
-          {/* Dropdown for Rate Type Selection & Display Rate */}
           <div className="relative mt-5">
             <select
-              value={`${rateType} @ ₦${rateType === 'buy' ? selectedOption?.buy : selectedOption?.sell}/$`}
-              onChange={(e) => {
-                const newRateType = e.target.value.startsWith('buy') ? 'buy' : 'sell';
-                setRateType(newRateType);
-              }}
+              value={rateType}
+              onChange={(e) => setRateType(e.target.value)}
               className="appearance-none border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] focus:outline-none focus:ring-0"
             >
-              {selectedOption && [
-                <option key="buy" value={`buy @ ₦${selectedOption?.buy}/$`} className="text-[#737D96] text-aeonikregular">Buy @ ₦{selectedOption?.buy}/$</option>,
-                <option key="sell" value={`sell @ ₦${selectedOption?.sell}/$`} className="text-[#737D96] text-aeonikregular">Sell @ ₦{selectedOption?.sell}/$</option>
-              ]}
+              <option value="buy" className="text-[#737D96] text-aeonikregular">Buy @ ₦{selectedOption?.ngnSellRate || 0}/$</option>
+              <option value="sell" className="text-[#737D96] text-aeonikregular">Sell @ ₦{selectedOption?.ngnSellRate || 0}/$</option>
             </select>
           </div>
 
@@ -169,10 +145,9 @@ function CheckoutPage() {
             />
           </div>
 
-          {/* Display information and amount in Naira */}
           <div className="mt-10">
             <h1 className='font-aeonikregular text-[#273046]'>
-              {rateType === 'buy' ? "What you’ll receive in Naira" : "What you will send in Naira"}
+              {rateType === 'buy' ? "What you'll receive in Naira" : "What you will send in Naira"}
             </h1>
             <p className='font-aeonikregular text-xs text-[#7280A0] mt-1'>Average confirmation time: 5 to 10 mins.</p>
             <h1 className="md:text-3xl text-2xl mt-6 font-grifter text-[#323948]">
@@ -185,13 +160,11 @@ function CheckoutPage() {
           <h1 className='text-white'>Continue to WhatsApp</h1>
         </div>
 
-
         <div className='mt-14'>
           <h1 className='text-[#273046] font-aeonikregular'>Trading on the website directs you to our official WhatsApp contact at
             <span className='text-black font-aeonikbold'> +2349071504491 </span> Please be aware of scammers, and kindly confirm the phone number is same on our contact page, and the website you are currently on should be www.majorlink.co/checkout</h1>
         </div>
       </div>
-
     </div>
   );
 }

@@ -14,12 +14,7 @@ const StatsBar = () => {
         {HERO_STATS.map((stat, index) => (
           <div key={index} className="flex flex-col items-start">
             <span
-              className="font-onest font-bold"
-              style={{
-                fontSize: 'clamp(22px, 4vw, 30px)',
-                lineHeight: '100%',
-                color: '#18181B',
-              }}
+              className="font-onest font-bold text-[#18181B] text-[17px] sm:text-[22px] md:text-[27px] lg:text-[30px] xl:text-[32px] leading-none"
             >
               {stat.value}
             </span>

@@ -3,33 +3,19 @@ import { HERO_CONTENT } from '../../data/content';
 import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 // ── Store CTA Button ───────────────────────────────────────────────────────────
-const StoreButton = ({ btn, iconSrc }) => (
+const StoreButton = ({ btn, imageSrc }) => (
   <a
     href={btn.url}
     target="_blank"
     rel="noopener noreferrer"
     aria-label={btn.ariaLabel}
+    className="hover:opacity-90 transition-opacity duration-200 shrink-0"
   >
-    <button
-      className="
-        flex items-center space-x-3
-        bg-brand-blue hover:bg-brand-blueDark
-        transition-colors duration-200
-        rounded-xl px-4 py-2.5
-        cursor-pointer
-        border border-brand-blue
-      "
-    >
-      <img src={iconSrc} alt="" className="w-5 h-5 object-contain shrink-0" />
-      <span className="flex flex-col items-start">
-        <span style={textStyle(TEXT_STYLES.storeSubDark)}>
-          {btn.sublabel}
-        </span>
-        <span style={textStyle(TEXT_STYLES.storeMainDark)}>
-          {btn.mainLabel}
-        </span>
-      </span>
-    </button>
+    <img
+      src={imageSrc}
+      alt={btn.ariaLabel}
+      className="h-[48px] md:h-[54px] w-auto object-contain"
+    />
   </a>
 );
 
@@ -39,10 +25,10 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#FAFAFA] pt-[65px] min-h-[600px] md:min-h-[800px] lg:min-h-[1024px]"
+      className="relative w-full h-screen overflow-hidden bg-[#FAFAFA] pt-[65px] z-0"
       aria-label="Hero section"
     >
-      {/* Layer 1 — sky background */}
+      {/* Layer 1 — sky background
       <img
         src="/images/hero_bg.webp"
         alt={bgImageAlt}
@@ -50,19 +36,49 @@ const HeroSection = () => {
         style={{ zIndex: 0, objectPosition: 'center -80px' }}
         aria-hidden="true"
       />
+      */}
 
-      {/* Layer 2 — cloud + crypto icons (all baked into the PNG) */}
-      <img
-        src="/images/hero_cloud.webp"
-        alt={cloudAlt}
-        className="absolute inset-0 w-full h-full object-cover object-top"
+      {/* Background Container — strictly clipped to hero section bounds */}
+      <div 
+        className="absolute inset-0 overflow-hidden pointer-events-none" 
         style={{ zIndex: 1 }}
-        aria-hidden="true"
-      />
+      >
+        {/* Cloud layer — h-full keeps it within hero bounds */}
+        <img
+          src="/images/hero_cloud.webp"
+          alt={cloudAlt}
+          className="absolute inset-0 w-full h-full object-cover object-top"
+          aria-hidden="true"
+        />
+
+        {/* Outer rotating ring (hero_bg1) */}
+        <div 
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ transform: 'translateY(-10%)' }}
+        >
+          <img
+            src="/images/hero_bg1.webp"
+            alt=""
+            className="w-[73%] max-w-none object-contain animate-spin-clockwise opacity-60"
+          />
+        </div>
+
+        {/* Inner rotating ring (hero_bg2) */}
+        <div 
+          className="absolute inset-0 flex items-center justify-center"
+          style={{ transform: 'translateY(-10%)' }}
+        >
+          <img
+            src="/images/hero_bg2.webp"
+            alt=""
+            className="w-[55%] max-w-none object-contain animate-spin-counterclockwise opacity-80"
+          />
+        </div>
+      </div>
 
       {/* Layer 3 — centered text content + CTAs */}
       <div
-        className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 z-[2] min-h-[calc(600px-65px)] md:min-h-[calc(800px-65px)] lg:min-h-[calc(1024px-65px)] pb-20 md:pb-40 lg:pb-[260px]"
+        className="relative flex flex-col items-center justify-center text-center px-4 sm:px-6 z-10 h-full pb-12"
       >
         {/* H1 headline */}
         <h1
@@ -86,8 +102,8 @@ const HeroSection = () => {
 
         {/* App Store + Google Play buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mt-8 md:mt-10 hero-fade-up-delay-2">
-          <StoreButton btn={appStore}  iconSrc="/logo/apple.svg" />
-          <StoreButton btn={playStore} iconSrc="/logo/play_store.svg" />
+          <StoreButton btn={appStore}  imageSrc="/images/app_store_button.webp" />
+          <StoreButton btn={playStore} imageSrc="/images/googe_button.webp" />
         </div>
       </div>
     </section>

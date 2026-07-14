@@ -6,7 +6,7 @@ import { TEXT_STYLES, textStyle } from '../../data/constants';
 const FeaturesSection = () => {
   return (
     <section className="w-full bg-white px-4 sm:px-6 md:px-20 py-8 md:py-10" aria-label="Features">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-[1240px] mx-auto w-full">
         {FEATURES_CONTENT.map((feature, index) => (
           <div
             key={index}
@@ -25,7 +25,7 @@ const FeaturesSection = () => {
               <h3
                 className="mb-1 font-archivo font-semibold"
                 style={{
-                  fontSize: 'clamp(16px, 3vw, 19px)',
+                  fontSize: 'clamp(15px, 2.5vw, 17px)',
                   lineHeight: '140%',
                   color: '#18181B',
                 }}

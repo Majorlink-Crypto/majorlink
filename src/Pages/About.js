@@ -22,7 +22,7 @@ const About = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
           {/* Left Column: Heading and Description */}
           <div className="flex flex-col justify-end text-left">
-            <h1 className="mb-6" style={textStyle(TEXT_STYLES.aboutHeading)}>
+            <h1 className="mb-6 font-onest font-bold text-black text-[20px] sm:text-[22px] md:text-[25px] lg:text-[27px] leading-[110%]">
               {hero.heading}
             </h1>
             <p style={textStyle(TEXT_STYLES.aboutBody)}>

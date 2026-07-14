@@ -138,7 +138,7 @@ export const SERVICES_CONTENT = [
     image:       '/images/giftcard.webp',
     imageAlt:    'Various gift cards fanned out',
     title:       'Trade Gift Cards',
-    description: 'Buy and sell gift cards at great rates.',
+    description: 'Convert gift cards to Naira instantly.',
   },
 ];
 

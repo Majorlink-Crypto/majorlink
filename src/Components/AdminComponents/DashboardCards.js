@@ -10,7 +10,7 @@ const DashboardCards = () => {
     React.useEffect(() => {
         
      axios.get('https://main.majorlink.co/api/services/list', {
-        header: {
+        headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json' 
         }

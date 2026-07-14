@@ -152,15 +152,15 @@ export const TEXT_STYLES = {
     lineHeight: '100%', color: COLORS.zinc900,
   },
   ratesLink: {
-    font: FONTS.archivo, weight: FONT_WEIGHTS.semibold, size: '19px',
+    font: FONTS.archivo, weight: FONT_WEIGHTS.semibold, size: '17px',
     lineHeight: '140%', color: COLORS.brandIndigo,
   },
   ratesTableHeader: {
-    font: FONTS.archivo, weight: FONT_WEIGHTS.medium, size: '19px',
+    font: FONTS.archivo, weight: FONT_WEIGHTS.medium, size: '17px',
     lineHeight: '140%', color: COLORS.zinc400,
   },
   ratesTableValue: {
-    font: FONTS.archivo, weight: FONT_WEIGHTS.medium, size: '19px',
+    font: FONTS.archivo, weight: FONT_WEIGHTS.medium, size: '17px',
     lineHeight: '140%', color: COLORS.zinc800,
   },
 
@@ -192,7 +192,7 @@ export const TEXT_STYLES = {
     lineHeight: '180%', color: COLORS.zinc800,
   },
   ratesCardTitle: {
-    font: FONTS.archivo, weight: FONT_WEIGHTS.semibold, size: '19px',
+    font: FONTS.archivo, weight: FONT_WEIGHTS.semibold, size: '17px',
     lineHeight: '160%', color: COLORS.zinc600,
   },
   ratesCardLabel: {
@@ -200,7 +200,7 @@ export const TEXT_STYLES = {
     lineHeight: '160%', color: COLORS.zinc400,
   },
   ratesCardValue: {
-    font: FONTS.archivo, weight: FONT_WEIGHTS.medium, size: '19px',
+    font: FONTS.archivo, weight: FONT_WEIGHTS.medium, size: '17px',
     lineHeight: '140%', color: COLORS.zinc800,
   },
 

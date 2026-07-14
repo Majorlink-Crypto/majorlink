@@ -4,8 +4,8 @@ import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-white px-4 sm:px-6 md:px-20 py-8 md:py-10 animate-fadeIn" aria-label="Services">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
+    <section className="w-full bg-[#FAFAFA] px-4 sm:px-6 md:px-20 py-8 md:py-10 animate-fadeIn" aria-label="Services">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1240px] mx-auto w-full">
         {SERVICES_CONTENT.map((service, index) => (
           <div
             key={index}
@@ -15,7 +15,7 @@ const ServicesSection = () => {
             data-aos-delay={index * 150}
           >
             {/* Card image container */}
-            <div className="bg-[#F4F4F8] rounded-3xl overflow-hidden w-full h-auto md:h-[500px] flex items-end justify-center">
+            <div className="bg-[#F4F4F8] rounded-2xl overflow-hidden w-full h-auto md:h-[450px] flex items-end justify-center">
               <img
                 src={service.image}
                 alt={service.imageAlt}
@@ -27,7 +27,7 @@ const ServicesSection = () => {
               <h3
                 className="font-onest font-bold"
                 style={{
-                  fontSize: 'clamp(20px, 4vw, 27px)',
+                  fontSize: 'clamp(18px, 3vw, 22px)',
                   lineHeight: '100%',
                   color: '#18181B',
                 }}

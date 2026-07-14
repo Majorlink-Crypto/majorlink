@@ -13,7 +13,7 @@ const Sectionfour = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
         {/* Left Column: Heading */}
         <div>
-          <h2 style={textStyle(TEXT_STYLES.sectionHeading)}>
+          <h2 className="font-onest font-bold text-[#18181B] text-[20px] sm:text-[22px] md:text-[25px] lg:text-[27px] leading-[110%]">
             Simple Solutions<br />in a Digital Age
           </h2>
         </div>

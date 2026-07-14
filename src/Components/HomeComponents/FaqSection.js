@@ -19,14 +19,9 @@ const FaqSection = () => {
         {/* ── Left Column ── */}
         <div className="md:w-[36%] flex-shrink-0">
           <h2
-            className="font-onest font-bold"
+            className="font-onest font-bold text-[#0D1B2A] text-[20px] sm:text-[22px] md:text-[25px] lg:text-[27px] leading-[110%]"
             data-aos="fade-up"
             data-aos-duration="600"
-            style={{
-              fontSize: 'clamp(24px, 5vw, 34px)',
-              lineHeight: '110%',
-              color: '#0D1B2A',
-            }}
           >
             Things You Might Be<br />Wondering About
           </h2>

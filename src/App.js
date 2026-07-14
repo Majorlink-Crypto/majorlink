@@ -13,6 +13,8 @@ import Unauthorized from './Pages/Unauthorized';
 import Services from './Pages/Admin/Services';
 import Construction from './Pages/Construction';
 import About from './Pages/About';
+import ScrollToTop from './Components/scrollTop';
+import { LenisProvider } from './Context/LenisContext';
 
 import 'react-toastify/dist/ReactToastify.css';
 import ContactPage from './Pages/ContactPage';
@@ -34,7 +36,9 @@ function App() {
 
   return (
     <div className='font-aeonikmedium'>
+      <LenisProvider>
       <BrowserRouter>
+      <ScrollToTop />
       <ToastContainer />
        <Routes>
        <Route path='/' element={<HomePage/>}></Route>
@@ -54,6 +58,7 @@ function App() {
        <Route path="*"  element={<ErrorPage/>}/>
    </Routes> 
       </BrowserRouter>
+      </LenisProvider>
     </div>
   );
 }
