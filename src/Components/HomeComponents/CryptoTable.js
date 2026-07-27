@@ -40,7 +40,7 @@ const CryptoTable = () => {
 
   const getRate = (service) => {
     if (!service) return 0;
-    return service.ngnSellRate || 0;
+    return tradeType === "buy" ? (service.ngnBuyRate || service.ngnSellRate || 0) : (service.ngnSellRate || 0);
   };
 
   const rate = getRate(selectedService);
@@ -112,7 +112,7 @@ const CryptoTable = () => {
                   </span>
                 </div>
                 <span className="text-xs sm:text-base" style={textStyle(TEXT_STYLES.ratesTableValue)}>
-                  {formatRate(service.ngnSellRate)}
+                  {formatRate(service.ngnBuyRate)}
                 </span>
                 <span className="text-xs sm:text-base" style={textStyle(TEXT_STYLES.ratesTableValue)}>
                   {formatRate(service.ngnSellRate)}

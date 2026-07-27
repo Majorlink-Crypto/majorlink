@@ -36,7 +36,7 @@ function CheckoutPage() {
   }, []);
 
   const calculateNairaAmount = () => {
-    const rate = selectedOption?.ngnSellRate || 0;
+    const rate = rateType === 'buy' ? (selectedOption?.ngnBuyRate || selectedOption?.ngnSellRate || 0) : (selectedOption?.ngnSellRate || 0);
     return amount * rate;
   };
 
@@ -129,7 +129,7 @@ function CheckoutPage() {
               onChange={(e) => setRateType(e.target.value)}
               className="appearance-none border border-[#DDDDDD] py-3 px-3 rounded-xl w-[95%] focus:outline-none focus:ring-0"
             >
-              <option value="buy" className="text-[#737D96] text-aeonikregular">Buy @ ₦{selectedOption?.ngnSellRate || 0}/$</option>
+              <option value="buy" className="text-[#737D96] text-aeonikregular">Buy @ ₦{selectedOption?.ngnBuyRate || selectedOption?.ngnSellRate || 0}/$</option>
               <option value="sell" className="text-[#737D96] text-aeonikregular">Sell @ ₦{selectedOption?.ngnSellRate || 0}/$</option>
             </select>
           </div>

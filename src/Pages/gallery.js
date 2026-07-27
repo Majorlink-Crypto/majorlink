@@ -54,7 +54,7 @@ const Gallery = () => {
   const getRate = (service) => {
     if (!service) return 0;
     if (activeTab === 'crypto') {
-      return service.ngnSellRate || 0;
+      return tradeType === 'buy' ? (service.ngnBuyRate || service.ngnSellRate || 0) : (service.ngnSellRate || 0);
     }
     return tradeType === 'buy' ? service.buy : service.sell;
   };
@@ -110,7 +110,7 @@ const Gallery = () => {
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {services.map((service, i) => {
-                const buyRate  = activeTab === 'crypto' ? service.ngnSellRate : service.buy;
+                const buyRate  = activeTab === 'crypto' ? service.ngnBuyRate : service.buy;
                 const sellRate = activeTab === 'crypto' ? service.ngnSellRate : service.sell;
                 const isSelected = selectedService?.id === service.id;
 
