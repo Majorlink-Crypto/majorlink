@@ -56,7 +56,7 @@ export const HERO_CONTENT = {
 /** @type {import('./types').HeroStat[]} */
 export const HERO_STATS = [
   { value: '$1M',   label: 'Daily Trade Volume' },
-  { value: '10K+',  label: 'user base.' },
+  { value: '200K+', label: 'user base.' },
   { value: '100%',  label: 'Guaranteed uptime.' },
   { value: '24/7',  label: 'Support' },
 ];
