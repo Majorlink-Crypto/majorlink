@@ -271,7 +271,7 @@ export const ROUTES = {
 
 // ── External Links ─────────────────────────────────────────────────────────────
 export const EXTERNAL_LINKS = {
-  appStore:  'https://apps.apple.com/app/majorlink/id6463786218',
+  appStore:  'https://apps.apple.com/app/majorlink-ltd/id6472656224',
   playStore: 'https://play.google.com/store/apps/details?id=com.olamide81.MajorlinkApp',
   whatsapp:  'https://wa.me/+2349071504491?text=Hi,%20I%20would%20like%20to%20trade%20with%20you.%20What%20are%20your%20current%20rates%20and%20how%20do%20we%20proceed%20with%20the%20trade%3F',
   tradeWeb:  'http://app.majorlink.co/',
