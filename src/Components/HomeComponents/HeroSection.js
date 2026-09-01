@@ -1,6 +1,5 @@
 import React from 'react';
 import { HERO_CONTENT } from '../../data/content';
-import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 // ── Store CTA Button ───────────────────────────────────────────────────────────
 const StoreButton = ({ btn, imageSrc }) => (
@@ -21,7 +20,7 @@ const StoreButton = ({ btn, imageSrc }) => (
 
 // ── Main Hero Section ──────────────────────────────────────────────────────────
 const HeroSection = () => {
-  const { headline, body, appStore, playStore, bgImageAlt, cloudAlt } = HERO_CONTENT;
+  const { body, appStore, playStore, cloudAlt } = HERO_CONTENT;
 
   return (
     <section

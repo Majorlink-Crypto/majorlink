@@ -1,6 +1,5 @@
 import React from 'react';
 import { HERO_STATS } from '../../data/content';
-import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 const StatsBar = () => {
   return (

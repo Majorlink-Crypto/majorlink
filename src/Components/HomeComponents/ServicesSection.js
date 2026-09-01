@@ -1,6 +1,5 @@
 import React from 'react';
 import { SERVICES_CONTENT } from '../../data/content';
-import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 const ServicesSection = () => {
   return (

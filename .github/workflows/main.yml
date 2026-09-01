@@ -24,7 +24,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload build zip to production server
+      - name: Upload build to production server
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}

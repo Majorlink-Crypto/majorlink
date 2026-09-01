@@ -15,9 +15,7 @@ const Services = () => {
      const [buy, addbuy] = useState('')
      const [sell, addsell] = useState('')
      const [symbol, addsymbol] = useState('')
-     const [loading, setLoading] = useState(false);  
-
-    //  const APIURL = ('/v1/admin/services/add')
+     const [loading] = useState(false);
 
      useEffect(() => {
        const init = async () => {
@@ -35,9 +33,6 @@ const Services = () => {
 
        init()
      }, [])
-
-     // service list
-     const hello = services;
 
      const create = async () => {
           const item = {name, buy, sell, symbol}
@@ -171,7 +166,7 @@ const Services = () => {
                   <input type='text'className='p-2 border-primary border-2 rounded-md' value={symbol} onChange={(e) => addsymbol(e.target.value)}/>
                   </section>
 
-                  <button className='bg-primary mt-4 text-base rounded-md p-3 text-white md:w-[fit] w-[100%] flex items-center text-center justify-center' onClick={create}> <ion-icon name={'add'}></ion-icon>Create</button>
+                  <button className='bg-primary mt-4 text-base rounded-md p-3 text-white md:w-fit w-full flex items-center text-center justify-center' onClick={create}> <ion-icon name={'add'}></ion-icon>Create</button>
             </div>
                    {/*Create Service*/}
                    <BounceLoader color="#2752E7" loading={loading}/>

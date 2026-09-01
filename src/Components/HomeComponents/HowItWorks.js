@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { HOW_IT_WORKS_CONTENT } from '../../data/content';
-import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);

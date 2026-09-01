@@ -80,7 +80,7 @@ const AdminLogin = () => {
              <input className='text-sm font-gilroysemibold p-3 w-[106%] md:w-[136%] border-primary border-2 rounded-md' placeholder='******' type='password' value={password} onChange={(e) => setpassword(e.target.value)}/>
                </section>
 
-                <button className='p-3 bg-primary text-white text-sm font-gilroysemibold mt-4 rounded-md w-[76%] md:w-[fill]' onClick={login}>Log In </button>
+                <button className='p-3 bg-primary text-white text-sm font-gilroysemibold mt-4 rounded-md w-[76%] md:w-full' onClick={login}>Log In </button>
         </div>
         <BounceLoader color="#2752E7" loading={loading}/>
          {/*Center Div*/}

@@ -4,7 +4,7 @@ import Navbar from '../Components/Navbar';
 import FeaturesSection from '../Components/HomeComponents/FeaturesSection';
 import CtaBanner from '../Components/HomeComponents/CtaBanner';
 import Footer from '../Components/Footer';
-import { RATES_PAGE_CONTENT, RATES_SECTION_CONTENT } from '../data/content';
+import { RATES_PAGE_CONTENT } from '../data/content';
 import { EXTERNAL_LINKS, TEXT_STYLES, textStyle } from '../data/constants';
 
 const { heading, headingLine2, tabs, card, panel } = RATES_PAGE_CONTENT;

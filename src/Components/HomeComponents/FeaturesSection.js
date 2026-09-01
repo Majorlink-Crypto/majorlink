@@ -1,7 +1,6 @@
 import React from 'react';
 import { FEATURES_CONTENT } from '../../data/content';
 import Ethereum from '../../Assets/Ethereum.png';
-import { TEXT_STYLES, textStyle } from '../../data/constants';
 
 const FeaturesSection = () => {
   return (
